@@ -106,4 +106,27 @@ document.addEventListener('DOMContentLoaded', () => {
         updateGeometry();
         beforeImg.onload = updateGeometry;
     });
+
+    // Chat Widget Toggle Logic
+    const chatToggleBtn = document.querySelector('.chat-toggle-btn');
+    const chatOptions = document.querySelector('.chat-options');
+    const chatBadge = document.querySelector('.chat-badge');
+
+    if (chatToggleBtn && chatOptions) {
+        chatToggleBtn.addEventListener('click', () => {
+            const isActive = chatToggleBtn.classList.toggle('active');
+            chatOptions.classList.toggle('active');
+
+            // Toggle Icon
+            const icon = chatToggleBtn.querySelector('i');
+            if (isActive) {
+                icon.classList.remove('fa-comments');
+                icon.classList.add('fa-xmark');
+                if (chatBadge) chatBadge.style.display = 'none'; // Hide badge when opened
+            } else {
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-comments');
+            }
+        });
+    }
 });

@@ -201,23 +201,73 @@
         <div class="container">
             <h2 class="section-title">Why Choose Glass Lux?</h2>
             <div class="features-grid">
-                <div class="feature-item">
-                    <i class="fa-solid fa-medal"></i>
-                    <h4>Lifetime Warranty</h4>
-                    <p>We stand behind our workmanship for as long as you own your vehicle.</p>
+                <!-- Before / After Slider 3 -->
+                <div class="slider-wrapper" style="margin-top: 40px;">
+                    <h3>Side Profile Perfection</h3>
+                    <p>Invisible repairs from every angle.</p>
+                    <div class="slider-container" id="comparisonSlider3">
+                        <div class="slider-image after">
+                            <img src="slider3_after.png" alt="After Repair">
+                            <span class="slider-label">AFTER</span>
+                        </div>
+                        <div class="slider-image before">
+                            <img src="slider3_before.png" alt="Before Repair">
+                            <span class="slider-label">BEFORE</span>
+                        </div>
+                        <div class="slider-handle">
+                            <div class="handle-line"></div>
+                            <div class="handle-circle"><i class="fa-solid fa-arrows-left-right"></i></div>
+                        </div>
+                    </div>
                 </div>
-                <div class="feature-item">
-                    <i class="fa-solid fa-user-shield"></i>
-                    <h4>Certified Techs</h4>
-                    <p>Our technicians are highly trained and AGSC certified.</p>
+
+                <div class="process-content" style="margin-top: 60px;">
+                    <div class="process-text">
+                        <h3>The Science of Auto Glass Repair</h3>
+                        <p>We use advanced resin technology that restores windshield strength and visual clarity.</p>
+                        <ul class="process-steps">
+                            <li><i class="fa-solid fa-circle-check"></i> <strong>Vacuum & Pressure:</strong> Injecting
+                                resin into the break.</li>
+                            <li><i class="fa-solid fa-circle-check"></i> <strong>UV Curing:</strong> Hardening the resin
+                                for durability.</li>
+                            <li><i class="fa-solid fa-circle-check"></i> <strong>Polishing:</strong> Restoring the glass
+                                surface finish.</li>
+                        </ul>
+                    </div>
+                    <div class="process-image"
+                        style="box-shadow: 0 20px 40px rgba(0,0,0,0.5); border-radius: 20px; overflow: hidden;">
+                        <img src="chip_guide.png" alt="Windshield Repair Technical Guide"
+                            style="width: 100%; height: auto; display: block;">
+                    </div>
                 </div>
-                <div class="feature-item">
-                    <i class="fa-solid fa-clock"></i>
-                    <h4>Same Day Service</h4>
-                    <p>Get back on the road quickly with our efficient scheduling.</p>
+
+                <div class="guide-section text-center" style="margin-top: 60px;">
+                    <h3 class="section-title">Is Your Crack Repairable?</h3>
+                    <div class="damage-grid">
+                        <div class="damage-card">
+                            <img src="crack_bullseye.png" alt="Bullseye Crack">
+                            <h4>Bullseye</h4>
+                            <div class="status-badge success">Repairable</div>
+                            <p style="color: #999; margin-top: 10px; font-size: 0.9rem;">Clean circular break, up to 1
+                                inch.</p>
+                        </div>
+                        <div class="damage-card">
+                            <img src="crack_star.png" alt="Star Break">
+                            <h4>Star Break</h4>
+                            <div class="status-badge success">Repairable</div>
+                            <p style="color: #999; margin-top: 10px; font-size: 0.9rem;">Multiple legs spreading from
+                                impact.</p>
+                        </div>
+                        <div class="damage-card">
+                            <img src="crack_combo.png" alt="Combo Crack">
+                            <h4>Combination</h4>
+                            <div class="status-badge success">Repairable</div>
+                            <p style="color: #999; margin-top: 10px; font-size: 0.9rem;">Mix of star and bullseye
+                                features.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
     </section>
 
     <!-- Service Checkout Section -->
@@ -311,16 +361,27 @@
         </div>
     </section>
 
-    <!-- Floating Chat Button -->
-    <a href="sms:+13859885129" class="floating-chat-btn">
-        <div class="chat-icon">
-            <i class="fa-solid fa-comment-dots"></i>
+    <!-- Multi-Channel Chat Widget -->
+    <div class="chat-widget">
+        <div class="chat-options">
+            <a href="https://wa.me/13859885129" target="_blank" class="chat-option whatsapp">
+                <i class="fa-brands fa-whatsapp"></i> <span>WhatsApp</span>
+            </a>
+            <a href="https://t.me/13859885129" target="_blank" class="chat-option telegram">
+                <i class="fa-brands fa-telegram"></i> <span>Telegram</span>
+            </a>
+            <a href="sms:+13859885129" class="chat-option sms">
+                <i class="fa-solid fa-comment-sms"></i> <span>SMS / Text</span>
+            </a>
+            <a href="https://m.me/13859885129" target="_blank" class="chat-option messenger">
+                <i class="fa-brands fa-facebook-messenger"></i> <span>Messenger</span>
+            </a>
         </div>
-        <div class="chat-text">
-            <span>Text Us Now!</span>
-            <small>Fast Response</small>
-        </div>
-    </a>
+        <button class="chat-toggle-btn">
+            <i class="fa-solid fa-comments"></i>
+            <span class="chat-badge">1</span>
+        </button>
+    </div>
 
     <!-- Footer -->
     <footer id="contact" class="footer">
@@ -331,6 +392,16 @@
                 </a>
                 <p>Premium auto glass solutions delivered to your doorstep. Quality, integrity, and safety in every
                     repair.</p>
+                <!-- Payment Methods -->
+                <div class="payment-methods"
+                    style="margin-top: 20px; font-size: 1.8rem; color: #fff; display: flex; gap: 15px;">
+                    <i class="fa-brands fa-cc-visa"></i>
+                    <i class="fa-brands fa-cc-mastercard"></i>
+                    <i class="fa-brands fa-cc-amex"></i>
+                    <i class="fa-brands fa-cc-discover"></i>
+                    <i class="fa-brands fa-cc-apple-pay"></i>
+                    <i class="fa-brands fa-cc-stripe"></i>
+                </div>
             </div>
             <div class="footer-col links-col">
                 <h4>Quick Links</h4>
@@ -350,18 +421,20 @@
                     <li><i class="fa-solid fa-location-dot"></i> 10100 Brickhill Drive,<br>Boca Raton, FL 33428</li>
                 </ul>
                 <div class="social-links">
-                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
                     <a href="#"><i class="fa-brands fa-instagram"></i></a>
                     <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
                 </div>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2024 GlassLux LLC. All rights reserved.</p>
+            <p>&copy; 2026 GlassLux LLC. All rights reserved.</p>
         </div>
     </footer>
 
     <script src="js/script.js"></script>
-</body>
 
 </html>
