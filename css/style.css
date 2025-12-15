@@ -4510,3 +4510,47 @@ body {
         font-size: 1.3rem;
     }
 }
+/* =============================================
+   MOBILE REPAIR PROCESS - SPLIT IMAGES
+   ============================================= */
+
+/* Default State (Desktop): Hide Mobile Split */
+.mobile-process-split {
+    display: none;
+}
+
+/* Mobile State: Show Split, Hide Desktop */
+@media (max-width: 768px) {
+    .desktop-process-img {
+        display: none !important;
+    }
+
+    .mobile-process-split {
+        display: flex !important;
+        flex-direction: column;
+        gap: 15px; /* The "Nice Cut" Gap */
+        width: 100%;
+    }
+
+    .split-step {
+        width: 100%;
+        height: 140px; /* Consistent height for each slice */
+        overflow: hidden;
+        border-radius: 15px; /* Nice rounded corners */
+        border: 1px solid rgba(57, 255, 20, 0.3); /* Subtle green border */
+        box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+        position: relative;
+    }
+
+    .split-step img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+    }
+    
+    /* Interactive Touch: Zoom slightly on press/hover */
+    .split-step:active img {
+        transform: scale(1.1);
+    }
+}

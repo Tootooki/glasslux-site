@@ -15,7 +15,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="css/style.css?v=20241215au">
+    <link rel="stylesheet" href="css/style.css?v=20241215av">
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -348,8 +348,22 @@
                     </div>
                 </div>
                 <div class="process-image">
-                    <img src="repair_process.png" alt="Windshield Repair Process Steps"
+                    <!-- Desktop: Original Single Image -->
+                    <img src="repair_process.png" alt="Windshield Repair Process Steps" class="desktop-process-img"
                         style="border-radius: 15px; border: 1px solid var(--glass-border);">
+
+                    <!-- Mobile: 3 Split Images -->
+                    <div class="mobile-process-split">
+                        <div class="split-step">
+                            <img src="repair_step_1_drill.png" alt="Drilling">
+                        </div>
+                        <div class="split-step">
+                            <img src="repair_step_2_inject.png" alt="Injection">
+                        </div>
+                        <div class="split-step">
+                            <img src="repair_step_3_uv.png" alt="UV Curing">
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
