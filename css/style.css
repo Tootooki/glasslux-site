@@ -3734,3 +3734,54 @@ img {
         white-space: normal !important; /* Allow wrap */
     }
 }
+
+/* =============================================
+   BOOKING PROMO IMAGE & BADGE
+   ============================================= */
+
+/* Style the New Image Container */
+.product-image {
+    position: relative; /* Anchor for the badge */
+    width: 100%;
+    height: 180px; /* Define a nice height */
+    overflow: hidden;
+    border-radius: 12px;
+    background: #000; /* Fallback */
+    margin-bottom: 20px;
+    display: flex; /* Center img if needed */
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #333;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Fill the box nicely */
+    transition: transform 0.5s ease;
+}
+
+.product-card:hover .product-image img {
+    transform: scale(1.05); /* Zoom effect on hover */
+}
+
+/* Remove old icon styles if they conflict */
+.product-image i {
+    display: none;
+}
+
+/* The "20% OFF" Badge */
+.promo-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: var(--primary-green);
+    color: #000;
+    font-weight: 800;
+    font-size: 0.9rem;
+    padding: 5px 10px;
+    border-radius: 6px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    z-index: 2;
+    transform: rotate(3deg); /* Fun tilt */
+}
