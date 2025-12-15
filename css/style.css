@@ -2914,3 +2914,83 @@ img {
         min-height: 60px; /* Ensure logical height */
     }
 }
+
+/* =============================================
+   MOBILE HEADER FIXES
+   ============================================= */
+
+@media (max-width: 768px) {
+    /* 1. Compensation for taller header */
+    .hero {
+        padding-top: 130px !important; /* Increase from 80px to accommodate taller fixed header */
+        background-position: center top !important;
+    }
+    
+    /* 2. Layout Width Fixes */
+    .navbar-container {
+        padding: 0 10px !important; /* Reduce container padding to give more space to content */
+        gap: 5px !important;
+    }
+    
+    /* 3. Sizing Adjustments to prevent overflow */
+    .logo {
+        font-size: 1.1rem !important; /* Smaller logo */
+    }
+    
+    .logo-img {
+        height: 25px !important;
+    }
+    
+    .mobile-pill-btn {
+        padding: 8px 10px !important;
+        font-size: 0.75rem !important;
+        white-space: nowrap;
+    }
+    
+    /* Hide specific text on very narrow screens to prevent overlap */
+    @media (max-width: 380px) {
+        .phone-pill span, 
+        .whatsapp-pill span {
+            display: none !important; /* Show icons only on small phones */
+        }
+        
+        .mobile-pill-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 !important;
+        }
+        
+        .mobile-pill-btn i {
+            margin: 0 !important;
+            font-size: 1.1rem;
+        }
+    }
+}
+
+/* =============================================
+   MOBILE HEADER - FIT CONTENT
+   ============================================= */
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 10px 0 !important; /* Tight padding, let content dictate height */
+        height: auto !important;
+        min-height: auto !important;
+    }
+    
+    .navbar-container {
+        min-height: 0 !important;
+        padding-top: 5px !important;
+        padding-bottom: 5px !important;
+        align-items: center !important; /* Vertically center everything */
+    }
+    
+    /* Ensure Hero starts after the header */
+    .hero {
+        padding-top: 80px !important; /* Reset to reasonable offset */
+    }
+}
