@@ -3169,3 +3169,67 @@ img {
         }
     }
 }
+
+/* =============================================
+   MOBILE HEADER - EQUAL SIZE BUTTONS
+   ============================================= */
+
+@media (max-width: 768px) {
+    .navbar-container {
+        /* Ensure the grid gives equal space to left and right columns */
+        grid-template-columns: 1fr auto 1fr !important;
+        gap: 5px !important;
+        padding: 10px 5px !important;
+    }
+
+    .mobile-pill-btn {
+        /* FORCE EQUAL WIDTHS */
+        width: 100% !important;
+        max-width: 140px !important; /* Cap width so they don't get too huge */
+        min-width: 110px !important; /* Ensure they don't get too small */
+        
+        /* Layout internals */
+        justify-content: center !important;
+        padding: 8px 5px !important; /* Use padding to control height equivalence */
+        height: 38px !important; /* Fixed height for uniformity */
+        
+        /* Font sizing - allow "different sizes" as requested, but start standard */
+        font-size: 0.7rem !important;
+        letter-spacing: -0.5px !important; /* Tighten up text to fit */
+    }
+
+    /* Target specific buttons to align them perfectly */
+    .phone-pill {
+        justify-self: start !important; /* Stick to left edge */
+        margin-left: 2px !important;
+    }
+
+    .whatsapp-pill {
+        justify-self: end !important; /* Stick to right edge */
+        margin-right: 2px !important;
+    }
+    
+    /* Make the logo compact to fit between the equal-sized buttons */
+    .logo {
+        padding: 0 5px !important;
+        width: auto !important;
+        white-space: nowrap !important;
+    }
+    
+    .logo-img {
+        height: 22px !important;
+    }
+    
+    .logo-text {
+        font-size: 0.9rem !important;
+    }
+    
+    /* Auto-scale text for very small screens if needed */
+    @media (max-width: 380px) {
+        .mobile-pill-btn {
+            min-width: auto !important; /* Allow shrinking below 110px on tiny screens */
+            width: 100% !important;
+            font-size: 0.6rem !important;
+        }
+    }
+}
