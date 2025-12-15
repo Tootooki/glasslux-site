@@ -4807,3 +4807,78 @@ body {
         max-width: 100% !important;
     }
 }
+
+/* =============================================
+   WHATSAPP BLOCK REDESIGN (SLIM & PREMIUM)
+   ============================================= */
+
+.whatsapp-card {
+    /* Make it slimmer and wider */
+    padding: 25px 20px !important; 
+    max-width: 600px !important; /* Allow it to be wider on desktop */
+    width: 100%;
+    
+    /* Premium Look */
+    background: linear-gradient(145deg, #111 0%, #050505 100%);
+    border: 1px solid #333;
+    border-left: 4px solid #25D366; /* Matching the Science Card style */
+    border-radius: 15px;
+    
+    /* Center Layout */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+}
+
+.whatsapp-card:hover {
+    border-color: #25D366;
+    box-shadow: 0 0 20px rgba(37, 211, 102, 0.2);
+}
+
+.whatsapp-icon-large {
+    font-size: 2.5rem !important; /* Smaller icon for slim look */
+    margin-bottom: 5px !important;
+    filter: drop-shadow(0 0 10px rgba(37, 211, 102, 0.4));
+}
+
+.whatsapp-card h3 {
+    font-size: 1.4rem !important;
+    margin: 0 !important;
+    line-height: 1.2;
+}
+
+.whatsapp-card p {
+    margin: 0 !important;
+    font-size: 0.9rem !important;
+    color: #aaa;
+    max-width: 80%;
+}
+
+.btn-whatsapp-large {
+    margin-top: 10px;
+    padding: 12px 0 !important; /* Slimmer button */
+    font-size: 1rem !important;
+    border-radius: 50px !important; /* Pill shape */
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+}
+
+.whatsapp-fallback {
+    margin-top: 10px !important;
+    font-size: 0.85rem !important;
+}
+
+/* Mobile Tweaks to ensure full width usage within padding */
+@media (max-width: 768px) {
+    .whatsapp-chat-section {
+        margin: 30px 0 !important; /* Reduced vertical margin */
+    }
+    
+    .whatsapp-card {
+        border-left: 1px solid #333; /* Full border on mobile looks cleaner than just left strip? 
+                                       Actually let's keep the premium borders user asked for */
+        border: 1px solid rgba(37, 211, 102, 0.3); /* Visible Green Border on sides */
+        border-radius: 12px;
+    }
+}
