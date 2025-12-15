@@ -3957,3 +3957,84 @@ footer {
         height: 250px !important; /* Keep the compact mobile height */
     }
 }
+
+/* =============================================
+   URGENT: GLOBAL MOBILE ALIGNMENT FIX (5% RULE)
+   ============================================= */
+
+@media (max-width: 768px) {
+    /* 1. MASTER CONTAINER RULE */
+    /* Ensure ALL content sits inside this 5% rail */
+    .container {
+        padding-left: 5% !important;
+        padding-right: 5% !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    /* 2. HEADER ALIGNMENT */
+    /* Must match the container exactly */
+    .navbar-container {
+        padding-left: 5% !important;
+        padding-right: 5% !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    /* 3. RESET COMPONENT WIDTHS (Undo "Wide" Hacks) */
+    /* By removing side padding/margins, they will fill the .container exactly */
+    
+    .damage-grid {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        width: 100% !important;
+        gap: 10px !important; /* Keep internal gap */
+    }
+
+    .services-grid {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        width: 100% !important;
+    }
+
+    .science-collage-container {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        width: 100% !important;
+    }
+    
+    .science-collage-container img {
+        width: 100% !important;
+        border-radius: 8px !important;
+    }
+
+    .booking-layout-grid {
+        padding: 0 !important;
+        margin: 0 !important;
+        width: 100% !important;
+    }
+    
+    .product-card.main-booking-card {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        width: 100% !important;
+    }
+
+    /* 4. FOOTER ALIGNMENT */
+    .footer-content {
+        padding-left: 5% !important;
+        padding-right: 5% !important;
+    }
+    
+    .footer-bottom {
+        padding-left: 5% !important;
+        padding-right: 5% !important;
+    }
+}
