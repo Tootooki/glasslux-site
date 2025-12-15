@@ -3544,3 +3544,44 @@ img {
         color: var(--primary-green);
     }
 }
+
+/* =============================================
+   MOBILE DAMAGE GRID - WIDER & TIGHTER MARGINS
+   ============================================= */
+
+@media (max-width: 768px) {
+    /* 1. Maximize Width */
+    .damage-grid {
+        padding: 0 5px !important; /* Reduce side padding significantly */
+        gap: 8px !important; /* Tighter gap to allow wider cards */
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+    }
+
+    /* 2. Adjust Parent Container if needed */
+    .guide-section {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        width: 100% !important;
+    }
+    
+    .guide-section .container {
+        padding-left: 5px !important;
+        padding-right: 5px !important;
+        max-width: 100% !important;
+    }
+
+    /* 3. Card Sizing */
+    .damage-card {
+        width: 100% !important; /* Take full available grid slot space */
+        padding: 15px 5px !important; /* Reduce internal side padding */
+    }
+    
+    /* Ensure images fill the card width nicely */
+    .damage-card img {
+        width: 100% !important;
+        height: auto !important;
+        max-height: 90px;
+    }
+}
