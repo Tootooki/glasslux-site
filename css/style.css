@@ -2357,3 +2357,78 @@ img {
         justify-content: center;
     }
 }
+
+/* =============================================
+   MOBILE - GLOBAL CONSISTENT PADDING
+   Same left/right margins for EVERYTHING
+   ============================================= */
+
+@media (max-width: 768px) {
+    
+    /* Global container padding */
+    .container {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+    }
+    
+    /* Header alignment */
+    .navbar-container {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
+    
+    /* Chat section alignment */
+    .embedded-chat-section .container {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+    }
+    
+    .chat-side-panel,
+    .side-panel-content,
+    .live-chat-box {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+    
+    /* All sections align */
+    .services .container,
+    .process-section .container,
+    .why-us .container,
+    .shop .container,
+    .reviews .container,
+    footer .container {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+    }
+    
+    /* Cards and grids full width */
+    .service-card,
+    .future-card,
+    .damage-card,
+    .product-card,
+    .review-card {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+    
+    /* Sliders full width */
+    .slider-wrapper {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+    
+    /* Booking section */
+    .booking-layout-grid {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+    
+    /* All text centered */
+    .hero-content,
+    .section-title,
+    .chat-side-panel {
+        text-align: center;
+    }
+}
