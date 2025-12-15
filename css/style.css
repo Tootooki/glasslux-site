@@ -525,3 +525,30 @@ img {
 .guide-section {
     padding: var(--section-padding);
 }
+
+/* Mobile & Graphic Refinements */
+.process-image img, 
+.guide-content img {
+    height: auto;
+    width: 100%;
+    object-fit: contain;
+}
+
+@media (max-width: 768px) {
+    /* Ensure no horizontal scroll on small phones */
+    .process-image, .process-text {
+        min-width: 100%;
+    }
+    
+    .hero h1 {
+        font-size: 2.5rem; /* Smaller heading for mobile */
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .shop-grid, .features-grid, .process-content {
+        gap: 30px;
+    }
+}
