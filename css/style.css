@@ -723,3 +723,18 @@ img {
     aspect-ratio: 16/9;
     height: auto; 
 }
+
+/* Ultimate Slider Fixes */
+.slider-container {
+    touch-action: pan-y; /* Allow vertical scroll, block horizontal for slider */
+    user-select: none; /* Prevent text selection while dragging */
+    -webkit-user-select: none;
+}
+
+.slider-image.before {
+    will-change: width; /* Optimization for animation */
+}
+
+.slider-handle {
+    will-change: left;
+}

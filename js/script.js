@@ -10,76 +10,106 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Comparison Slider Logic
+    // High-Performance Comparison Slider
     const slider = document.getElementById('comparisonSlider');
 
     if (slider) {
-        const afterImage = slider.querySelector('.slider-image.after');
-        const beforeImage = slider.querySelector('.slider-image.before');
+        const beforeImageContainer = slider.querySelector('.slider-image.before');
+        const beforeImg = beforeImageContainer.querySelector('img');
         const sliderHandle = slider.querySelector('.slider-handle');
 
+        // State
         let isDragging = false;
+        let startX = 0;
+        let currentPos = 50; // Percentage
+        let sliderWidth = 0;
+        let sliderLeft = 0;
 
-        const getPosition = (event) => {
-            const sliderRect = slider.getBoundingClientRect();
-            let pageX = event.pageX || event.touches[0].pageX;
-            let position = ((pageX - sliderRect.left) / sliderRect.width) * 100;
-            return Math.min(Math.max(position, 0), 100);
+        // Optimized Renderer
+        const render = () => {
+            beforeImageContainer.style.width = `${currentPos}%`;
+            sliderHandle.style.left = `${currentPos}%`;
         };
 
-        const updateImageWidth = () => {
-            const width = slider.offsetWidth;
-            beforeImage.querySelector('img').style.width = width + 'px';
+        // Geometry Updater (Robust Resizing)
+        const updateGeometry = () => {
+            const rect = slider.getBoundingClientRect();
+            sliderWidth = rect.width;
+            sliderLeft = rect.left + window.scrollX; // Account for scroll
+
+            // Critical: Lock inner image width to container width
+            // This prevents the "squashing" effect
+            beforeImg.style.width = `${sliderWidth}px`;
         };
 
-        const updateSlider = (position) => {
-            beforeImage.style.width = `${position}%`;
-            sliderHandle.style.left = `${position}%`;
+        // Resize Observer is better than window.resize
+        // It tracks the element itself (e.g. if layout changes)
+        const resizeObserver = new ResizeObserver(() => {
+            window.requestAnimationFrame(updateGeometry);
+        });
+        resizeObserver.observe(slider);
+
+        // Input Handler
+        const handleMove = (pageX) => {
+            if (!isDragging) return;
+
+            // Calculate percentage
+            // We use cached sliderWidth/Left for performance, but need to be careful with scroll
+            // Re-calculating rect on move is safer for correctness, slightly slower but negligible here
+            const rect = slider.getBoundingClientRect();
+            const x = pageX - rect.left;
+
+            let pos = (x / rect.width) * 100;
+
+            // Clamp
+            pos = Math.max(0, Math.min(100, pos));
+
+            currentPos = pos;
+            window.requestAnimationFrame(render);
         };
 
-        // Initialize
-        updateImageWidth();
-        window.addEventListener('resize', updateImageWidth);
-
-        // Start Dragging
-        const startDrag = (e) => {
+        const onPointerDown = (e) => {
             isDragging = true;
-            slider.classList.add('active'); // Optional for styling
-            // Prevent default drag behaviors for images
-            e.preventDefault();
+            slider.classList.add('active');
+            handleMove(e.pageX || e.touches[0].pageX); // Jump to pos
         };
 
-        // Stop Dragging
-        const stopDrag = () => {
+        const onPointerUp = () => {
             isDragging = false;
             slider.classList.remove('active');
         };
 
-        // Move handle
-        const moveDrag = (e) => {
+        const onPointerMove = (e) => {
             if (!isDragging) return;
-            const pos = getPosition(e);
-            updateSlider(pos);
+
+            const pageX = e.pageX || (e.touches ? e.touches[0].pageX : 0);
+            handleMove(pageX);
         };
 
-        // Event Listeners (Mouse)
-        sliderHandle.addEventListener('mousedown', startDrag);
-        slider.addEventListener('mousedown', (e) => {
-            startDrag(e);
-            moveDrag(e); // Jump to click position immediately
-        });
+        // Event Binding
+        // Mouse
+        slider.addEventListener('mousedown', onPointerDown);
+        window.addEventListener('mouseup', onPointerUp);
+        window.addEventListener('mousemove', onPointerMove);
 
-        window.addEventListener('mouseup', stopDrag);
-        window.addEventListener('mousemove', moveDrag);
-
-        // Event Listeners (Touch)
-        sliderHandle.addEventListener('touchstart', startDrag);
+        // Touch
         slider.addEventListener('touchstart', (e) => {
-            startDrag(e);
-            moveDrag(e);
+            onPointerDown(e);
+            // Prevent scrolling ONLY if we are mostly moving horizontally?
+            // checking passive: false allows us to call preventDefault if needed
+        }, { passive: true });
+
+        window.addEventListener('touchend', onPointerUp);
+
+        window.addEventListener('touchmove', (e) => {
+            if (isDragging) {
+                onPointerMove(e);
+            }
         }, { passive: false });
 
-        window.addEventListener('touchend', stopDrag);
-        window.addEventListener('touchmove', moveDrag, { passive: false });
+        // Initial setup
+        updateGeometry();
+        // Force update after image load
+        beforeImg.onload = updateGeometry;
     }
 });
