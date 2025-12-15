@@ -1165,3 +1165,20 @@ img {
 #sendChatBtn:active {
     transform: scale(0.95);
 }
+
+/* Chat Desktop Width Enhancement */
+@media (min-width: 768px) {
+    .live-chat-box {
+        max-width: 550px !important;
+    }
+}
+
+@media (min-width: 1024px) {
+    .live-chat-box {
+        max-width: 600px !important;
+    }
+}
+
+#userMessageInput:focus {
+    border-color: #39FF14 !important;
+}
