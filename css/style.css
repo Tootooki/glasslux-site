@@ -2781,3 +2781,25 @@ img {
         max-width: 100% !important;
     }
 }
+
+/* =============================================
+   SERVICES - SINGLE LINE TITLES
+   ============================================= */
+
+.service-card h3 {
+    white-space: nowrap !important;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+@media (max-width: 480px) {
+    .service-card h3 {
+        font-size: 1.1rem !important; /* Scale down to fit */
+    }
+}
+
+@media (max-width: 360px) {
+    .service-card h3 {
+        font-size: 1.0rem !important;
+    }
+}
