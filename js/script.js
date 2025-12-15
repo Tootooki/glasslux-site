@@ -223,27 +223,47 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }]);
 
+    // Track message count for phone prompt
+    let messageCount = 0;
+    let phoneCollected = false;
+
     // Handle Send Button Click
     if (sendBtn && userInput) {
         const sendMessage = () => {
             const msg = userInput.value.trim();
             if (!msg) return;
 
+            messageCount++;
+
             // Show user's message in our custom chat
             addMessage(msg, false);
             userInput.value = '';
+
+            // Check if this looks like a phone number
+            const phonePattern = /[\d\-\(\)\s]{10,}/;
+            if (phonePattern.test(msg) && !phoneCollected) {
+                phoneCollected = true;
+            }
 
             // Send to Crisp
             if (typeof $crisp !== 'undefined') {
                 $crisp.push(['do', 'message:send', ['text', msg]]);
             }
 
-            // Show confirmation
-            showTyping();
-            setTimeout(() => {
-                hideTyping();
-                addMessage("Message sent! I'll respond shortly 💬");
-            }, 1000);
+            // After first message, nicely ask for phone
+            if (messageCount === 1 && !phoneCollected) {
+                showTyping();
+                setTimeout(() => {
+                    hideTyping();
+                    addMessage("Thanks for reaching out! 📱 If you'd like a faster callback, drop your phone number and we'll call you right back!");
+                }, 1200);
+            } else {
+                showTyping();
+                setTimeout(() => {
+                    hideTyping();
+                    addMessage("Got it! We'll get back to you shortly 💬");
+                }, 800);
+            }
         };
 
         sendBtn.addEventListener('click', sendMessage);
@@ -252,6 +272,43 @@ document.addEventListener('DOMContentLoaded', () => {
                 e.preventDefault();
                 sendMessage();
             }
+        });
+    }
+
+    // Emoji Button - Simple emoji picker
+    const emojiBtn = document.getElementById('emojiBtn');
+    const emojis = ['😊', '👍', '🚗', '💪', '✅', '📱', '🔧', '💬', '❤️', '👋'];
+
+    if (emojiBtn && userInput) {
+        emojiBtn.addEventListener('click', () => {
+            const randomEmoji = emojis[Math.floor(Math.random() * emojis.length)];
+            userInput.value += randomEmoji;
+            userInput.focus();
+        });
+    }
+
+    // File Button
+    const fileBtn = document.getElementById('fileBtn');
+    const fileInput = document.getElementById('fileInput');
+
+    if (fileBtn && fileInput) {
+        fileBtn.addEventListener('click', () => fileInput.click());
+
+        fileInput.addEventListener('change', (e) => {
+            if (e.target.files.length > 0) {
+                const fileName = e.target.files[0].name;
+                addMessage(`📎 Attached: ${fileName}`, false);
+                addMessage("Thanks! I received your file. Let me take a look...", true);
+            }
+        });
+    }
+
+    // Voice Button
+    const voiceBtn = document.getElementById('voiceBtn');
+
+    if (voiceBtn) {
+        voiceBtn.addEventListener('click', () => {
+            addMessage("🎤 Voice messages coming soon! For now, please type your message or call us at (385) 988-5129", true);
         });
     }
 });

@@ -1182,3 +1182,26 @@ img {
 #userMessageInput:focus {
     border-color: #39FF14 !important;
 }
+
+/* FORCE HIDE ALL FLOATING CHAT BUBBLES */
+.crisp-client,
+.crisp-client *,
+#tawk-bubble-container,
+.tawk-min-container,
+.chat-floating-btn,
+.chat-widget-container,
+[class*="crisp"],
+[id*="crisp"],
+[class*="tawk"],
+[id*="tawk"] {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+}
+
+/* Chat action button hover */
+.chat-action-btn:hover {
+    background: #444 !important;
+    transform: scale(1.1);
+}
