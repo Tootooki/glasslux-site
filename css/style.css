@@ -4510,6 +4510,7 @@ body {
         font-size: 1.3rem;
     }
 }
+
 /* =============================================
    MOBILE REPAIR PROCESS - SPLIT IMAGES
    ============================================= */
@@ -4528,17 +4529,21 @@ body {
     .mobile-process-split {
         display: flex !important;
         flex-direction: column;
-        gap: 15px; /* The "Nice Cut" Gap */
+        gap: 15px;
+        /* The "Nice Cut" Gap */
         width: 100%;
     }
 
     .split-step {
         width: 100%;
-        height: 140px; /* Consistent height for each slice */
+        height: 140px;
+        /* Consistent height for each slice */
         overflow: hidden;
-        border-radius: 15px; /* Nice rounded corners */
-        border: 1px solid rgba(57, 255, 20, 0.3); /* Subtle green border */
-        box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+        border-radius: 15px;
+        /* Nice rounded corners */
+        border: 1px solid rgba(57, 255, 20, 0.3);
+        /* Subtle green border */
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
         position: relative;
     }
 
@@ -4548,7 +4553,7 @@ body {
         object-fit: cover;
         transition: transform 0.5s ease;
     }
-    
+
     /* Interactive Touch: Zoom slightly on press/hover */
     .split-step:active img {
         transform: scale(1.1);
@@ -4560,29 +4565,34 @@ body {
    ============================================= */
 
 @media (max-width: 768px) {
+
     /* 1. Hide the original text list (it's now integrated above images) */
     .process-content .process-text .tech-points-container {
         display: none !important;
     }
-    
+
     /* 2. Wrapper for Text + Image Pair */
     .process-step-wrapper {
         display: flex;
         flex-direction: column;
-        gap: 10px; /* Space between text card and image */
+        gap: 10px;
+        /* Space between text card and image */
     }
 
     /* 3. Style the Mobile Header Card */
     .mobile-header.tech-point-row {
-        background: #111; /* Dark card background */
+        background: #111;
+        /* Dark card background */
         border: 1px solid #333;
-        border-left: 4px solid var(--primary-green); /* The requested green border */
+        border-left: 4px solid var(--primary-green);
+        /* The requested green border */
         padding: 15px;
         border-radius: 8px;
         display: flex;
         align-items: center;
         gap: 15px;
-        margin: 0 !important; /* Reset any desktop margins */
+        margin: 0 !important;
+        /* Reset any desktop margins */
         width: 100%;
         box-sizing: border-box;
     }
@@ -4605,9 +4615,10 @@ body {
         font-size: 0.85rem !important;
         color: #aaa;
     }
-    
+
     .mobile-header .tech-point-icon {
-        font-size: 1.4rem; /* Slightly larger icon */
+        font-size: 1.4rem;
+        /* Slightly larger icon */
     }
 }
 
@@ -4616,21 +4627,17 @@ body {
    ============================================= */
 
 @media (max-width: 768px) {
+
     /* STRICT GLOBAL RULE: 5% Padding on all key containers */
-    .container, 
-    .navbar-container, 
-    .hero-content, 
+    .container,
+    .navbar-container,
+    .hero-content,
+    /* Often sits outside container */
     .section-title,
-    .damage-grid-container,
-    .services-grid,
-    .booking-layout-grid,
+    /* Ensure titles align */
     .footer-content,
     .callback-card,
-    .process-image,
-    .slider-wrapper,
-    .review-card,
-    .future-tech-section .container,
-    .shop-note {
+    .slider-wrapper {
         padding-left: 5% !important;
         padding-right: 5% !important;
         width: 100% !important;
@@ -4640,17 +4647,23 @@ body {
         margin-right: 0 !important;
     }
 
-    /* Reset specific grids that might double up padding */
-    .damage-grid, 
+    /* Reset specific grids that are INSIDE container to avoid double padding (5% + 5% = 10%) */
+    .damage-grid-container,
+    .services-grid,
+    .booking-layout-grid,
+    .process-image,
+    .future-tech-section .container,
+    /* Already covered by .container */
+    .shop-note,
+    .damage-grid,
     .services-grid .service-card,
     .booking-side-block {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
         width: 100% !important;
         margin: 0 !important;
-        /* Padding is handled by the parent container now, so we reset child padding if needed, 
-           or let them inherit the width minus padding. 
-           But user said "every", so we ensure the PARENTS provide the border. */
     }
-    
+
     /* Ensure no negative margins pull content out */
     .row {
         margin-left: 0 !important;
