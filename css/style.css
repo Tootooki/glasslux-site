@@ -2899,3 +2899,18 @@ img {
         margin-right: 0 !important;
     }
 }
+
+/* =============================================
+   MOBILE HEADER - TWICE AS BIG
+   ============================================= */
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 35px 0 !important; /* Doubling the standard 15px with some extra */
+    }
+    
+    /* Ensure elements remain centered vertically */
+    .navbar-container {
+        min-height: 60px; /* Ensure logical height */
+    }
+}
