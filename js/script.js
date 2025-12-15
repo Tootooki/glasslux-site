@@ -131,41 +131,79 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // ===========================================
-    // SEAMLESS LIVE CHAT LOGIC
+    // SEAMLESS LIVE CHAT LOGIC (Enhanced)
     // ===========================================
     const chatMessages = document.getElementById('chatMessages');
     const userInput = document.getElementById('userMessageInput');
     const sendBtn = document.getElementById('sendChatBtn');
+    const typingIndicator = document.getElementById('typingIndicator');
     const PHONE_NUMBER = '13859885129';
 
-    // Helper: Add a message bubble
+    // Helper: Add a message bubble with avatar for support
     function addMessage(text, isFromSupport = true) {
+        const wrapper = document.createElement('div');
+        wrapper.className = 'chat-message';
+        wrapper.style.cssText = `
+            display: flex;
+            align-items: flex-end;
+            gap: 8px;
+            margin-bottom: 12px;
+            ${isFromSupport ? '' : 'flex-direction: row-reverse;'}
+        `;
+
+        if (isFromSupport) {
+            const avatar = document.createElement('img');
+            avatar.src = 'support_avatar.png';
+            avatar.style.cssText = 'width: 28px; height: 28px; border-radius: 50%; object-fit: cover;';
+            wrapper.appendChild(avatar);
+        }
+
         const bubble = document.createElement('div');
         bubble.style.cssText = `
-            max-width: 80%;
-            padding: 10px 14px;
-            margin-bottom: 10px;
-            border-radius: 15px;
-            line-height: 1.4;
-            font-size: 0.95rem;
-            animation: fadeIn 0.3s ease;
+            max-width: 78%;
+            padding: 12px 16px;
+            border-radius: 18px;
+            line-height: 1.45;
+            font-size: 0.9rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
             ${isFromSupport
-                ? 'background: #fff; color: #333; margin-right: auto; border-bottom-left-radius: 5px;'
-                : 'background: #DCF8C6; color: #333; margin-left: auto; border-bottom-right-radius: 5px;'}
+                ? 'background: #2a2a2a; color: #fff; border-bottom-left-radius: 4px; border: 1px solid #39FF14;'
+                : 'background: linear-gradient(135deg, #39FF14, #2dd30f); color: #000; border-bottom-right-radius: 4px; font-weight: 500;'}
         `;
         bubble.textContent = text;
-        chatMessages.appendChild(bubble);
+        wrapper.appendChild(bubble);
+
+        chatMessages.appendChild(wrapper);
         chatMessages.scrollTop = chatMessages.scrollHeight;
     }
 
-    // Auto-Greeting on Page Load
+    // Show/Hide Typing Indicator
+    function showTyping() {
+        if (typingIndicator) typingIndicator.style.display = 'block';
+    }
+    function hideTyping() {
+        if (typingIndicator) typingIndicator.style.display = 'none';
+    }
+
+    // Auto-Greeting Sequence on Page Load
     if (chatMessages) {
+        showTyping();
         setTimeout(() => {
-            addMessage("Hey there! 👋 Welcome to GlassLux!");
-        }, 500);
+            hideTyping();
+            addMessage("Hey there! 👋 I'm Sofia from GlassLux.");
+            showTyping();
+        }, 800);
+
         setTimeout(() => {
-            addMessage("Need a quote or have a question about your windshield? Just type your message below – we reply fast!");
-        }, 1200);
+            hideTyping();
+            addMessage("How can I help you today? Got a cracked windshield? Need a quick quote?");
+            showTyping();
+        }, 2200);
+
+        setTimeout(() => {
+            hideTyping();
+            addMessage("Just type your message below and I'll get back to you right away! 💬");
+        }, 3500);
     }
 
     // Handle Send Button Click
@@ -178,16 +216,19 @@ document.addEventListener('DOMContentLoaded', () => {
             addMessage(msg, false);
             userInput.value = '';
 
-            // Show "sending" response
-            setTimeout(() => {
-                addMessage("Thanks! Opening WhatsApp to continue the chat...");
-            }, 400);
+            // Show typing animation
+            showTyping();
 
-            // Open WhatsApp with pre-filled message after a short delay
+            setTimeout(() => {
+                hideTyping();
+                addMessage("Thanks for your message! Let me connect you to WhatsApp so we can chat faster... 🚀");
+            }, 600);
+
+            // Open WhatsApp with pre-filled message
             setTimeout(() => {
                 const waUrl = `https://wa.me/${PHONE_NUMBER}?text=${encodeURIComponent(msg)}`;
                 window.open(waUrl, '_blank');
-            }, 1200);
+            }, 1500);
         };
 
         sendBtn.addEventListener('click', sendMessage);
