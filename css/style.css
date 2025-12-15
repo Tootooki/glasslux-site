@@ -3585,3 +3585,23 @@ img {
         max-height: 90px;
     }
 }
+
+/* =============================================
+   MOBILE SCIENCE COLLAGE IMAGE
+   ============================================= */
+
+@media (max-width: 768px) {
+    .science-collage-container {
+        width: 100% !important;
+        padding: 0 5px !important; /* Wide like the damage cards */
+        margin-top: 20px !important;
+    }
+    
+    .science-collage-container img {
+        width: 100% !important;
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        border: 1px solid #333;
+        display: block;
+    }
+}
