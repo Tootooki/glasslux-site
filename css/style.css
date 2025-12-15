@@ -3057,3 +3057,32 @@ img {
         }
     }
 }
+
+/* =============================================
+   FORCE ICON-ONLY BUTTONS ON MOBILE
+   ============================================= */
+
+@media (max-width: 768px) {
+    /* Hide text inside grid buttons starting from general mobile width */
+    .mobile-pill-btn span {
+        display: none !important;
+    }
+    
+    .mobile-pill-btn {
+        width: 45px !important;
+        height: 45px !important;
+        border-radius: 50% !important; /* Perfect circle */
+        padding: 0 !important;
+        min-width: 0 !important;
+    }
+    
+    .mobile-pill-btn i {
+        margin: 0 !important;
+        font-size: 1.4rem !important; /* Larger icon */
+    }
+    
+    /* Ensure no ::after content interferes */
+    .mobile-pill-btn::after {
+        display: none !important;
+    }
+}
