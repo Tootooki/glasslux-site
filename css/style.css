@@ -4882,3 +4882,62 @@ body {
         border-radius: 12px;
     }
 }
+
+/* =============================================
+   GLOBAL MOBILE VERTICAL RHYTHM (50px Rule)
+   ============================================= */
+
+@media (max-width: 768px) {
+    /* 1. Reset & Standardize Section Spacing */
+    section, 
+    .hero-section, 
+    .features-section, 
+    .process-content, 
+    .guide-section, 
+    .shop, 
+    .reviews-section,
+    .whatsapp-chat-section {
+        margin-bottom: 50px !important;
+        margin-top: 0 !important; /* Let the previous section's bottom margin handle the gap */
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+    }
+
+    /* Exception: Hero usually needs no top margin but bottom is key */
+    .hero-section {
+        margin-bottom: 50px !important;
+    }
+
+    /* Exception: Future Tech might need internal padding */
+    .future-tech-section {
+        padding: 40px 0 !important;
+        margin-bottom: 50px !important;
+    }
+
+    /* 2. COMPACT FOOTER (Top to Bottom) */
+    footer {
+        padding-top: 40px !important;
+        padding-bottom: 40px !important; /* enough for splatter art */
+        margin-top: 0 !important;
+    }
+    
+    .footer-content {
+        gap: 30px !important; /* consistent gap between footer cols */
+    }
+
+    .footer h4 {
+        margin-bottom: 15px !important; /* tighter titles */
+    }
+
+    /* 3. internal spacing for breathing room */
+    .section-title {
+        margin-bottom: 30px !important; /* consistent title-to-content gap */
+        margin-top: 0 !important;
+    }
+
+    /* 4. Fix WhatsApp Block Spacing */
+    .whatsapp-chat-section {
+        margin: 50px 0 !important; /* Strict 50px top/bottom if it's an inserted block */
+        padding: 0 5% !important; /* Horizontal alignment */
+    }
+}
