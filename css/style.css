@@ -3233,3 +3233,45 @@ img {
         }
     }
 }
+
+/* =============================================
+   MOBILE HEADER - LOGO DOMINANCE
+   ============================================= */
+
+@media (max-width: 768px) {
+    /* 1. Make the Logo BIGGER */
+    .logo {
+        transform: scale(1.0); /* Reset any transforms */
+        z-index: 10;
+        padding: 0 4px !important;
+    }
+
+    .logo-text {
+        font-size: 1.3rem !important; /* significantly larger */
+        line-height: 1;
+        display: inline-block;
+    }
+    
+    .logo-img {
+        height: 32px !important; /* taller icon */
+    }
+
+    /* 2. Shrink Buttons slightly to let Logo shine */
+    .mobile-pill-btn {
+        height: 34px !important; /* slightly slimmer than 38px */
+        padding: 4px 8px !important; /* compact padding */
+        font-size: 0.65rem !important; /* smaller text */
+        max-width: 120px !important; /* strict width limit */
+        width: auto !important; /* let them shrink to content */
+    }
+    
+    .mobile-pill-btn i {
+        font-size: 0.8rem !important;
+    }
+    
+    /* 3. Adjust Grid to prioritize Center */
+    .navbar-container {
+        grid-template-columns: 1fr auto 1fr !important;
+        gap: 2px !important;
+    }
+}
