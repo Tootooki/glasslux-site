@@ -27,10 +27,19 @@ document.addEventListener('DOMContentLoaded', () => {
             return Math.min(Math.max(position, 0), 100);
         };
 
+        const updateImageWidth = () => {
+            const width = slider.offsetWidth;
+            beforeImage.querySelector('img').style.width = width + 'px';
+        };
+
         const updateSlider = (position) => {
             beforeImage.style.width = `${position}%`;
             sliderHandle.style.left = `${position}%`;
         };
+
+        // Initialize
+        updateImageWidth();
+        window.addEventListener('resize', updateImageWidth);
 
         // Start Dragging
         const startDrag = (e) => {

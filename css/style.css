@@ -707,3 +707,19 @@ img {
     border-right: 3px solid var(--primary-green); /* Thicker divider */
     box-shadow: 5px 0 20px rgba(0,0,0,0.5); /* Shadow for depth */
 }
+
+/* Comparison Slider Fix - Prevent Image Squashing */
+.slider-image.before img {
+    /* Important: The image must be the width of the CONTAINER, not the resizing wrapper */
+    width: 100vw; /* Fallback */
+    max-width: 800px; /* Match slider max-width */
+    height: 100%;
+    object-fit: cover;
+    object-position: left;
+}
+
+.slider-container {
+    /* Ensure aspect ratio is consistent */
+    aspect-ratio: 16/9;
+    height: auto; 
+}
