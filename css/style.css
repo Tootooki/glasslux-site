@@ -3845,3 +3845,64 @@ img {
         text-shadow: 0 2px 4px rgba(0,0,0,0.8); /* Ensure readable over art */
     }
 }
+
+/* =============================================
+   MOBILE BOOKING CARD - WIDE & COMPACT
+   ============================================= */
+
+@media (max-width: 768px) {
+    /* 1. Maximize Card Width & Stretch Content */
+    .product-card.main-booking-card {
+        padding: 10px !important; /* Less internal padding */
+        width: 100% !important;
+        margin-bottom: 25px !important;
+    }
+    
+    /* 2. Image Full Width */
+    .product-image {
+        width: 100% !important;
+        height: 200px !important; /* Slightly taller for impact */
+        margin-bottom: 12px !important;
+    }
+    
+    /* 3. Typography Updates (Single Line Goals) */
+    .main-booking-card h3 {
+        font-size: 1.4rem !important;
+        margin-bottom: 5px !important;
+        white-space: nowrap !important; /* Force one line */
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    
+    .main-booking-card p {
+        font-size: 0.9rem !important;
+        margin-bottom: 15px !important;
+        white-space: nowrap !important; /* Force one line */
+        overflow: hidden;
+        text-overflow: ellipsis;
+        color: #bbb;
+    }
+    
+    /* 4. Price & Discount Styling */
+    .price-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+        margin-bottom: 15px;
+    }
+    
+    .old-price {
+        text-decoration: line-through;
+        color: #666;
+        font-size: 1.2rem;
+        font-weight: 600;
+    }
+    
+    .price {
+        color: var(--primary-green) !important;
+        font-size: 1.8rem !important;
+        font-weight: 800 !important;
+        text-shadow: 0 0 10px rgba(57, 255, 20, 0.4);
+    }
+}
