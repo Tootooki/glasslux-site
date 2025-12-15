@@ -94,7 +94,28 @@
     <section class="process-section">
         <div class="container">
             <h2 class="section-title">How It Works</h2>
-            <div class="process-content">
+
+            <!-- Before / After Slider -->
+            <div class="slider-wrapper">
+                <h3>See The Difference</h3>
+                <p>Drag the slider to see the repair results.</p>
+                <div class="slider-container" id="comparisonSlider">
+                    <div class="slider-image after">
+                        <img src="slider_after.png" alt="After Repair">
+                        <span class="slider-label">AFTER</span>
+                    </div>
+                    <div class="slider-image before">
+                        <img src="slider_before.png" alt="Before Repair">
+                        <span class="slider-label">BEFORE</span>
+                    </div>
+                    <div class="slider-handle">
+                        <div class="handle-line"></div>
+                        <div class="handle-circle"><i class="fa-solid fa-arrows-left-right"></i></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="process-content" style="margin-top: 60px;">
                 <div class="process-text">
                     <h3>The Science of Auto Glass Repair</h3>
                     <p>Our advanced repair process restores the structural integrity of your windshield while
@@ -122,11 +143,27 @@
         <div class="container">
             <h2 class="section-title">Can It Be Repaired?</h2>
             <div class="guide-content" style="text-align: center;">
-                <p style="max-width: 800px; margin: 0 auto 40px; font-size: 1.1rem; color: #ccc;">Not all damage is
-                    created equal. Use this guide to determine if your windshield is a candidate for our $150 premium
-                    repair service or if it requires full replacement.</p>
-                <img src="chip_guide.png" alt="Windshield Chip Repair Guide"
-                    style="max-width: 100%; border-radius: 15px; border: 1px solid var(--glass-border); box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+                <p style="max-width: 800px; margin: 0 auto 40px; font-size: 1.1rem; color: #ccc;">Does your windshield
+                    have one of these? Check our guide below.</p>
+
+                <div class="damage-grid">
+                    <div class="damage-card">
+                        <img src="crack_bullseye.png" alt="Bullseye Crack">
+                        <h4>Bullseye</h4>
+                        <p class="status-badge success"><i class="fa-solid fa-check"></i> Repairable</p>
+                    </div>
+                    <div class="damage-card">
+                        <img src="crack_star.png" alt="Star Crack">
+                        <h4>Star Break</h4>
+                        <p class="status-badge success"><i class="fa-solid fa-check"></i> Repairable</p>
+                    </div>
+                    <div class="damage-card">
+                        <img src="crack_combo.png" alt="Combination Crack">
+                        <h4>Combination</h4>
+                        <p class="status-badge success"><i class="fa-solid fa-check"></i> Repairable</p>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
