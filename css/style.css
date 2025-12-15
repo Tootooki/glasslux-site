@@ -4083,3 +4083,28 @@ footer {
         box-sizing: border-box !important;
     }
 }
+
+/* =============================================
+   DESKTOP CENTRALIZATION FIX (USER REQUEST)
+   ============================================= */
+
+/* Override the specific "wings" layout (Left/Right alignment) */
+/* Force Standard Center Alignment for EVERYTHING in booking section on Desktop */
+
+.booking-side-block.left,
+.booking-side-block.right {
+    text-align: center !important;
+    align-items: center !important;
+}
+
+.booking-side-block.left .trust-item,
+.booking-side-block.right .trust-item {
+    align-items: center !important;
+    text-align: center !important;
+}
+
+/* Ensure the layout grid itself is balanced */
+.booking-layout-grid {
+    align-items: center !important; 
+    /* grid-template-columns is already 1fr 400px 1fr, which works well with center align */
+}
