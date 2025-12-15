@@ -3605,3 +3605,24 @@ img {
         display: block;
     }
 }
+
+/* =============================================
+   MOBILE DAMAGE GRID - EVEN SPACING FIX
+   ============================================= */
+
+@media (max-width: 768px) {
+    .damage-grid {
+        padding: 0 12px !important; /* Even outer padding */
+        gap: 12px !important; /* Matches outer padding for consistency */
+        margin-bottom: 20px !important;
+    }
+
+    .damage-card {
+        padding: 15px 10px !important; /* Restore comfortable internal padding */
+    }
+    
+    /* Ensure the grid columns share space equally */
+    .damage-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
