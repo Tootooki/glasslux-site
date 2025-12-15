@@ -1205,3 +1205,21 @@ img {
     background: #444 !important;
     transform: scale(1.1);
 }
+
+/* Fix mobile buttons spacing */
+@media (max-width: 768px) {
+    .hero-btns {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+
+    .hero-btns .btn {
+        width: 100%;
+        display: block;
+        margin: 0;
+    }
+}
