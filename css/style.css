@@ -3322,3 +3322,48 @@ img {
         margin-top: 0 !important; /* Remove top margin since logo is gone */
     }
 }
+
+/* =============================================
+   MOBILE LAYOUT FIXES (STEP 1952)
+   ============================================= */
+
+@media (max-width: 768px) {
+    /* 1. FORCE HIDE SECURE CHAT FOOTER */
+    /* Being extra specific to override any conflicts */
+    p.secure-chat-footer {
+        display: none !important;
+        visibility: hidden !important;
+        height: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        opacity: 0 !important;
+    }
+
+    /* 2. SERVICES SECTION - HORIZONTAL SCROLL ("One Line") */
+    .services-grid {
+        display: flex !important; /* Switch from grid to flex */
+        flex-wrap: nowrap !important; /* Don't wrap */
+        overflow-x: auto !important; /* Enable horizontal scroll */
+        -webkit-overflow-scrolling: touch; /* Smooth scroll on iOS */
+        gap: 15px !important;
+        padding: 10px 20px 30px 20px !important; /* Bottom padding for scrollbar space */
+        justify-content: flex-start !important;
+        scroll-snap-type: x mandatory; /* Snap effect */
+    }
+
+    .service-card {
+        min-width: 85vw !important; /* Make cards wide (85% of screen width) */
+        flex: 0 0 auto !important; /* Prevent shrinking */
+        scroll-snap-align: center; /* Snap to center */
+        margin: 0 !important;
+    }
+
+    /* Hide scrollbar for cleaner look (optional, but requested "one line") */
+    .services-grid::-webkit-scrollbar {
+        display: none; 
+    }
+    .services-grid {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+}
