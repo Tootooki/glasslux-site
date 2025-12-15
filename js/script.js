@@ -208,7 +208,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Handle Send Button Click
     if (sendBtn && userInput) {
-        const sendMessage = () => {
+        const sendMessage = async () => {
             const msg = userInput.value.trim();
             if (!msg) return;
 
@@ -219,16 +219,40 @@ document.addEventListener('DOMContentLoaded', () => {
             // Show typing animation
             showTyping();
 
-            setTimeout(() => {
-                hideTyping();
-                addMessage("Thanks for your message! Let me connect you to WhatsApp so we can chat faster... 🚀");
-            }, 600);
+            // Telegram Bot Config
+            const TELEGRAM_BOT_TOKEN = '7573457305:AAEOrbiQBeuFjDneE_y6B-Sakv6Trq2KgRY';
+            const TELEGRAM_CHAT_ID = '29544079';
 
-            // Open WhatsApp with pre-filled message
-            setTimeout(() => {
-                const waUrl = `https://wa.me/${PHONE_NUMBER}?text=${encodeURIComponent(msg)}`;
-                window.open(waUrl, '_blank');
-            }, 1500);
+            try {
+                // Send to Telegram
+                const telegramUrl = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
+                const response = await fetch(telegramUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        chat_id: TELEGRAM_CHAT_ID,
+                        text: `🌐 *New Website Message*\n\n${msg}\n\n_Reply here to respond!_`,
+                        parse_mode: 'Markdown'
+                    })
+                });
+
+                hideTyping();
+
+                if (response.ok) {
+                    addMessage("Got it! I've received your message and will get back to you shortly! 💬");
+                } else {
+                    throw new Error('Failed to send');
+                }
+            } catch (error) {
+                hideTyping();
+                console.error('Telegram Error:', error);
+                // Fallback to WhatsApp
+                addMessage("Let me connect you via WhatsApp instead...");
+                setTimeout(() => {
+                    const waUrl = `https://wa.me/13859885129?text=${encodeURIComponent(msg)}`;
+                    window.open(waUrl, '_blank');
+                }, 1000);
+            }
         };
 
         sendBtn.addEventListener('click', sendMessage);
