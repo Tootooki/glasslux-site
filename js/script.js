@@ -130,56 +130,71 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Embedded Chat Form Logic
-    const chatForm = document.getElementById('embeddedChatForm');
-    const chatStatus = document.getElementById('chatStatus');
+    // ===========================================
+    // SEAMLESS LIVE CHAT LOGIC
+    // ===========================================
+    const chatMessages = document.getElementById('chatMessages');
+    const userInput = document.getElementById('userMessageInput');
+    const sendBtn = document.getElementById('sendChatBtn');
+    const PHONE_NUMBER = '13859885129';
 
-    if (chatForm) {
-        chatForm.addEventListener('submit', async (e) => {
-            e.preventDefault();
+    // Helper: Add a message bubble
+    function addMessage(text, isFromSupport = true) {
+        const bubble = document.createElement('div');
+        bubble.style.cssText = `
+            max-width: 80%;
+            padding: 10px 14px;
+            margin-bottom: 10px;
+            border-radius: 15px;
+            line-height: 1.4;
+            font-size: 0.95rem;
+            animation: fadeIn 0.3s ease;
+            ${isFromSupport
+                ? 'background: #fff; color: #333; margin-right: auto; border-bottom-left-radius: 5px;'
+                : 'background: #DCF8C6; color: #333; margin-left: auto; border-bottom-right-radius: 5px;'}
+        `;
+        bubble.textContent = text;
+        chatMessages.appendChild(bubble);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
 
-            const submitBtn = chatForm.querySelector('button');
-            const originalBtnText = submitBtn.innerHTML;
+    // Auto-Greeting on Page Load
+    if (chatMessages) {
+        setTimeout(() => {
+            addMessage("Hey there! 👋 Welcome to GlassLux!");
+        }, 500);
+        setTimeout(() => {
+            addMessage("Need a quote or have a question about your windshield? Just type your message below – we reply fast!");
+        }, 1200);
+    }
 
-            // Loading State
-            submitBtn.disabled = true;
-            submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Sending...';
-            chatStatus.style.display = 'none';
+    // Handle Send Button Click
+    if (sendBtn && userInput) {
+        const sendMessage = () => {
+            const msg = userInput.value.trim();
+            if (!msg) return;
 
-            // Gather Data
-            const formData = {
-                name: document.getElementById('chatName').value,
-                phone: document.getElementById('chatPhone').value,
-                message: document.getElementById('chatMessage').value
-            };
+            // Show user's message in chat
+            addMessage(msg, false);
+            userInput.value = '';
 
-            try {
-                // Send to Local WhatsApp Bot
-                const response = await fetch('http://localhost:3000/api/send-message', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify(formData)
-                });
+            // Show "sending" response
+            setTimeout(() => {
+                addMessage("Thanks! Opening WhatsApp to continue the chat...");
+            }, 400);
 
-                const result = await response.json();
+            // Open WhatsApp with pre-filled message after a short delay
+            setTimeout(() => {
+                const waUrl = `https://wa.me/${PHONE_NUMBER}?text=${encodeURIComponent(msg)}`;
+                window.open(waUrl, '_blank');
+            }, 1200);
+        };
 
-                if (response.ok) {
-                    // Success
-                    chatForm.reset();
-                    chatStatus.innerHTML = '<i class="fa-solid fa-check-circle" style="color: green;"></i> Message sent! We will WhatsApp you shortly.';
-                    chatStatus.style.display = 'block';
-                } else {
-                    throw new Error(result.error || 'Failed to send');
-                }
-            } catch (error) {
-                console.error('Chat Error:', error);
-                chatStatus.innerHTML = '<i class="fa-solid fa-triangle-exclamation" style="color: orange;"></i> Bot is offline. <a href="sms:+13859885129">Click to Text Us</a> instead.';
-                chatStatus.style.display = 'block';
-            } finally {
-                submitBtn.disabled = false;
-                submitBtn.innerHTML = originalBtnText;
+        sendBtn.addEventListener('click', sendMessage);
+        userInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                sendMessage();
             }
         });
     }

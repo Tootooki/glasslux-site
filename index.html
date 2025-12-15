@@ -61,37 +61,36 @@
         </div>
     </header>
 
-    <!-- Embedded Live Chat Section (Relocated) -->
+    <!-- Seamless Live Chat Section -->
     <section class="embedded-chat-section" style="padding: 40px 0; background: #111;">
         <div class="container">
-            <div class="chat-box-container"
-                style="max-width: 800px; margin: 0 auto; background: #fff; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.5); display: flex; flex-direction: row;">
-                <!-- Left Side: Message -->
-                <div
-                    style="background: var(--primary-green); padding: 30px; width: 40%; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; color: #000;">
-                    <i class="fa-brands fa-whatsapp" style="font-size: 4rem; margin-bottom: 15px;"></i>
-                    <h3 style="margin: 0; font-size: 1.8rem; line-height: 1.2;">Direct<br>WhatsApp<br>Chat</h3>
-                    <p style="margin-top: 10px; opacity: 0.8; font-weight: 500;">Skip the waiting.<br>Message us
-                        directly!</p>
+            <div class="live-chat-box"
+                style="max-width: 500px; margin: 0 auto; background: #fff; border-radius: 20px; overflow: hidden; box-shadow: 0 15px 50px rgba(0,0,0,0.4);">
+                <!-- Chat Header -->
+                <div style="background: #25D366; padding: 15px 20px; display: flex; align-items: center; gap: 12px;">
+                    <div
+                        style="width: 45px; height: 45px; background: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                        <i class="fa-brands fa-whatsapp" style="font-size: 1.8rem; color: #25D366;"></i>
+                    </div>
+                    <div style="color: #fff;">
+                        <h4 style="margin: 0; font-size: 1.1rem;">GlassLux Support</h4>
+                        <span style="font-size: 0.8rem; opacity: 0.9;"><i class="fa-solid fa-circle"
+                                style="color: #90EE90; font-size: 8px;"></i> Online now</span>
+                    </div>
                 </div>
-                <!-- Right Side: Form -->
-                <div style="padding: 30px; width: 60%; color: #333;">
-                    <form id="embeddedChatForm">
-                        <div style="display: flex; gap: 10px; margin-bottom: 15px;">
-                            <input type="text" id="chatName" placeholder="Your Name" required
-                                style="width: 50%; padding: 10px; border: 1px solid #ddd; border-radius: 6px; background: #f9f9f9;">
-                            <input type="tel" id="chatPhone" placeholder="WhatsApp Number" required
-                                style="width: 50%; padding: 10px; border: 1px solid #ddd; border-radius: 6px; background: #f9f9f9;">
-                        </div>
-                        <textarea id="chatMessage" placeholder="How can we help you today?" required
-                            style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 6px; background: #f9f9f9; height: 80px; resize: none; margin-bottom: 15px;"></textarea>
-                        <button type="submit"
-                            style="width: 100%; background: #000; color: #fff; border: none; padding: 12px; border-radius: 6px; font-weight: bold; cursor: pointer; transition: opacity 0.3s;">
-                            <i class="fa-regular fa-paper-plane"></i> Send Message
-                        </button>
-                    </form>
-                    <div id="chatStatus"
-                        style="text-align: center; margin-top: 10px; display: none; font-size: 0.9rem;"></div>
+                <!-- Chat Messages Area -->
+                <div id="chatMessages"
+                    style="padding: 20px; background: #ECE5DD; min-height: 200px; max-height: 300px; overflow-y: auto;">
+                    <!-- Auto Greeting (injected by JS) -->
+                </div>
+                <!-- Message Input -->
+                <div style="padding: 15px; background: #fff; border-top: 1px solid #eee; display: flex; gap: 10px;">
+                    <input type="text" id="userMessageInput" placeholder="Type a message..."
+                        style="flex: 1; padding: 12px 15px; border: 1px solid #ddd; border-radius: 25px; outline: none; font-size: 1rem;">
+                    <button id="sendChatBtn"
+                        style="width: 45px; height: 45px; background: #25D366; border: none; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: transform 0.2s;">
+                        <i class="fa-solid fa-paper-plane" style="color: #fff; font-size: 1.1rem;"></i>
+                    </button>
                 </div>
             </div>
         </div>
