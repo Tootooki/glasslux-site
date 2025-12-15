@@ -4154,3 +4154,50 @@ html, body {
         width: 100% !important;
     }
 }
+
+/* =============================================
+   PLACEMENT GLITCH FIX (HEIGHT & CENTER)
+   ============================================= */
+
+@media (min-width: 992px) {
+    /* 1. Compact the Side Blocks (Desktop) */
+    .booking-side-block {
+        gap: 15px !important; /* Reduce gap (was 30px) so it fits INSIDE the card height */
+        justify-content: center !important;
+    }
+    
+    /* 2. Compact the Trust Items (Desktop) */
+    .trust-item {
+        margin-bottom: 0 !important;
+    }
+    
+    .trust-item i {
+        font-size: 1.5rem !important; /* Slightly smaller icons to save height */
+        margin-bottom: 8px !important;
+    }
+    
+    .trust-item h4 {
+        font-size: 1rem !important;
+    }
+    
+    .trust-item p {
+        font-size: 0.85rem !important;
+        margin: 0 !important;
+    }
+    
+    /* 3. Ensure Main Card Dominates Height */
+    .product-card.main-booking-card {
+        padding-top: 30px !important;
+        padding-bottom: 30px !important;
+    }
+}
+
+@media (max-width: 768px) {
+    /* 4. Mobile Grid - Strict Centering Safety */
+    .booking-layout-grid {
+        justify-content: center !important; /* Force center */
+        justify-items: center !important; /* Force items to center of their cells */
+        width: 100% !important;
+        margin: 0 auto !important;
+    }
+}
