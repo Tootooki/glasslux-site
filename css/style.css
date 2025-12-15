@@ -4554,3 +4554,59 @@ body {
         transform: scale(1.1);
     }
 }
+
+/* =============================================
+   MOBILE REPAIR PROCESS - TEXT HEADERS
+   ============================================= */
+
+@media (max-width: 768px) {
+    /* 1. Hide the original text list (it's now integrated above images) */
+    .process-content .process-text .tech-points-container {
+        display: none !important;
+    }
+    
+    /* 2. Wrapper for Text + Image Pair */
+    .process-step-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 10px; /* Space between text card and image */
+    }
+
+    /* 3. Style the Mobile Header Card */
+    .mobile-header.tech-point-row {
+        background: #111; /* Dark card background */
+        border: 1px solid #333;
+        border-left: 4px solid var(--primary-green); /* The requested green border */
+        padding: 15px;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin: 0 !important; /* Reset any desktop margins */
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* 4. Text Stack Alignment */
+    .mobile-text-stack {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    .mobile-header .tech-point-label {
+        font-size: 1rem !important;
+        margin-bottom: 2px;
+        color: #fff;
+    }
+
+    .mobile-header .tech-point-desc {
+        font-size: 0.85rem !important;
+        color: #aaa;
+    }
+    
+    .mobile-header .tech-point-icon {
+        font-size: 1.4rem; /* Slightly larger icon */
+    }
+}
