@@ -3086,3 +3086,16 @@ img {
         display: none !important;
     }
 }
+
+/* =============================================
+   SAFEGUARD - FORCE HIDE TEXT ON MOBILE
+   ============================================= */
+@media (max-width: 768px) {
+    .mobile-pill-btn {
+        font-size: 0 !important; /* Forces any stray text to be invisible */
+    }
+    
+    .mobile-pill-btn i {
+        font-size: 1.4rem !important; /* Restore icon size */
+    }
+}
