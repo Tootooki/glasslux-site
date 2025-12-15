@@ -5547,3 +5547,41 @@ section p,
 .footer-content p {
     color: #FFFFFF !important;
 }
+
+/* =============================================
+   LOGO DESIGN - LUX VISIBILITY FIX
+   ============================================= */
+
+/* Logo Text Styling */
+.logo-text {
+    font-weight: 800 !important;
+    letter-spacing: 2px !important;
+}
+
+/* GLASS part - Dark */
+.logo-text {
+    color: #1A1A1A !important;
+}
+
+/* LUX part - Vibrant Green with pop */
+.logo-text .highlight {
+    color: #00CC66 !important; /* Slightly deeper green for white bg */
+    text-shadow: 0 0 10px rgba(0, 204, 102, 0.3) !important;
+    font-weight: 900 !important;
+}
+
+/* Navbar specific */
+.navbar .logo-text .highlight {
+    color: #00CC66 !important;
+}
+
+/* Footer logo - Green on dark */
+.footer .logo-text .highlight {
+    color: #39FF14 !important;
+    text-shadow: 0 0 15px rgba(57, 255, 20, 0.5) !important;
+}
+
+/* Footer GLASS text - White */
+.footer .logo-text {
+    color: #FFFFFF !important;
+}
