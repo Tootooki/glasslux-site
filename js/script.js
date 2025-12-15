@@ -131,16 +131,31 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // ===========================================
-    // SEAMLESS LIVE CHAT LOGIC (Enhanced)
+    // SEAMLESS LIVE CHAT LOGIC (Crisp Powered)
     // ===========================================
     const chatMessages = document.getElementById('chatMessages');
     const userInput = document.getElementById('userMessageInput');
     const sendBtn = document.getElementById('sendChatBtn');
     const typingIndicator = document.getElementById('typingIndicator');
-    const PHONE_NUMBER = '13859885129';
+
+    // Hide Crisp default widget (we use our custom UI)
+    window.$crisp = window.$crisp || [];
+    window.$crisp.push(['config', 'hide:on:away', true]);
+    window.$crisp.push(['config', 'hide:on:mobile', true]);
+
+    // Wait for Crisp to load then hide bubble
+    const hideCrispBubble = () => {
+        const crispBubble = document.querySelector('.crisp-client');
+        if (crispBubble) {
+            crispBubble.style.display = 'none';
+        }
+    };
+    setTimeout(hideCrispBubble, 2000);
+    setTimeout(hideCrispBubble, 4000);
 
     // Helper: Add a message bubble with avatar for support
     function addMessage(text, isFromSupport = true) {
+        if (!chatMessages) return;
         const wrapper = document.createElement('div');
         wrapper.className = 'chat-message';
         wrapper.style.cssText = `
@@ -196,85 +211,40 @@ document.addEventListener('DOMContentLoaded', () => {
 
         setTimeout(() => {
             hideTyping();
-            addMessage("How can I help you today? Got a cracked windshield? Need a quick quote?");
-            showTyping();
+            addMessage("How can I help you today? Need a quote or have a question?");
         }, 2200);
-
-        setTimeout(() => {
-            hideTyping();
-            addMessage("Just type your message below and I'll get back to you right away! 💬");
-        }, 3500);
     }
 
-    // Handle Send Button Click
-    let customerPhone = null;
+    // Listen for Crisp replies to show in our UI
+    window.$crisp.push(['on', 'message:received', (data) => {
+        if (data && data.content) {
+            hideTyping();
+            addMessage(data.content, true);
+        }
+    }]);
 
+    // Handle Send Button Click
     if (sendBtn && userInput) {
-        const sendMessage = async () => {
+        const sendMessage = () => {
             const msg = userInput.value.trim();
             if (!msg) return;
 
-            // Show user's message in chat
+            // Show user's message in our custom chat
             addMessage(msg, false);
             userInput.value = '';
 
-            // Show typing animation
+            // Send to Crisp
+            if (typeof $crisp !== 'undefined') {
+                $crisp.push(['do', 'message:send', ['text', msg]]);
+            }
+
+            // Show confirmation
             showTyping();
-
-            // Telegram Bot Config
-            const TELEGRAM_BOT_TOKEN = '7573457305:AAEOrbiQBeuFjDneE_y6B-Sakv6Trq2KgRY';
-            const TELEGRAM_CHAT_ID = '29544079';
-
-            // Build message with phone if provided
-            let telegramMessage = `🌐 *New Website Message*\n\n"${msg}"`;
-            if (customerPhone) {
-                telegramMessage += `\n\n📱 *Reply to:* ${customerPhone}`;
-            }
-            telegramMessage += `\n\n⏰ ${new Date().toLocaleString()}`;
-
-            try {
-                // Send to Telegram
-                const telegramUrl = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
-                const response = await fetch(telegramUrl, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({
-                        chat_id: TELEGRAM_CHAT_ID,
-                        text: telegramMessage,
-                        parse_mode: 'Markdown'
-                    })
-                });
-
+            setTimeout(() => {
                 hideTyping();
-
-                if (response.ok) {
-                    // First message? Ask for phone
-                    if (!customerPhone) {
-                        addMessage("Message received! 📩");
-                        showTyping();
-                        setTimeout(() => {
-                            hideTyping();
-                            addMessage("To reply to you, please share your phone number (or just keep chatting!)");
-                        }, 800);
-                    } else {
-                        addMessage("Got it! I'll get back to you shortly! 💬");
-                    }
-                } else {
-                    throw new Error('Failed');
-                }
-            } catch (error) {
-                hideTyping();
-                addMessage("Oops! Please try again or call us at (385) 988-5129");
-            }
+                addMessage("Message sent! I'll respond shortly 💬");
+            }, 1000);
         };
-
-        // Check if message looks like a phone number
-        userInput.addEventListener('input', () => {
-            const val = userInput.value.replace(/\D/g, '');
-            if (val.length >= 10 && !customerPhone) {
-                customerPhone = userInput.value;
-            }
-        });
 
         sendBtn.addEventListener('click', sendMessage);
         userInput.addEventListener('keypress', (e) => {
