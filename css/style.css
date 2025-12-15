@@ -4038,3 +4038,48 @@ footer {
         padding-right: 5% !important;
     }
 }
+
+/* =============================================
+   MOBILE GRID ALIGNMENT CORRECTION
+   ============================================= */
+
+@media (max-width: 768px) {
+    /* 1. FORCE GRID CENTERING */
+    /* The gap is pushing items on the right side over the edge or off-center */
+    
+    .booking-layout-grid {
+        /* Ensure no lingering padding/margins interfering with the 5% container rule */
+        padding: 0 !important;
+        margin: 0 !important;
+        width: 100% !important;
+        
+        /* Balance the columns */
+        justify-content: space-between !important;
+        
+        /* Reduce the gap slightly to fit 3 cols comfortably in 90vw */
+        gap: 5px !important; 
+    }
+
+    /* 2. RESET TRUST ITEMS (Phantom Margin Fix) */
+    /* Ensure no desktop margins persist on these items */
+    .booking-layout-grid .trust-item {
+        margin: 0 !important;
+        padding: 10px 2px !important; /* Slightly tighter internal padding */
+        width: 100% !important;
+        box-sizing: border-box !important;
+        
+        /* Force Center Content */
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+        text-align: center !important;
+    }
+    
+    /* 3. ENSURE BOOKING CARD IS ALSO FLUSH */
+    .product-card.main-booking-card {
+        margin: 0 0 25px 0 !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+}
