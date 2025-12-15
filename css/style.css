@@ -2285,3 +2285,55 @@ img {
         display: none !important;
     }
 }
+
+/* MOBILE HEADER - 3 ITEMS: PHONE | LOGO | WHATSAPP */
+.mobile-only {
+    display: none !important;
+}
+
+@media (max-width: 768px) {
+    .mobile-only {
+        display: flex !important;
+    }
+    
+    .navbar-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 8px;
+    }
+    
+    .logo {
+        order: 2;
+        flex: 0 0 auto;
+    }
+    
+    .phone-pill.mobile-only {
+        order: 1;
+    }
+    
+    .whatsapp-pill.mobile-only {
+        order: 3;
+    }
+    
+    .mobile-pill-btn {
+        font-size: 0.7rem;
+        padding: 8px 10px;
+        gap: 5px;
+    }
+    
+    .logo-text {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .mobile-pill-btn {
+        font-size: 0.6rem;
+        padding: 6px 8px;
+    }
+    
+    .logo-text {
+        font-size: 0.9rem;
+    }
+}
