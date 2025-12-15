@@ -4670,3 +4670,39 @@ body {
         margin-right: 0 !important;
     }
 }
+/* =============================================
+   MOBILE TEXT CUTOFF FIX - 2 COLUMNS
+   ============================================= */
+
+@media (max-width: 768px) {
+    /* Switch Trust Items to 2 Columns for more breathing room */
+    .booking-layout-grid {
+        grid-template-columns: 1fr 1fr !important; /* 2 columns instead of 3 */
+        gap: 10px !important;
+        justify-content: center !important; 
+    }
+
+    /* Make the items flow naturally */
+    .trust-item {
+        width: 100% !important;
+        box-sizing: border-box !important;
+        padding: 8px 4px !important;
+        min-height: auto !important; /* Let text expand height if needed */
+        overflow: visible !important; /* Ensure no clipping */
+    }
+
+    .trust-item h4 {
+        white-space: normal !important; /* Force wrap */
+        overflow: visible !important;
+        text-overflow: clip !important; /* No ellipsis */
+        font-size: 0.75rem !important; /* slightly readable size */
+        margin-top: 4px !important;
+    }
+
+    /* Make the Main Booking Card span both columns so it stays centered/large */
+    .main-booking-card {
+        grid-column: span 2 !important;
+        width: 100% !important; 
+        margin-bottom: 20px !important;
+    }
+}
