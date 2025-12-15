@@ -3450,3 +3450,97 @@ img {
         display: none !important;
     }
 }
+
+/* =============================================
+   MOBILE FOOTER POLISH (PREMIUM DESIGN)
+   ============================================= */
+
+@media (max-width: 768px) {
+    
+    /* 1. Spacer for the Copyright Text */
+    footer {
+        padding-bottom: 50px !important; /* Move copyright up from the edge */
+    }
+    
+    .footer-bottom {
+        padding-top: 20px !important;
+        padding-bottom: 20px !important;
+        font-size: 0.8rem;
+        opacity: 0.7;
+    }
+
+    /* 2. Premium Contact Cards (Like the reference image) */
+    .contact-list {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .contact-item {
+        background: #0f0f0f; /* Very dark bg */
+        border: 1px solid #333; /* Subtle border */
+        border-radius: 12px;
+        padding: 15px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center; /* Center content */
+        gap: 12px;
+        color: #fff;
+        font-weight: 500;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+        margin: 0 !important; /* Reset margins */
+    }
+    
+    /* Green Icons */
+    .contact-item i {
+        color: var(--primary-green);
+        font-size: 1.1rem;
+    }
+    
+    /* Active State/Hover touch */
+    .contact-item:active {
+        border-color: var(--primary-green);
+        background: #151515;
+    }
+
+    /* 3. Section Titles */
+    .footer h4 {
+        text-align: center;
+        margin-bottom: 20px;
+        font-size: 1.3rem;
+        position: relative;
+        display: inline-block;
+        padding-bottom: 10px;
+    }
+    
+    /* Underline effect */
+    .footer h4::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 40px;
+        height: 3px;
+        background: var(--primary-green);
+        border-radius: 2px;
+    }
+
+    /* 4. Quick Links Polish */
+    .links-col ul {
+        gap: 12px;
+    }
+    
+    .links-col a {
+        background: #111;
+        border: 1px solid #2a2a2a;
+        padding: 14px;
+        font-weight: 500;
+        transition: all 0.2s;
+    }
+    
+    .links-col a:active {
+        border-color: var(--primary-green);
+        color: var(--primary-green);
+    }
+}
