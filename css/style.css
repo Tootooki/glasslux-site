@@ -4706,3 +4706,104 @@ body {
         margin-bottom: 20px !important;
     }
 }
+
+/* =============================================
+   WHATSAPP CHAT BLOCK
+   ============================================= */
+
+.whatsapp-card {
+    background: #111;
+    border: 1px solid #333;
+    border-radius: 20px;
+    padding: 40px 30px;
+    text-align: center;
+    max-width: 400px; /* Nice contained width */
+    margin: 0 auto;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+    transition: transform 0.3s ease;
+}
+
+.whatsapp-card:hover {
+    border-color: rgba(37, 211, 102, 0.3); /* WhatsApp green border hint */
+}
+
+.whatsapp-icon-large {
+    font-size: 3.5rem;
+    color: #25D366;
+    margin-bottom: 20px;
+    filter: drop-shadow(0 0 15px rgba(37, 211, 102, 0.4));
+}
+
+.whatsapp-card h3 {
+    color: #fff;
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.whatsapp-card p {
+    color: #ccc;
+    font-size: 0.95rem;
+    margin-bottom: 25px;
+}
+
+.btn-whatsapp-large {
+    background: #25D366;
+    color: #fff;
+    font-weight: 800;
+    font-size: 1.1rem;
+    padding: 15px 25px;
+    border-radius: 12px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+.btn-whatsapp-large:hover {
+    background: #20b858;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4);
+    color: #fff;
+}
+
+.whatsapp-fallback {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: #888;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.whatsapp-fallback a {
+    color: #ccc;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s;
+}
+
+.whatsapp-fallback a:hover {
+    color: #fff;
+}
+
+/* Mobile Tweak */
+@media (max-width: 768px) {
+    .whatsapp-chat-section {
+        padding-left: 5% !important; /* Enforce alignment */
+        padding-right: 5% !important;
+        margin: 40px 0 !important;
+    }
+    
+    .whatsapp-card {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+}
