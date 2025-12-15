@@ -3099,3 +3099,73 @@ img {
         font-size: 1.4rem !important; /* Restore icon size */
     }
 }
+
+/* =============================================
+   MOBILE HEADER - GREEN PILL BUTTONS (RESTORED TEXT)
+   ============================================= */
+
+@media (max-width: 768px) {
+    /* 1. Restore Button Visibility & Styling */
+    .mobile-pill-btn {
+        background-color: var(--primary-green) !important; /* Neon Green Background */
+        color: #000 !important; /* Black Text */
+        border: none !important;
+        border-radius: 50px !important; /* Full rounded pill */
+        padding: 6px 14px !important; /* optimize padding */
+        font-size: 0.75rem !important; /* Compact font */
+        font-weight: 700 !important;
+        width: auto !important; /* Allow auto width */
+        height: auto !important;
+        display: flex !important;
+        align-items: center !important;
+        gap: 6px !important;
+        box-shadow: 0 4px 10px rgba(57, 255, 20, 0.3);
+    }
+    
+    /* 2. Restore Text */
+    .mobile-pill-btn span {
+        display: inline-block !important; /* Show text again */
+        white-space: nowrap !important;
+    }
+    
+    /* 3. Icon Styling */
+    .mobile-pill-btn i {
+        font-size: 0.9rem !important;
+        margin: 0 !important;
+        color: #000 !important;
+    }
+    
+    /* 4. Disable the Icon-Only override I added previously */
+    .mobile-pill-btn::after {
+        display: none !important;
+    }
+
+    /* 5. Layout Adjustments to Fit Everything */
+    .navbar-container {
+        padding: 5px 8px !important; /* Very tight container padding */
+        gap: 2px !important;
+    }
+    
+    .logo-text {
+        font-size: 1rem !important; /* Smaller logo text to make room */
+        white-space: nowrap;
+    }
+    
+    .logo-img {
+        height: 20px !important; /* Smaller logo icon */
+    }
+    
+    /* 6. Specific styling for very small screens (iPhone SE etc) */
+    @media (max-width: 370px) {
+        .mobile-pill-btn {
+            padding: 5px 8px !important;
+            font-size: 0.65rem !important;
+        }
+        .logo-text {
+            display: none !important; /* Hide logo text only on tiniest screens to save layout */
+        }
+        .logo-img {
+            height: 28px !important; /* Make icon slightly bigger since text is gone */
+        }
+    }
+}
