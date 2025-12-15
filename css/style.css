@@ -4610,3 +4610,50 @@ body {
         font-size: 1.4rem; /* Slightly larger icon */
     }
 }
+
+/* =============================================
+   GLOBAL 5% PADDING ENFORCEMENT (MOBILE)
+   ============================================= */
+
+@media (max-width: 768px) {
+    /* STRICT GLOBAL RULE: 5% Padding on all key containers */
+    .container, 
+    .navbar-container, 
+    .hero-content, 
+    .section-title,
+    .damage-grid-container,
+    .services-grid,
+    .booking-layout-grid,
+    .footer-content,
+    .callback-card,
+    .process-image,
+    .slider-wrapper,
+    .review-card,
+    .future-tech-section .container,
+    .shop-note {
+        padding-left: 5% !important;
+        padding-right: 5% !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        max-width: 100% !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+
+    /* Reset specific grids that might double up padding */
+    .damage-grid, 
+    .services-grid .service-card,
+    .booking-side-block {
+        width: 100% !important;
+        margin: 0 !important;
+        /* Padding is handled by the parent container now, so we reset child padding if needed, 
+           or let them inherit the width minus padding. 
+           But user said "every", so we ensure the PARENTS provide the border. */
+    }
+    
+    /* Ensure no negative margins pull content out */
+    .row {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+}
