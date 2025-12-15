@@ -3275,3 +3275,13 @@ img {
         gap: 2px !important;
     }
 }
+
+/* =============================================
+   HIDE SECURE CHAT FOOTER ON MOBILE
+   ============================================= */
+
+@media (max-width: 768px) {
+    .secure-chat-footer {
+        display: none !important;
+    }
+}
