@@ -3676,3 +3676,61 @@ img {
         padding-right: 5% !important;
     }
 }
+
+/* =============================================
+   MOBILE TRUST SECTION - 6 ITEM GRID ("2 LINES")
+   ============================================= */
+
+@media (max-width: 768px) {
+    /* 1. Parent becomes the Grid */
+    .booking-layout-grid {
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr) !important; /* 3 Columns = 2 Lines of 6 items */
+        gap: 10px !important;
+        align-items: start;
+    }
+
+    /* 2. Unwrap the side blocks so items flow together */
+    .booking-side-block {
+        display: contents !important; /* The Magic: Side blocks disappear, children join parent grid */
+    }
+
+    /* 3. Handle the Main Card (Move to Top, Full Width) */
+    .product-card.main-booking-card {
+        grid-column: 1 / -1 !important; /* Full width */
+        order: -1 !important; /* Move to top of section */
+        margin-bottom: 20px !important;
+    }
+
+    /* 4. Style the Trust Items (Compact) */
+    .trust-item {
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 10px 5px !important;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        background: rgba(255,255,255,0.03); /* Subtle backdrop */
+        border-radius: 8px;
+    }
+
+    /* 5. Hide Checkbox/Description Text for "Less Text" */
+    .trust-item p {
+        display: none !important;
+    }
+    
+    /* 6. Adjust Icon and Title */
+    .trust-item i {
+        font-size: 1.2rem !important;
+        margin-bottom: 8px !important;
+        color: var(--primary-green) !important;
+    }
+    
+    .trust-item h4 {
+        font-size: 0.7rem !important;
+        line-height: 1.2;
+        margin: 0;
+        white-space: normal !important; /* Allow wrap */
+    }
+}
