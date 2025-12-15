@@ -2560,3 +2560,189 @@ img {
         display: block !important;
     }
 }
+
+/* =============================================
+   FOOTER - COLORFUL SOCIAL ICONS + LAYOUT FIX
+   ============================================= */
+
+/* Colorful Social Media Icons */
+.social-links a:nth-child(1) { color: #1877F2; } /* Facebook Blue */
+.social-links a:nth-child(2) { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); -webkit-background-clip: text; -webkit-text-fill-color: transparent; } /* Instagram Gradient */
+.social-links a:nth-child(3) { color: #1DA1F2; } /* Twitter Blue */
+.social-links a:nth-child(4) { color: #FF0000; } /* YouTube Red */
+.social-links a:nth-child(5) { color: #ff0050; } /* TikTok Pink */
+.social-links a:nth-child(6) { color: #0A66C2; } /* LinkedIn Blue */
+
+.social-links a {
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    transform: scale(1.3);
+    filter: brightness(1.2);
+}
+
+/* Mobile Footer Improvements */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column !important;
+        text-align: center;
+    }
+    
+    .footer-col {
+        width: 100% !important;
+        margin-bottom: 30px;
+    }
+    
+    /* Social links first, then payment */
+    .social-links {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin-bottom: 20px;
+    }
+    
+    .payment-methods {
+        justify-content: center !important;
+        flex-wrap: wrap;
+        gap: 10px !important;
+        font-size: 1.5rem !important;
+    }
+    
+    .brand-col {
+        order: 1;
+    }
+    
+    .contact-col {
+        order: 2;
+    }
+    
+    .links-col {
+        order: 3;
+    }
+}
+
+/* =============================================
+   CONTACT SECTION - BEAUTIFUL STYLING
+   ============================================= */
+
+.contact-list {
+    list-style: none;
+    padding: 0;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 20px;
+    margin-bottom: 10px;
+    background: linear-gradient(135deg, rgba(57, 255, 20, 0.1), rgba(30, 30, 30, 0.8));
+    border: 1px solid rgba(57, 255, 20, 0.3);
+    border-radius: 12px;
+    color: #fff;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.contact-item:hover {
+    border-color: var(--primary-green);
+    transform: translateX(5px);
+    box-shadow: 0 0 20px rgba(57, 255, 20, 0.3);
+}
+
+.contact-item i {
+    color: var(--primary-green);
+    font-size: 1.2rem;
+}
+
+.map-container {
+    margin: 20px 0;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 2px solid rgba(57, 255, 20, 0.3);
+}
+
+.map-container iframe {
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .contact-item {
+        justify-content: center;
+        padding: 15px 20px;
+    }
+    
+    .map-container {
+        margin: 15px 0;
+    }
+}
+
+/* =============================================
+   TRUST ITEMS - SINGLE LINE TEXT FIX
+   ============================================= */
+
+.trust-item h4 {
+    white-space: nowrap !important;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Ensure container allows width */
+.booking-side-block {
+    min-width: 0; /* Flexbox overflow fix */
+}
+
+/* Responsive Font Sizing for Trust items to preventing wrapping */
+@media (max-width: 1200px) {
+    .trust-item h4 {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .trust-item h4 {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .booking-layout-grid {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .booking-side-block {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+    
+    .trust-item {
+        width: 45%; /* 2 items per row on mobile for better balance */
+        min-width: 140px;
+        margin-bottom: 20px;
+        padding: 0 5px;
+    }
+    
+    .trust-item h4 {
+        font-size: 0.85rem;
+        white-space: nowrap !important;
+    }
+    
+    .trust-item p {
+        font-size: 0.75rem;
+        line-height: 1.3;
+        display: block; /* Ensure subtext shows */
+    }
+}
+
+@media (max-width: 400px) {
+    .trust-item h4 {
+        font-size: 0.75rem;
+    }
+}
