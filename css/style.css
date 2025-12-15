@@ -5156,3 +5156,153 @@ body {
     background: #2A2A2A !important;
     color: #FFFFFF !important;
 }
+
+/* =============================================
+   LIGHT MODE FIXES - READABILITY & VIBRANCY
+   ============================================= */
+
+/* 1. Hero Section - Light Overlay for Readability */
+.hero-section {
+    background: #FFFFFF !important;
+    position: relative;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.85) !important;
+    z-index: 1;
+}
+
+.hero-section .container,
+.hero-section .hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-section h1 {
+    color: #1A1A1A !important;
+    text-shadow: none !important;
+}
+
+.hero-section .highlight {
+    color: #0066CC !important;
+    text-shadow: none !important;
+}
+
+.hero-section p {
+    color: #333333 !important;
+}
+
+/* 2. Make Colors POP - More Vibrant Accent */
+:root {
+    --primary-accent: #0077FF !important; /* Brighter blue */
+    --primary-green: #0077FF !important;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #0077FF 0%, #0055CC 100%) !important;
+    box-shadow: 0 4px 20px rgba(0, 119, 255, 0.4) !important;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #0088FF 0%, #0066DD 100%) !important;
+    box-shadow: 0 6px 25px rgba(0, 119, 255, 0.5) !important;
+    transform: translateY(-3px) !important;
+}
+
+/* 3. Background Pure White */
+body,
+.hero-section,
+main,
+section:not(.footer) {
+    background-color: #FFFFFF !important;
+}
+
+/* 4. Cards with More Pop */
+.service-card,
+.damage-card,
+.product-card,
+.science-card {
+    background: #FFFFFF !important;
+    border: 1px solid #E0E0E0 !important;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08) !important;
+    transition: all 0.3s ease !important;
+}
+
+.service-card:hover,
+.damage-card:hover,
+.product-card:hover,
+.science-card:hover {
+    box-shadow: 0 12px 40px rgba(0, 119, 255, 0.15) !important;
+    border-color: #0077FF !important;
+    transform: translateY(-5px) !important;
+}
+
+/* 5. Section Titles - Pop */
+.section-title {
+    color: #1A1A1A !important;
+}
+
+.section-title::after {
+    background: linear-gradient(90deg, #0077FF, #00AAFF) !important;
+    height: 4px !important;
+}
+
+/* 6. Icons Pop */
+.icon-box,
+.science-icon,
+.trust-item i {
+    color: #0077FF !important;
+    background: rgba(0, 119, 255, 0.1) !important;
+}
+
+/* 7. Booking Section Background */
+.shop {
+    background: #F8FAFC !important;
+}
+
+/* 8. Price Pop */
+.price {
+    color: #0077FF !important;
+    font-weight: 800 !important;
+}
+
+/* 9. Status Badges */
+.status-badge.success {
+    background: linear-gradient(135deg, #0077FF, #0055CC) !important;
+}
+
+/* 10. WhatsApp Card - Keep Green */
+.whatsapp-card {
+    background: #FFFFFF !important;
+    border: 2px solid #25D366 !important;
+}
+
+.whatsapp-icon-large i {
+    color: #25D366 !important;
+}
+
+.btn-whatsapp-large {
+    background: #25D366 !important;
+}
+
+/* 11. Tech Point Rows */
+.tech-point-row {
+    background: #FFFFFF !important;
+    border-left: 4px solid #0077FF !important;
+}
+
+/* 12. Reviews Section */
+.reviews-section {
+    background: #FFFFFF !important;
+}
+
+.review-card {
+    background: #FFFFFF !important;
+    border: 1px solid #E0E0E0 !important;
+}
