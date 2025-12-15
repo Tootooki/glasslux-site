@@ -5433,3 +5433,77 @@ section:not(.footer) {
 .stars i {
     color: #FFB800 !important;
 }
+
+/* =============================================
+   TEXT CONTRAST FIXES
+   ============================================= */
+
+/* 1. HERO - ALL TEXT BRIGHT WHITE */
+.hero-section h1,
+.hero-section h1 span,
+.hero-section p,
+.hero-content h1,
+.hero-content p {
+    color: #FFFFFF !important;
+    text-shadow: 0 2px 15px rgba(0, 0, 0, 0.9), 0 0 30px rgba(0, 0, 0, 0.5) !important;
+    opacity: 1 !important;
+}
+
+/* Keep highlight green but visible */
+.hero-section .highlight,
+.hero-content .highlight {
+    color: #39FF14 !important;
+    text-shadow: 0 2px 15px rgba(0, 0, 0, 0.9), 0 0 10px rgba(57, 255, 20, 0.5) !important;
+}
+
+/* 2. GRAY TEXT ON WHITE - Make Darker */
+/* Any .text-gray or description text */
+.service-card p,
+.damage-card p,
+.product-card p,
+.review-card p,
+.science-card p,
+.tech-point-desc,
+.whatsapp-card p,
+.callback-card p,
+.slider-desc,
+.science-text p {
+    color: #555555 !important; /* Darker gray for readability */
+}
+
+/* 3. Future Tech / Science Section descriptions */
+.future-tech-section p,
+.science-section p,
+.slider-card p {
+    color: #444444 !important;
+}
+
+/* 4. WhatsApp fallback text */
+.whatsapp-fallback,
+.whatsapp-fallback a {
+    color: #555555 !important;
+}
+
+/* 5. Any remaining light gray text */
+.text-gray,
+[style*="color: #999"],
+[style*="color: #ccc"],
+[style*="color: #aaa"] {
+    color: #555555 !important;
+}
+
+/* 6. Ensure callback card text is visible */
+.callback-card h3,
+.whatsapp-card h3 {
+    color: #1A1A1A !important;
+}
+
+/* 7. Trust item descriptions */
+.trust-item p {
+    color: #666666 !important;
+}
+
+/* 8. Review text */
+.review-text {
+    color: #333333 !important;
+}
