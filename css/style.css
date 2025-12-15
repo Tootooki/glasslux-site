@@ -1,13 +1,19 @@
 :root {
-    /* Colors */
-    --primary-green: #39FF14;
-    /* Neon Green */
-    --primary-green-dark: #32CD32;
-    --dark-bg: #121212;
-    --card-bg: #1e1e1e;
-    --text-light: #ffffff;
-    --text-gray: #a0a0a0;
-    --glass-border: rgba(255, 255, 255, 0.1);
+    /* Colors - LIGHT MODE */
+    --primary-accent: #0066CC;
+    /* Professional Blue */
+    --primary-accent-dark: #004C99;
+    --light-bg: #FFFFFF;
+    --card-bg: #F5F5F5;
+    --text-dark: #1A1A1A;
+    --text-gray: #666666;
+    --glass-border: rgba(0, 0, 0, 0.1);
+
+    /* Legacy variable mappings for compatibility */
+    --primary-green: #0066CC;
+    --primary-green-dark: #004C99;
+    --dark-bg: #FFFFFF;
+    --text-light: #1A1A1A;
 
     /* Spacing */
     --section-padding: 80px 20px;
@@ -4670,16 +4676,19 @@ body {
         margin-right: 0 !important;
     }
 }
+
 /* =============================================
    MOBILE TEXT CUTOFF FIX - 2 COLUMNS
    ============================================= */
 
 @media (max-width: 768px) {
+
     /* Switch Trust Items to 2 Columns for more breathing room */
     .booking-layout-grid {
-        grid-template-columns: 1fr 1fr !important; /* 2 columns instead of 3 */
+        grid-template-columns: 1fr 1fr !important;
+        /* 2 columns instead of 3 */
         gap: 10px !important;
-        justify-content: center !important; 
+        justify-content: center !important;
     }
 
     /* Make the items flow naturally */
@@ -4687,22 +4696,27 @@ body {
         width: 100% !important;
         box-sizing: border-box !important;
         padding: 8px 4px !important;
-        min-height: auto !important; /* Let text expand height if needed */
-        overflow: visible !important; /* Ensure no clipping */
+        min-height: auto !important;
+        /* Let text expand height if needed */
+        overflow: visible !important;
+        /* Ensure no clipping */
     }
 
     .trust-item h4 {
-        white-space: normal !important; /* Force wrap */
+        white-space: normal !important;
+        /* Force wrap */
         overflow: visible !important;
-        text-overflow: clip !important; /* No ellipsis */
-        font-size: 0.75rem !important; /* slightly readable size */
+        text-overflow: clip !important;
+        /* No ellipsis */
+        font-size: 0.75rem !important;
+        /* slightly readable size */
         margin-top: 4px !important;
     }
 
     /* Make the Main Booking Card span both columns so it stays centered/large */
     .main-booking-card {
         grid-column: span 2 !important;
-        width: 100% !important; 
+        width: 100% !important;
         margin-bottom: 20px !important;
     }
 }
@@ -4717,15 +4731,17 @@ body {
     border-radius: 20px;
     padding: 40px 30px;
     text-align: center;
-    max-width: 400px; /* Nice contained width */
+    max-width: 400px;
+    /* Nice contained width */
     margin: 0 auto;
     position: relative;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
     transition: transform 0.3s ease;
 }
 
 .whatsapp-card:hover {
-    border-color: rgba(37, 211, 102, 0.3); /* WhatsApp green border hint */
+    border-color: rgba(37, 211, 102, 0.3);
+    /* WhatsApp green border hint */
 }
 
 .whatsapp-icon-large {
@@ -4797,11 +4813,12 @@ body {
 /* Mobile Tweak */
 @media (max-width: 768px) {
     .whatsapp-chat-section {
-        padding-left: 5% !important; /* Enforce alignment */
+        padding-left: 5% !important;
+        /* Enforce alignment */
         padding-right: 5% !important;
         margin: 40px 0 !important;
     }
-    
+
     .whatsapp-card {
         width: 100% !important;
         max-width: 100% !important;
@@ -4814,22 +4831,24 @@ body {
 
 .whatsapp-card {
     /* Make it slimmer and wider */
-    padding: 25px 20px !important; 
-    max-width: 600px !important; /* Allow it to be wider on desktop */
+    padding: 25px 20px !important;
+    max-width: 600px !important;
+    /* Allow it to be wider on desktop */
     width: 100%;
-    
+
     /* Premium Look */
     background: linear-gradient(145deg, #111 0%, #050505 100%);
     border: 1px solid #333;
-    border-left: 4px solid #25D366; /* Matching the Science Card style */
+    border-left: 4px solid #25D366;
+    /* Matching the Science Card style */
     border-radius: 15px;
-    
+
     /* Center Layout */
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 15px;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
 }
 
 .whatsapp-card:hover {
@@ -4838,7 +4857,8 @@ body {
 }
 
 .whatsapp-icon-large {
-    font-size: 2.5rem !important; /* Smaller icon for slim look */
+    font-size: 2.5rem !important;
+    /* Smaller icon for slim look */
     margin-bottom: 5px !important;
     filter: drop-shadow(0 0 10px rgba(37, 211, 102, 0.4));
 }
@@ -4858,9 +4878,11 @@ body {
 
 .btn-whatsapp-large {
     margin-top: 10px;
-    padding: 12px 0 !important; /* Slimmer button */
+    padding: 12px 0 !important;
+    /* Slimmer button */
     font-size: 1rem !important;
-    border-radius: 50px !important; /* Pill shape */
+    border-radius: 50px !important;
+    /* Pill shape */
     box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
 }
 
@@ -4872,13 +4894,16 @@ body {
 /* Mobile Tweaks to ensure full width usage within padding */
 @media (max-width: 768px) {
     .whatsapp-chat-section {
-        margin: 30px 0 !important; /* Reduced vertical margin */
+        margin: 30px 0 !important;
+        /* Reduced vertical margin */
     }
-    
+
     .whatsapp-card {
-        border-left: 1px solid #333; /* Full border on mobile looks cleaner than just left strip? 
+        border-left: 1px solid #333;
+        /* Full border on mobile looks cleaner than just left strip? 
                                        Actually let's keep the premium borders user asked for */
-        border: 1px solid rgba(37, 211, 102, 0.3); /* Visible Green Border on sides */
+        border: 1px solid rgba(37, 211, 102, 0.3);
+        /* Visible Green Border on sides */
         border-radius: 12px;
     }
 }
@@ -4888,17 +4913,19 @@ body {
    ============================================= */
 
 @media (max-width: 768px) {
+
     /* 1. Reset & Standardize Section Spacing */
-    section, 
-    .hero-section, 
-    .features-section, 
-    .process-content, 
-    .guide-section, 
-    .shop, 
+    section,
+    .hero-section,
+    .features-section,
+    .process-content,
+    .guide-section,
+    .shop,
     .reviews-section,
     .whatsapp-chat-section {
         margin-bottom: 50px !important;
-        margin-top: 0 !important; /* Let the previous section's bottom margin handle the gap */
+        margin-top: 0 !important;
+        /* Let the previous section's bottom margin handle the gap */
         padding-top: 0 !important;
         padding-bottom: 0 !important;
     }
@@ -4917,27 +4944,215 @@ body {
     /* 2. COMPACT FOOTER (Top to Bottom) */
     footer {
         padding-top: 40px !important;
-        padding-bottom: 40px !important; /* enough for splatter art */
+        padding-bottom: 40px !important;
+        /* enough for splatter art */
         margin-top: 0 !important;
     }
-    
+
     .footer-content {
-        gap: 30px !important; /* consistent gap between footer cols */
+        gap: 30px !important;
+        /* consistent gap between footer cols */
     }
 
     .footer h4 {
-        margin-bottom: 15px !important; /* tighter titles */
+        margin-bottom: 15px !important;
+        /* tighter titles */
     }
 
     /* 3. internal spacing for breathing room */
     .section-title {
-        margin-bottom: 30px !important; /* consistent title-to-content gap */
+        margin-bottom: 30px !important;
+        /* consistent title-to-content gap */
         margin-top: 0 !important;
     }
 
     /* 4. Fix WhatsApp Block Spacing */
     .whatsapp-chat-section {
-        margin: 50px 0 !important; /* Strict 50px top/bottom if it's an inserted block */
-        padding: 0 5% !important; /* Horizontal alignment */
+        margin: 50px 0 !important;
+        /* Strict 50px top/bottom if it's an inserted block */
+        padding: 0 5% !important;
+        /* Horizontal alignment */
     }
+}
+/* =============================================
+   LIGHT MODE OVERRIDES
+   ============================================= */
+
+/* Global Light Mode */
+body {
+    background-color: #FFFFFF !important;
+    color: #1A1A1A !important;
+}
+
+/* Navbar */
+.navbar {
+    background: rgba(255, 255, 255, 0.95) !important;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar .logo-text,
+.navbar .nav-links a {
+    color: #1A1A1A !important;
+}
+
+.navbar .nav-links a:hover {
+    color: #0066CC !important;
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ec 100%) !important;
+}
+
+.hero-section h1,
+.hero-section p {
+    color: #1A1A1A !important;
+}
+
+.hero-section .highlight {
+    color: #0066CC !important;
+}
+
+/* Cards Global */
+.service-card,
+.damage-card,
+.product-card,
+.review-card,
+.science-card,
+.callback-card,
+.whatsapp-card {
+    background: #FFFFFF !important;
+    border: 1px solid rgba(0, 0, 0, 0.1) !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08) !important;
+    color: #1A1A1A !important;
+}
+
+.service-card h3,
+.damage-card h4,
+.product-card h3,
+.review-card h4,
+.science-card h4 {
+    color: #1A1A1A !important;
+}
+
+.service-card p,
+.damage-card p,
+.product-card p,
+.review-card p,
+.science-card p {
+    color: #666666 !important;
+}
+
+/* Section Titles */
+.section-title {
+    color: #1A1A1A !important;
+}
+
+.section-title::after {
+    background: #0066CC !important;
+}
+
+/* Buttons */
+.btn-primary,
+.btn-whatsapp-large {
+    background: #0066CC !important;
+    color: #FFFFFF !important;
+}
+
+.btn-primary:hover,
+.btn-whatsapp-large:hover {
+    background: #004C99 !important;
+}
+
+/* Trust Items */
+.trust-item {
+    background: rgba(0, 102, 204, 0.05) !important;
+    border: 1px solid rgba(0, 102, 204, 0.1) !important;
+}
+
+.trust-item i {
+    color: #0066CC !important;
+}
+
+.trust-item h4 {
+    color: #1A1A1A !important;
+}
+
+/* Footer */
+.footer {
+    background: #1A1A1A !important;
+    color: #FFFFFF !important;
+}
+
+.footer h4,
+.footer a,
+.footer p,
+.footer .contact-item {
+    color: #FFFFFF !important;
+}
+
+.footer a:hover {
+    color: #0066CC !important;
+}
+
+.footer h4::after {
+    background: #0066CC !important;
+}
+
+/* Process Section */
+.tech-point-row {
+    background: #FFFFFF !important;
+    border: 1px solid rgba(0, 0, 0, 0.1) !important;
+    border-left: 4px solid #0066CC !important;
+}
+
+.tech-point-label {
+    color: #1A1A1A !important;
+}
+
+.tech-point-desc {
+    color: #666666 !important;
+}
+
+/* Booking Section */
+.shop {
+    background: #F5F5F5 !important;
+}
+
+.price {
+    color: #0066CC !important;
+}
+
+/* Reviews */
+.stars i {
+    color: #FFB800 !important;
+}
+
+/* WhatsApp Icon */
+.whatsapp-icon-large i {
+    color: #25D366 !important;
+}
+
+/* Status Badges */
+.status-badge.success {
+    background: #0066CC !important;
+    color: #FFFFFF !important;
+}
+
+/* Icons */
+.icon-box,
+.science-icon {
+    background: rgba(0, 102, 204, 0.1) !important;
+    color: #0066CC !important;
+}
+
+.science-icon i {
+    color: #0066CC !important;
+}
+
+/* Links Column in Footer */
+.links-col a {
+    background: #2A2A2A !important;
+    color: #FFFFFF !important;
 }
