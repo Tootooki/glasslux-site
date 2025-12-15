@@ -2228,3 +2228,53 @@ img {
         font-size: 1.1rem;
     }
 }
+
+/* MOBILE PILL BUTTONS */
+.mobile-pill-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 16px;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: all 0.3s ease;
+}
+
+.phone-pill {
+    background: var(--primary-green);
+    color: #000;
+}
+
+.whatsapp-pill {
+    background: var(--primary-green);
+    color: #000;
+}
+
+.phone-pill:hover, .whatsapp-pill:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(57, 255, 20, 0.5);
+}
+
+@media (max-width: 768px) {
+    .mobile-header-btns {
+        display: flex;
+        gap: 8px;
+    }
+    
+    .mobile-pill-btn {
+        font-size: 0.75rem;
+        padding: 8px 12px;
+    }
+}
+
+@media (max-width: 400px) {
+    .mobile-pill-btn {
+        font-size: 0.65rem;
+        padding: 6px 10px;
+        gap: 5px;
+    }
+}
