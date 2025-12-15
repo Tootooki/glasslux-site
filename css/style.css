@@ -2337,3 +2337,23 @@ img {
         font-size: 0.9rem;
     }
 }
+
+/* MOBILE - EVEN SIDE PADDING */
+@media (max-width: 768px) {
+    .hero-content {
+        padding-left: 25px !important;
+        padding-right: 25px !important;
+    }
+    
+    .hero-btns {
+        width: 100%;
+        padding: 0 10px;
+    }
+    
+    .hero-btn {
+        width: 100%;
+        max-width: 280px;
+        text-align: center;
+        justify-content: center;
+    }
+}
