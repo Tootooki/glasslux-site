@@ -5585,3 +5585,75 @@ section p,
 .footer .logo-text {
     color: #FFFFFF !important;
 }
+
+/* =============================================
+   GREEN TEXT ON WHITE - DARKER FOR READABILITY
+   ============================================= */
+
+/* All green headings on white background = Darker green */
+.slider-card h4,
+.science-card h4,
+.future-tech-section h4,
+.service-card h3,
+.tech-point-label,
+h3.highlight,
+h4.highlight,
+.slider-title,
+.comparison-title {
+    color: #00994D !important; /* Darker green for white bg */
+}
+
+/* Green section subtitles */
+.science-text h4,
+.slider-wrapper h4 {
+    color: #00994D !important;
+}
+
+/* Any green text that's a title/heading */
+section h3:not(.section-title),
+section h4 {
+    color: #00994D !important;
+}
+
+/* Exception: Keep neon green for dark backgrounds */
+.footer h3,
+.footer h4 {
+    color: #FFFFFF !important;
+}
+
+/* Icon boxes - darker green */
+.icon-box,
+.science-icon {
+    background: rgba(0, 153, 77, 0.1) !important;
+    color: #00994D !important;
+}
+
+.science-icon i,
+.icon-box i {
+    color: #00994D !important;
+}
+
+/* Trust item icons */
+.trust-item i {
+    color: #00994D !important;
+}
+
+/* Price - darker green */
+.price {
+    color: #00994D !important;
+}
+
+/* Tech point border */
+.tech-point-row {
+    border-left-color: #00994D !important;
+}
+
+/* Section title underline */
+.section-title::after {
+    background: #00994D !important;
+}
+
+/* Status badges */
+.status-badge.success {
+    background: #00994D !important;
+}
