@@ -2209,3 +2209,22 @@ img {
         height: 35px;
     }
 }
+
+/* MESSENGER BUTTON */
+.messenger-btn {
+    background: #0084FF;
+    color: #fff;
+}
+
+.messenger-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(0, 132, 255, 0.5);
+}
+
+@media (max-width: 768px) {
+    .mobile-header-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1.1rem;
+    }
+}
