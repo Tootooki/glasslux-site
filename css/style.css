@@ -1142,15 +1142,31 @@ img {
     color: #000;
     border-color: var(--primary-green);
 }
+
 /* Chat Animations */
 @keyframes typingBounce {
-    0%, 80%, 100% { transform: translateY(0); }
-    40% { transform: translateY(-6px); }
+
+    0%,
+    80%,
+    100% {
+        transform: translateY(0);
+    }
+
+    40% {
+        transform: translateY(-6px);
+    }
 }
 
 @keyframes messageFadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .chat-message {
@@ -1183,21 +1199,25 @@ img {
     border-color: #39FF14 !important;
 }
 
-/* FORCE HIDE ALL FLOATING CHAT BUBBLES */
-.crisp-client,
-.crisp-client *,
+/* CRISP CHAT BUBBLE - TOP RIGHT POSITION */
+.crisp-client .cc-tlyw {
+    bottom: auto !important;
+    top: 90px !important;
+    right: 20px !important;
+}
+
+.crisp-client .cc-1m2mf {
+    bottom: auto !important;
+    top: 150px !important;
+    right: 20px !important;
+}
+
+/* Hide Tawk only (not Crisp) */
 #tawk-bubble-container,
 .tawk-min-container,
-.chat-floating-btn,
-.chat-widget-container,
-[class*="crisp"],
-[id*="crisp"],
 [class*="tawk"],
 [id*="tawk"] {
     display: none !important;
-    visibility: hidden !important;
-    opacity: 0 !important;
-    pointer-events: none !important;
 }
 
 /* Chat action button hover */
@@ -1221,5 +1241,500 @@ img {
         width: 100%;
         display: block;
         margin: 0;
+    }
+}
+
+/* Fix Footer Social Links Layout */
+.social-links {
+    display: flex !important;
+    gap: 15px !important;
+    margin-top: 20px !important;
+    flex-wrap: wrap !important;
+}
+
+.social-links a {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #333;
+    color: #fff;
+    font-size: 1rem;
+    transition: all 0.3s;
+    text-decoration: none;
+}
+
+.social-links a:hover {
+    background: var(--primary-green);
+    color: #000;
+    transform: translateY(-3px);
+}
+
+/* BOOKING SECTION LAYOUT (New) */
+.booking-layout-grid {
+    display: grid;
+    grid-template-columns: 1fr 400px 1fr;
+    gap: 40px;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.booking-side-block {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.booking-side-block.left {
+    text-align: right;
+    align-items: flex-end;
+}
+
+.booking-side-block.right {
+    text-align: left;
+    align-items: flex-start;
+}
+
+.trust-item {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    max-width: 250px;
+}
+
+.booking-side-block.left .trust-item {
+    align-items: flex-end;
+}
+
+.booking-side-block.right .trust-item {
+    align-items: flex-start;
+}
+
+.trust-item i {
+    font-size: 1.8rem;
+    color: var(--primary-green);
+    margin-bottom: 10px;
+}
+
+.trust-item h4 {
+    color: #fff;
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+.trust-item p {
+    color: #999;
+    font-size: 0.9rem;
+    margin: 0;
+    line-height: 1.4;
+}
+
+/* Mobile Stack for Booking */
+@media (max-width: 992px) {
+    .booking-layout-grid {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .booking-side-block.left,
+    .booking-side-block.right {
+        text-align: center;
+        align-items: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .booking-side-block.left .trust-item,
+    .booking-side-block.right .trust-item {
+        align-items: center;
+        text-align: center;
+    }
+
+    /* Reorder: Product First on Mobile */
+    .product-card.main-booking-card {
+        order: -1;
+        margin: 0 auto;
+    }
+}
+
+/* FUTURE TECH SECTION STYLES */
+.future-tech-section {
+    position: relative;
+    text-align: center;
+}
+
+.future-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+    position: relative;
+    z-index: 2;
+}
+
+.future-card {
+    background: #111;
+    border: 1px solid #333;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    cursor: pointer;
+    position: relative;
+}
+
+.future-card:hover {
+    transform: translateY(-15px) scale(1.02);
+    border-color: var(--primary-green);
+    box-shadow: 0 10px 40px rgba(57, 255, 20, 0.15);
+}
+
+.future-img-wrapper {
+    width: 100%;
+    height: 250px;
+    /* Reduced height for better aspect ratio */
+    overflow: hidden;
+    position: relative;
+}
+
+.future-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.future-card:hover .future-img-wrapper img {
+    transform: scale(1.1);
+}
+
+.future-content {
+    padding: 25px;
+    text-align: left;
+}
+
+.future-content h3 {
+    color: #fff;
+    margin-bottom: 10px;
+    font-size: 1.4rem;
+}
+
+.future-content p {
+    color: #bbb;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* Designed Tech Points (Single Line) */
+.tech-points-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.tech-point-row {
+    background: rgba(30, 30, 30, 0.6);
+    border: 1px solid #333;
+    border-left: 4px solid var(--primary-green);
+    padding: 15px 20px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transition: all 0.3s ease;
+}
+
+.tech-point-row:hover {
+    background: rgba(57, 255, 20, 0.05);
+    transform: translateX(10px);
+}
+
+.tech-point-icon {
+    font-size: 1.2rem;
+    color: var(--primary-green);
+}
+
+.tech-point-label {
+    font-weight: 800;
+    color: #fff;
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    min-width: 180px;
+    /* alignment */
+}
+
+.tech-point-desc {
+    color: #ccc;
+    font-style: italic;
+}
+
+/* Animated Orbs */
+.tech-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    z-index: 1;
+    opacity: 0.15;
+    animation: orbFloat 20s infinite alternate;
+}
+
+.orb-1 {
+    width: 400px;
+    height: 400px;
+    background: var(--primary-green);
+    top: -100px;
+    left: -100px;
+}
+
+.orb-2 {
+    width: 500px;
+    height: 500px;
+    background: #0044ff;
+    bottom: -150px;
+    right: -150px;
+    animation-delay: -5s;
+}
+
+@keyframes orbFloat {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    100% {
+        transform: translate(50px, 100px);
+    }
+}
+
+/* Fix mobile hero - header covering Premium */
+@media (max-width: 768px) {
+    .hero {
+        padding-top: 120px !important;
+        margin-top: -80px;
+    }
+
+    .hero h1 {
+        font-size: 2.2rem;
+        margin-top: 20px;
+    }
+
+    /* Keep button text on one line */
+    .hero-btns .btn {
+        white-space: nowrap;
+        font-size: 0.85rem;
+        padding: 12px 20px;
+    }
+}
+
+@media (max-width: 400px) {
+    .hero-btns .btn {
+        font-size: 0.75rem;
+        padding: 10px 15px;
+    }
+}
+
+/* Damage Grid - Force 4 columns on tablet and desktop */
+.damage-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+@media (max-width: 992px) {
+    .damage-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 15px;
+    }
+
+    .damage-card {
+        padding: 15px;
+    }
+
+    .damage-card img {
+        max-height: 120px;
+    }
+
+    .damage-card h4 {
+        font-size: 0.9rem;
+    }
+
+    .damage-card p {
+        font-size: 0.75rem !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .damage-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+    }
+
+    .damage-card {
+        padding: 10px;
+    }
+
+    .damage-card img {
+        max-height: 80px;
+    }
+
+    .damage-card h4 {
+        font-size: 0.8rem;
+    }
+
+    .damage-card .status-badge {
+        font-size: 0.65rem;
+        padding: 4px 8px;
+    }
+
+    .damage-card p {
+        display: none;
+        /* Hide descriptions on mobile to save space */
+    }
+}
+
+@media (max-width: 480px) {
+    .damage-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .damage-card p {
+        display: block;
+        font-size: 0.7rem !important;
+    }
+}
+
+/* Fix iOS zoom on chat input */
+#userMessageInput {
+    font-size: 16px !important;
+    /* Prevents iOS zoom */
+}
+
+/* Full-width chat on mobile */
+@media (max-width: 768px) {
+    .embedded-chat-section .container {
+        padding: 0 10px;
+    }
+
+    .live-chat-box {
+        max-width: 100% !important;
+        border-radius: 15px !important;
+        margin: 0 5px;
+    }
+
+    #userMessageInput {
+        font-size: 16px !important;
+        padding: 12px 15px !important;
+    }
+
+    #chatMessages {
+        min-height: 180px !important;
+        max-height: 250px !important;
+    }
+}
+
+/* SHOW Crisp Chat Bubble - Position Top Right */
+.crisp-client,
+.crisp-client * {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+}
+
+/* Move Crisp to top right */
+.crisp-client .crisp-1sps5x9 {
+    bottom: auto !important;
+    top: 100px !important;
+    right: 20px !important;
+}
+
+/* Crisp chat box position */
+.crisp-client .crisp-kquevr {
+    bottom: auto !important;
+    top: 160px !important;
+    right: 20px !important;
+}
+/* 3-COLUMN CHAT LAYOUT */
+.chat-layout-grid {
+    display: grid;
+    grid-template-columns: 1fr 550px 1fr;
+    gap: 40px;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.chat-side-panel {
+    text-align: center;
+}
+
+.side-panel-content {
+    background: rgba(30, 30, 30, 0.8);
+    border: 1px solid #333;
+    border-radius: 15px;
+    padding: 30px 25px;
+}
+
+.side-panel-content h3 {
+    color: #fff;
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+
+.side-panel-content p {
+    color: #999;
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 1200px) {
+    .chat-layout-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .chat-side-panel {
+        max-width: 500px;
+        margin: 0 auto;
+    }
+    
+    .live-chat-box {
+        max-width: 500px;
+        margin: 0 auto;
+    }
+}
+
+/* ALL 3 SLIDERS IN ONE ROW */
+.sliders-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.sliders-row .slider-wrapper {
+    margin: 0 !important;
+}
+
+.sliders-row .slider-container {
+    max-height: 300px;
+}
+
+.sliders-row h3 {
+    font-size: 1.1rem;
+}
+
+.sliders-row p {
+    font-size: 0.85rem;
+}
+
+@media (max-width: 992px) {
+    .sliders-row {
+        grid-template-columns: 1fr;
+        gap: 40px;
     }
 }

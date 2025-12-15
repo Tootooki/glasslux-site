@@ -138,20 +138,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const sendBtn = document.getElementById('sendChatBtn');
     const typingIndicator = document.getElementById('typingIndicator');
 
-    // Hide Crisp default widget (we use our custom UI)
+    // Crisp Chat Configuration - Show bubble
     window.$crisp = window.$crisp || [];
-    window.$crisp.push(['config', 'hide:on:away', true]);
-    window.$crisp.push(['config', 'hide:on:mobile', true]);
-
-    // Wait for Crisp to load then hide bubble
-    const hideCrispBubble = () => {
-        const crispBubble = document.querySelector('.crisp-client');
-        if (crispBubble) {
-            crispBubble.style.display = 'none';
-        }
-    };
-    setTimeout(hideCrispBubble, 2000);
-    setTimeout(hideCrispBubble, 4000);
+    // Keep bubble visible (removed hide settings)
 
     // Helper: Add a message bubble with avatar for support
     function addMessage(text, isFromSupport = true) {
