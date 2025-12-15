@@ -129,4 +129,58 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+    // Embedded Chat Form Logic
+    const chatForm = document.getElementById('embeddedChatForm');
+    const chatStatus = document.getElementById('chatStatus');
+
+    if (chatForm) {
+        chatForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const submitBtn = chatForm.querySelector('button');
+            const originalBtnText = submitBtn.innerHTML;
+
+            // Loading State
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Sending...';
+            chatStatus.style.display = 'none';
+
+            // Gather Data
+            const formData = {
+                name: document.getElementById('chatName').value,
+                phone: document.getElementById('chatPhone').value,
+                message: document.getElementById('chatMessage').value
+            };
+
+            try {
+                // Send to Local WhatsApp Bot
+                const response = await fetch('http://localhost:3000/api/send-message', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(formData)
+                });
+
+                const result = await response.json();
+
+                if (response.ok) {
+                    // Success
+                    chatForm.reset();
+                    chatStatus.innerHTML = '<i class="fa-solid fa-check-circle" style="color: green;"></i> Message sent! We will WhatsApp you shortly.';
+                    chatStatus.style.display = 'block';
+                } else {
+                    throw new Error(result.error || 'Failed to send');
+                }
+            } catch (error) {
+                console.error('Chat Error:', error);
+                chatStatus.innerHTML = '<i class="fa-solid fa-triangle-exclamation" style="color: orange;"></i> Bot is offline. <a href="sms:+13859885129">Click to Text Us</a> instead.';
+                chatStatus.style.display = 'block';
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = originalBtnText;
+            }
+        });
+    }
 });

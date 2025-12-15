@@ -359,6 +359,48 @@
         </div>
     </section>
 
+    <!-- Embedded Live Chat Section -->
+    <section class="embedded-chat-section" style="padding: 60px 0; background: #222;">
+        <div class="container">
+            <div class="chat-box-container"
+                style="max-width: 600px; margin: 0 auto; background: #fff; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
+                <div class="chat-header"
+                    style="background: var(--primary-green); padding: 20px; color: #000; text-align: center;">
+                    <h3 style="margin: 0; display: flex; align-items: center; justify-content: center; gap: 10px;">
+                        <i class="fa-brands fa-whatsapp" style="font-size: 1.5rem;"></i> Live WhatsApp Chat
+                    </h3>
+                    <p style="margin: 5px 0 0; font-size: 0.9rem; opacity: 0.9;">Message us directly. We reply
+                        instantly!</p>
+                </div>
+                <div class="chat-body" style="padding: 30px; color: #333;">
+                    <form id="embeddedChatForm">
+                        <div class="form-group" style="margin-bottom: 20px;">
+                            <label style="display: block; margin-bottom: 5px; font-weight: 600;">Your Name</label>
+                            <input type="text" id="chatName" placeholder="John Doe" required
+                                style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px;">
+                        </div>
+                        <div class="form-group" style="margin-bottom: 20px;">
+                            <label style="display: block; margin-bottom: 5px; font-weight: 600;">Your WhatsApp
+                                Number</label>
+                            <input type="tel" id="chatPhone" placeholder="+1 (555) 000-0000" required
+                                style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px;">
+                        </div>
+                        <div class="form-group" style="margin-bottom: 20px;">
+                            <label style="display: block; margin-bottom: 5px; font-weight: 600;">Message</label>
+                            <textarea id="chatMessage" placeholder="Hi, I need a quote for..." required
+                                style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; height: 100px; resize: none;"></textarea>
+                        </div>
+                        <button type="submit"
+                            style="width: 100%; background: #25D366; color: #fff; border: none; padding: 15px; border-radius: 8px; font-weight: bold; font-size: 1.1rem; cursor: pointer; transition: background 0.3s;">
+                            <i class="fa-regular fa-paper-plane"></i> Send to WhatsApp
+                        </button>
+                    </form>
+                    <div id="chatStatus" style="text-align: center; margin-top: 15px; display: none;"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Multi-Channel Chat Widget -->
     <div class="chat-widget">
         <div class="chat-options">
