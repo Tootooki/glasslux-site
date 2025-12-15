@@ -3285,3 +3285,40 @@ img {
         display: none !important;
     }
 }
+
+/* =============================================
+   MOBILE FOOTER - REORDER & HIDE LOGO
+   ============================================= */
+
+@media (max-width: 768px) {
+    /* 1. Hide the Logo in Footer */
+    .footer-logo {
+        display: none !important;
+    }
+
+    /* 2. Reorder Columns
+       Goal: Payment (Brand Col) below Privacy Policy (Links Col)
+       New Order: Contact -> Links -> Brand (Payment)
+    */
+    
+    .contact-col {
+        order: 1 !important;
+        margin-bottom: 20px !important;
+    }
+    
+    .links-col {
+        order: 2 !important;
+        margin-bottom: 20px !important;
+    }
+    
+    .brand-col {
+        order: 3 !important;
+        margin-top: 10px !important;
+        margin-bottom: 20px !important;
+    }
+    
+    /* Ensure payment methods look good by themselves */
+    .payment-methods {
+        margin-top: 0 !important; /* Remove top margin since logo is gone */
+    }
+}
