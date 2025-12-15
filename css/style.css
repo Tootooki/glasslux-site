@@ -3626,3 +3626,53 @@ img {
         grid-template-columns: repeat(2, 1fr) !important;
     }
 }
+
+/* =============================================
+   GLOBAL MOBILE PADDING FIX (5% CONSISTENCY)
+   ============================================= */
+
+@media (max-width: 768px) {
+    /* 1. Global Container Padding */
+    .container {
+        padding-left: 5% !important;
+        padding-right: 5% !important;
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    /* 2. Update Navbar to match */
+    .navbar-container {
+        padding-left: 5% !important;
+        padding-right: 5% !important;
+    }
+    
+    /* 3. Update Damage Grid (override previous 12px) */
+    .damage-grid {
+        padding-left: 5% !important;
+        padding-right: 5% !important;
+        /* Keep gap reasonable */
+        gap: 3% !important; 
+    }
+    
+    /* 4. Update Services Grid (Horizontal Scroll) */
+    /* Note: For scrolling containers, padding often acts as the "gutter" */
+    .services-grid {
+        padding-left: 5% !important;
+        padding-right: 5% !important;
+        /* Ensure cards take up appropriate width relative to this */
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 2% !important;
+    }
+    
+    /* 5. Update Science Collage Image */
+    .science-collage-container {
+        padding-left: 5% !important;
+        padding-right: 5% !important;
+    }
+    
+    /* 6. Footer Content */
+    .footer-content {
+        padding-left: 5% !important;
+        padding-right: 5% !important;
+    }
+}
