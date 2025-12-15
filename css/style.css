@@ -3906,3 +3906,54 @@ img {
         text-shadow: 0 0 10px rgba(57, 255, 20, 0.4);
     }
 }
+
+/* =============================================
+   MOBILE CLEANUP & GLOBAL FOOTER ART
+   ============================================= */
+
+/* 1. HIDE Secure Checkout Text on Mobile */
+@media (max-width: 768px) {
+    .shop-note {
+        display: none !important;
+    }
+}
+
+/* 2. GLOBAL FOOTER ART (Desktop + Mobile Support) */
+/* Moving this out of the mobile-only query so it shows everywhere */
+
+footer {
+    position: relative;
+    overflow: hidden; 
+    /* Padding might be mobile specific, but lets ensure base relative positioning */
+}
+
+/* The art overlay itself */
+.footer-art-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    /* Base height for desktop (taller) */
+    height: 400px; 
+    background-image: url('../neon_splatter.png');
+    background-position: bottom center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.8;
+    display: block !important; /* Force show */
+}
+
+/* Ensure content is above art globally */
+.footer-content, .footer-bottom {
+    position: relative;
+    z-index: 1;
+}
+
+/* Mobile adjustments for the art (override the global height) */
+@media (max-width: 768px) {
+    .footer-art-overlay {
+        height: 250px !important; /* Keep the compact mobile height */
+    }
+}
