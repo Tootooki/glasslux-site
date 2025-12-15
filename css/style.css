@@ -3785,3 +3785,63 @@ img {
     z-index: 2;
     transform: rotate(3deg); /* Fun tilt */
 }
+
+/* =============================================
+   MOBILE FOOTER FINALE - ART & SYMMETRY
+   ============================================= */
+
+@media (max-width: 768px) {
+    /* 1. Address Styling */
+    .contact-item span {
+        line-height: 1.4;
+    }
+
+    /* 2. Quick Links Symmetry (Centering the last odd item) */
+    .links-col ul li:last-child {
+        grid-column: span 2; /* Span full width */
+        width: 60%; /* But limit width so it looks like a centered button */
+        margin: 0 auto; /* Center it */
+    }
+
+    /* 3. Footer Art Overlay */
+    footer {
+        position: relative;
+        overflow: hidden;
+        padding-bottom: 80px !important; /* Visual finish */
+    }
+
+    .footer-art-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 250px; /* Paint splatter height */
+        background-image: url('../neon_splatter.png');
+        background-position: bottom center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        pointer-events: none; /* Let clicks pass through */
+        z-index: 0;
+        opacity: 0.8;
+    }
+    
+    /* Ensure content sits ABOVE the art */
+    .footer-content, .footer-bottom {
+        position: relative;
+        z-index: 1;
+    }
+    
+    /* 4. Compact Payment Icons */
+    .payment-methods {
+        gap: 8px !important;
+        transform: scale(0.9); /* Slightly more compact */
+        margin-bottom: 5px !important;
+    }
+    
+    .footer-bottom p {
+        margin-top: 5px !important;
+        font-size: 0.75rem !important;
+        opacity: 0.9;
+        text-shadow: 0 2px 4px rgba(0,0,0,0.8); /* Ensure readable over art */
+    }
+}
