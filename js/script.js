@@ -207,6 +207,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Handle Send Button Click
+    let customerPhone = null;
+
     if (sendBtn && userInput) {
         const sendMessage = async () => {
             const msg = userInput.value.trim();
@@ -223,6 +225,13 @@ document.addEventListener('DOMContentLoaded', () => {
             const TELEGRAM_BOT_TOKEN = '7573457305:AAEOrbiQBeuFjDneE_y6B-Sakv6Trq2KgRY';
             const TELEGRAM_CHAT_ID = '29544079';
 
+            // Build message with phone if provided
+            let telegramMessage = `🌐 *New Website Message*\n\n"${msg}"`;
+            if (customerPhone) {
+                telegramMessage += `\n\n📱 *Reply to:* ${customerPhone}`;
+            }
+            telegramMessage += `\n\n⏰ ${new Date().toLocaleString()}`;
+
             try {
                 // Send to Telegram
                 const telegramUrl = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
@@ -231,7 +240,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({
                         chat_id: TELEGRAM_CHAT_ID,
-                        text: `🌐 *New Website Message*\n\n${msg}\n\n_Reply here to respond!_`,
+                        text: telegramMessage,
                         parse_mode: 'Markdown'
                     })
                 });
@@ -239,21 +248,33 @@ document.addEventListener('DOMContentLoaded', () => {
                 hideTyping();
 
                 if (response.ok) {
-                    addMessage("Got it! I've received your message and will get back to you shortly! 💬");
+                    // First message? Ask for phone
+                    if (!customerPhone) {
+                        addMessage("Message received! 📩");
+                        showTyping();
+                        setTimeout(() => {
+                            hideTyping();
+                            addMessage("To reply to you, please share your phone number (or just keep chatting!)");
+                        }, 800);
+                    } else {
+                        addMessage("Got it! I'll get back to you shortly! 💬");
+                    }
                 } else {
-                    throw new Error('Failed to send');
+                    throw new Error('Failed');
                 }
             } catch (error) {
                 hideTyping();
-                console.error('Telegram Error:', error);
-                // Fallback to WhatsApp
-                addMessage("Let me connect you via WhatsApp instead...");
-                setTimeout(() => {
-                    const waUrl = `https://wa.me/13859885129?text=${encodeURIComponent(msg)}`;
-                    window.open(waUrl, '_blank');
-                }, 1000);
+                addMessage("Oops! Please try again or call us at (385) 988-5129");
             }
         };
+
+        // Check if message looks like a phone number
+        userInput.addEventListener('input', () => {
+            const val = userInput.value.replace(/\D/g, '');
+            if (val.length >= 10 && !customerPhone) {
+                customerPhone = userInput.value;
+            }
+        });
 
         sendBtn.addEventListener('click', sendMessage);
         userInput.addEventListener('keypress', (e) => {
