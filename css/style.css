@@ -1738,3 +1738,32 @@ img {
         gap: 40px;
     }
 }
+
+/* FORCE 3-COLUMN GRIDS ON DESKTOP - FIX */
+@media (min-width: 992px) {
+    .future-grid {
+        grid-template-columns: repeat(3, 1fr) !important;
+    }
+    
+    .chat-layout-grid {
+        display: grid !important;
+        grid-template-columns: 1fr 500px 1fr !important;
+        gap: 30px !important;
+    }
+    
+    .sliders-row {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+
+@media (min-width: 1200px) {
+    .chat-layout-grid {
+        grid-template-columns: 1fr 550px 1fr !important;
+        gap: 40px !important;
+    }
+}
+
+/* Fix future cards container width */
+.future-tech-section .container {
+    max-width: 1200px;
+}
