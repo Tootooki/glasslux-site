@@ -3367,3 +3367,86 @@ img {
         scrollbar-width: none;
     }
 }
+
+/* =============================================
+   MOBILE FOOTER & SERVICES OVERHAUL
+   ============================================= */
+
+@media (max-width: 768px) {
+    
+    /* --- FOOTER CHANGES --- */
+    
+    /* 1. Hide Social Icons */
+    .social-links {
+        display: none !important;
+    }
+
+    /* 2. Redesign Quick Links (Button Grid) */
+    .links-col ul {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr; /* 2 columns */
+        gap: 10px;
+    }
+
+    .links-col li {
+        margin-bottom: 0 !important;
+    }
+
+    .links-col a {
+        display: block;
+        background: #222;
+        padding: 10px;
+        text-align: center;
+        border-radius: 8px;
+        border: 1px solid #333;
+        font-size: 0.85rem;
+        color: #fff;
+    }
+
+    /* --- SERVICES SECTION CHANGES (COMPACT 3-COL) --- */
+    
+    /* Remove previous scroll/flex styles */
+    .services-grid {
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr) !important; /* Force 3 columns */
+        gap: 5px !important;
+        padding: 0 5px !important;
+        overflow-x: visible !important;
+        justify-content: center !important;
+    }
+    
+    .service-card {
+        min-width: 0 !important; /* Allow shrinking */
+        width: 100% !important;
+        flex: none !important;
+        padding: 10px 5px !important; /* Minimal padding */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        height: auto !important;
+        min-height: 110px;
+    }
+
+    /* Shrink Icons */
+    .service-card .icon-box {
+        width: 35px !important;
+        height: 35px !important;
+        font-size: 1rem !important;
+        margin-bottom: 8px !important;
+    }
+    
+    /* Shrink Title */
+    .service-card h3 {
+        font-size: 0.65rem !important; /* Very small text */
+        white-space: normal !important; /* Allow wrapping if needed, or keep nowrap */
+        line-height: 1.2;
+        margin-bottom: 0 !important;
+        height: auto;
+    }
+    
+    /* HIDE Description Text on Mobile (User said "less text") */
+    .service-card p {
+        display: none !important;
+    }
+}
