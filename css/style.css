@@ -1810,3 +1810,254 @@ img {
         grid-template-columns: repeat(3, 1fr) !important;
     }
 }
+
+/* ============================================
+   MOBILE OPTIMIZATION - COMPREHENSIVE FIX
+   ============================================ */
+
+@media (max-width: 768px) {
+    
+    /* REDUCE SECTION PADDING */
+    section {
+        padding: 40px 0 !important;
+    }
+    
+    .section-title {
+        font-size: 1.8rem !important;
+        margin-bottom: 25px !important;
+    }
+    
+    /* CHAT SECTION - REMOVE EXTRA SPACE */
+    .embedded-chat-section {
+        padding: 30px 0 !important;
+    }
+    
+    .embedded-chat-section .container > p {
+        margin-top: 10px !important;
+        margin-bottom: 0 !important;
+    }
+    
+    .chat-side-panel {
+        padding: 0 15px;
+    }
+    
+    .side-panel-content {
+        padding: 20px 15px;
+    }
+    
+    .side-panel-content h3 {
+        font-size: 1.1rem;
+    }
+    
+    .side-panel-content p {
+        font-size: 0.85rem;
+        margin-bottom: 15px;
+    }
+    
+    /* TECH POINTS - FIX TEXT WRAPPING */
+    .tech-point-row {
+        flex-wrap: wrap;
+        padding: 12px 15px;
+    }
+    
+    .tech-point-label {
+        min-width: auto !important;
+        font-size: 0.9rem !important;
+    }
+    
+    .tech-point-desc {
+        width: 100%;
+        margin-top: 5px;
+        font-size: 0.85rem;
+    }
+    
+    /* PROCESS CONTENT - BETTER LAYOUT */
+    .process-content {
+        margin-top: 30px !important;
+    }
+    
+    .process-text {
+        padding: 0 15px;
+    }
+    
+    .process-text h3 {
+        font-size: 1.5rem !important;
+        text-align: center;
+    }
+    
+    .process-text p {
+        text-align: center;
+        font-size: 0.9rem;
+    }
+    
+    .process-steps li {
+        margin-bottom: 15px;
+        font-size: 0.9rem;
+    }
+    
+    /* PROCESS IMAGE - NICER DISPLAY */
+    .process-image {
+        margin-top: 25px;
+        padding: 0 15px;
+    }
+    
+    .process-image img {
+        border-radius: 15px;
+        width: 100%;
+    }
+    
+    /* GUIDE SECTION - CHIP GUIDE IMAGE */
+    .guide-section {
+        margin-top: 30px !important;
+    }
+    
+    .guide-section img {
+        border-radius: 15px;
+        margin: 20px auto;
+        display: block;
+        max-width: 95%;
+    }
+    
+    /* DAMAGE CARDS - EVEN SPACING */
+    .damage-grid {
+        gap: 15px !important;
+        padding: 0 10px;
+    }
+    
+    .damage-card {
+        padding: 12px !important;
+    }
+    
+    .damage-card h4 {
+        font-size: 0.85rem;
+    }
+    
+    /* SERVICES SECTION */
+    .services-grid {
+        gap: 20px;
+        padding: 0 15px;
+    }
+    
+    .service-card {
+        padding: 25px 20px;
+    }
+    
+    /* FOOTER - CENTERED */
+    footer {
+        text-align: center !important;
+    }
+    
+    .footer-content {
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 30px;
+    }
+    
+    .footer-col {
+        text-align: center !important;
+        align-items: center !important;
+    }
+    
+    .footer-col h4 {
+        text-align: center;
+    }
+    
+    .footer-col ul {
+        text-align: center;
+        padding: 0;
+    }
+    
+    .footer-col ul li {
+        text-align: center;
+    }
+    
+    .footer-col p {
+        text-align: center;
+    }
+    
+    .social-links {
+        justify-content: center !important;
+    }
+    
+    .footer-bottom {
+        text-align: center;
+    }
+    
+    /* FEATURES GRID */
+    .features-grid {
+        gap: 25px;
+        padding: 0 15px;
+    }
+    
+    /* REMOVE EXCESSIVE MARGINS */
+    .slider-wrapper {
+        margin-top: 20px !important;
+        margin-bottom: 20px !important;
+    }
+    
+    /* FUTURE TECH CARDS */
+    .future-grid {
+        gap: 20px !important;
+        padding: 0 15px;
+    }
+    
+    .future-card {
+        margin-bottom: 0;
+    }
+    
+    .future-content {
+        padding: 15px;
+    }
+    
+    .future-content h3 {
+        font-size: 1.1rem;
+    }
+    
+    .future-content p {
+        font-size: 0.85rem;
+    }
+    
+    /* BOOKING SECTION */
+    .booking-layout-grid {
+        gap: 25px !important;
+        padding: 0 15px;
+    }
+    
+    .trust-item {
+        text-align: center !important;
+    }
+    
+    .trust-item h4 {
+        font-size: 1rem;
+    }
+    
+    .trust-item p {
+        font-size: 0.85rem;
+    }
+    
+    /* PRODUCT CARD */
+    .product-card {
+        padding: 25px 20px;
+    }
+    
+    /* REVIEWS */
+    .reviews-grid {
+        gap: 20px;
+        padding: 0 15px;
+    }
+}
+
+/* EXTRA SMALL SCREENS */
+@media (max-width: 400px) {
+    .hero h1 {
+        font-size: 1.8rem !important;
+    }
+    
+    .section-title {
+        font-size: 1.5rem !important;
+    }
+    
+    .hero-tagline {
+        font-size: 0.8rem;
+    }
+}
