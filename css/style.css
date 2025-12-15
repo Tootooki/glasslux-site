@@ -5507,3 +5507,43 @@ section:not(.footer) {
 .review-text {
     color: #333333 !important;
 }
+
+/* =============================================
+   SLIDER TEXT CONTRAST FIX
+   ============================================= */
+
+/* Slider descriptions - darker for white bg */
+.slider-desc,
+.slider-card p,
+.comparison-text,
+.slide-description,
+.slider-wrapper p,
+.future-tech-section .slider-card p,
+.future-tech-section p:not(h3):not(h4) {
+    color: #444444 !important;
+}
+
+/* Any italicized descriptions */
+.slider-card p em,
+.slider-card p i,
+em, i {
+    color: #555555 !important;
+}
+
+/* Ensure all paragraph text on white is readable */
+section p,
+.container p {
+    color: #444444 !important;
+}
+
+/* Exception: Hero stays white */
+.hero-section p,
+.hero-content p {
+    color: #FFFFFF !important;
+}
+
+/* Exception: Footer stays white */
+.footer p,
+.footer-content p {
+    color: #FFFFFF !important;
+}
