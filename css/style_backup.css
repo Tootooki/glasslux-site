@@ -713,14 +713,14 @@ img {
     section,
     .hero,
     footer {
-        padding-top: var(--section-gap) !important;
-        padding-bottom: var(--section-gap) !important;
+        padding-top: 60px !important;
+        padding-bottom: 60px !important;
     }
 
     /* Exception for Hero which needs top padding for navbar */
     .hero {
-        padding-top: 90px !important;
-        /* Navbar height + section gap approx */
+        padding-top: 20px !important;
+        /* height: auto !important; Allow growth if content is tall */
         min-height: 100vh;
         background-position: center top !important;
     }
@@ -740,7 +740,7 @@ img {
     .btn,
     .input-wrapper,
     .service-card {
-        margin-bottom: var(--section-gap);
+        margin-bottom: 30px;
     }
 
     /* Tighter spacing for immediate siblings that belong together */
@@ -7867,9 +7867,8 @@ section h4 {
    ============================================ */
 
 :root {
-    /* Side gap for mobile - Small enough to make blocks look "wide" but consistent */
-    --edge-padding: 12px;
-    --section-gap: 24px;
+    --edge-padding: 15px;
+    --section-max-width: calc(100% - 30px);
 }
 
 /* CRITICAL: Remove hero min-height that causes massive white space */
@@ -7883,7 +7882,6 @@ section h4 {
 .container {
     padding-left: var(--edge-padding) !important;
     padding-right: var(--edge-padding) !important;
-    max-width: 100% !important;
     box-sizing: border-box !important;
 }
 
@@ -7894,31 +7892,26 @@ section h4 {
     .hero {
         min-height: auto !important;
         height: auto !important;
-        padding-top: 60px !important;
-        /* Matches vertical spacing */
-        padding-bottom: var(--section-gap) !important;
+        padding-top: 70px !important;
+        padding-bottom: 15px !important;
         margin-bottom: 0 !important;
     }
 
     .hero-content {
         padding: 10px var(--edge-padding) !important;
-        width: 100% !important;
     }
 
-    /* Make logo wide but with side padding */
     .hero-logo {
-        width: 100% !important;
+        width: calc(100% - 10px) !important;
         max-width: none !important;
-        margin: 0 auto var(--section-gap) !important;
+        margin: 0 auto 15px !important;
         padding: 0 !important;
-        box-sizing: border-box !important;
     }
 
-    /* Make CTA blocks full width of the padded container */
     .hero-phone-cta {
-        width: 100% !important;
+        width: var(--section-max-width) !important;
         max-width: none !important;
-        margin: var(--section-gap) 0 !important;
+        margin: 0 auto !important;
         padding: 20px 15px !important;
         box-sizing: border-box !important;
         border-radius: 16px !important;
@@ -7926,67 +7919,192 @@ section h4 {
         right: auto !important;
         transform: none !important;
         position: relative !important;
-        display: block !important;
     }
 
-    .hero-phone-cta .phone-label {
-        color: #000 !important;
-        text-shadow: none !important;
-    }
-
-    .hero-phone-cta .phone-number {
-        color: #000 !important;
-        text-shadow: none !important;
-        font-size: 2.8rem !important;
-        /* Adjust for mobile width */
+    .hero-phone-cta:hover {
+        transform: translateY(-3px) !important;
     }
 
     /* SECTIONS - Consistent padding and spacing */
     section {
-        padding: var(--section-gap) 0 !important;
-        /* No side padding on section, only container */
+        padding: 30px var(--edge-padding) !important;
         margin: 0 !important;
+    }
+
+    /* EMBEDDED CHAT SECTION */
+    .embedded-chat-section {
+        padding-top: 25px !important;
+        padding-bottom: 30px !important;
+        margin-top: 0 !important;
+    }
+
+    .embedded-chat-section .container {
+        padding: 0 var(--edge-padding) !important;
+    }
+
+    .chat-hero-title {
+        margin-bottom: 20px !important;
+    }
+
+    .chat-side-panel {
+        padding: 0 !important;
+        margin-bottom: 20px !important;
+    }
+
+    .side-panel-content {
         width: 100% !important;
+        margin: 0 !important;
     }
 
-    /* Fix sections that might have intrinsic padding */
-    .embedded-chat-section,
-    .callback-section,
-    .process-section,
-    .why-us,
-    .shop,
-    .reviews-section,
-    .science-section {
-        padding-top: var(--section-gap) !important;
-        padding-bottom: var(--section-gap) !important;
-        padding-left: 0 !important;
-        padding-right: 0 !important;
-    }
-
-    /* ALL CARDS & BLOCKS - FORCE FULL WIDTH */
-    .live-chat-box,
-    .callback-card,
-    .slider-container,
-    .tech-points-container,
-    .whatsapp-card,
-    .damage-card,
-    .btn-book-now,
-    .review-card,
-    .science-card {
+    .live-chat-box {
         width: 100% !important;
         max-width: 100% !important;
-        margin-left: 0 !important;
-        margin-right: 0 !important;
-        box-sizing: border-box !important;
+        margin: 0 !important;
     }
 
-    /* INPUTS & BUTTONS */
-    .callback-form-sexy,
-    .sexy-input-wrapper,
+    /* CALLBACK SECTION */
+    .callback-section {
+        padding: 25px var(--edge-padding) !important;
+    }
+
+    .callback-card {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .callback-form-sexy {
+        width: 100% !important;
+    }
+
+    .sexy-input-wrapper {
+        width: 100% !important;
+    }
+
     .callback-btn {
         width: 100% !important;
+    }
+
+    /* PROCESS SECTION / SLIDER */
+    .process-section {
+        padding: 30px var(--edge-padding) !important;
+    }
+
+    .sliders-row {
+        padding: 0 !important;
+        margin-bottom: 25px !important;
+    }
+
+    .slider-wrapper {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .slider-container {
+        width: 100% !important;
         max-width: 100% !important;
-        box-sizing: border-box !important;
+        margin: 0 !important;
+    }
+
+    /* TECH POINTS - Full width */
+    .tech-points-container {
+        width: 100% !important;
+        padding: 0 !important;
+    }
+
+    .tech-point-row {
+        width: 100% !important;
+    }
+
+    .process-image {
+        width: 100% !important;
+        padding: 0 !important;
+        margin-top: 20px !important;
+    }
+
+    .process-image img {
+        width: 100% !important;
+        border-radius: 12px !important;
+    }
+
+    /* WHY US / DAMAGE CARDS SECTION */
+    .why-us {
+        padding: 30px var(--edge-padding) !important;
+    }
+
+    .features-grid {
+        margin-top: 20px !important;
+        gap: 25px !important;
+    }
+
+    /* WHATSAPP CARD */
+    .whatsapp-chat-section {
+        width: 100% !important;
+        margin-bottom: 25px !important;
+    }
+
+    .whatsapp-card {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding: 25px 20px !important;
+    }
+
+    /* GUIDE / IS YOUR CRACK REPAIRABLE */
+    .guide-section {
+        width: 100% !important;
+        padding: 20px 0 !important;
+        margin-top: 0 !important;
+    }
+
+    .damage-grid {
+        width: 100% !important;
+        padding: 0 !important;
+        margin-top: 20px !important;
+        gap: 12px !important;
+    }
+
+    .damage-card {
+        width: 100% !important;
+    }
+
+    /* BOOK NOW SECTION */
+    .shop {
+        padding: 25px var(--edge-padding) !important;
+    }
+
+    .shop .container {
+        padding: 0 !important;
+    }
+
+    .btn-book-now {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+    }
+
+    /* REVIEWS SECTION */
+    .reviews-section {
+        padding: 30px var(--edge-padding) !important;
+    }
+
+    .reviews-grid {
+        gap: 20px !important;
+        margin-top: 25px !important;
+    }
+
+    .review-card {
+        width: 100% !important;
+        margin: 0 !important;
+    }
+
+    .review-card.featured {
+        transform: none !important;
+    }
+
+    .review-card.featured:hover {
+        transform: translateY(-5px) !important;
     }
 
     /* FOOTER */
@@ -7994,55 +8112,48 @@ section h4 {
         padding: 40px var(--edge-padding) 20px !important;
     }
 
-    .footer .container {
-        padding: 0 !important;
-        /* Already on footer */
+    .footer-content {
+        gap: 30px !important;
     }
 
-    .map-container,
+    .footer-col {
+        width: 100% !important;
+    }
+
+    .map-container {
+        width: 100% !important;
+    }
+
     .map-container iframe {
         width: 100% !important;
-        border-radius: 15px !important;
     }
 
-    /* SECTION TITLES */
+    /* SECTION TITLES - Consistent styling */
     .section-title {
-        font-size: 1.8rem !important;
+        font-size: 1.6rem !important;
         margin-bottom: 20px !important;
-        padding: 0 !important;
-        width: 100% !important;
+        padding: 0 10px !important;
     }
 }
 
 /* TABLET FIXES (768px - 1024px) */
 @media (min-width: 769px) and (max-width: 1024px) {
-    .container {
-        padding-left: 30px !important;
-        padding-right: 30px !important;
+    .hero {
+        min-height: auto !important;
+        height: auto !important;
+        padding-bottom: 40px !important;
     }
 
-    .hero {
-        padding-bottom: 40px !important;
+    .hero-phone-cta {
+        max-width: 500px !important;
     }
 }
 
-/* DESKTOP - Keep centered limited width */
+/* DESKTOP - Ensure hero doesn't have excessive height */
 @media (min-width: 1025px) {
-    .container {
-        padding-left: 20px !important;
-        padding-right: 20px !important;
-        max-width: 1200px !important;
-        margin: 0 auto !important;
-    }
-
     .hero {
+        min-height: auto !important;
+        height: auto !important;
         padding-bottom: 60px !important;
-    }
-
-    /* Hero CTA shouldn't be full width on desktop */
-    .hero-phone-cta {
-        width: auto !important;
-        display: inline-block !important;
-        padding: 25px 40px !important;
     }
 }

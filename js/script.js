@@ -231,8 +231,8 @@ document.addEventListener('DOMContentLoaded', () => {
             font-size: 0.9rem;
             box-shadow: 0 2px 8px rgba(0,0,0,0.3);
             ${isFromSupport
-                ? 'background: #2a2a2a; color: #fff; border-bottom-left-radius: 4px; border: 1px solid #39FF14;'
-                : 'background: linear-gradient(135deg, #39FF14, #2dd30f); color: #000; border-bottom-right-radius: 4px; font-weight: 500;'}
+                ? 'background: #2a2a2a; color: #fff; border-bottom-left-radius: 4px; border: 1px solid #a8fe28;'
+                : 'background: linear-gradient(135deg, #a8fe28, #a8fe28); color: #000; border-bottom-right-radius: 4px; font-weight: 500;'}
         `;
         bubble.textContent = text;
         wrapper.appendChild(bubble);
