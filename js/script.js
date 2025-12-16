@@ -105,6 +105,66 @@ document.addEventListener('DOMContentLoaded', () => {
         // Init
         updateGeometry();
         beforeImg.onload = updateGeometry;
+
+        // Auto-Animation: Slowly move slider from left to right
+        let autoAnimationId = null;
+        let autoPercent = 50; // Start at center
+        let autoDirection = 1; // 1 = moving right, -1 = moving left
+        let pauseTimeout = null;
+        let isPaused = false;
+        const autoSpeed = 0.15; // Lower = slower animation
+
+        const startAutoAnimation = () => {
+            if (autoAnimationId) return; // Already running
+            isPaused = false;
+
+            const animate = () => {
+                if (isPaused) {
+                    autoAnimationId = null;
+                    return;
+                }
+
+                autoPercent += autoSpeed * autoDirection;
+
+                // Reverse direction at edges
+                if (autoPercent >= 85) {
+                    autoDirection = -1;
+                } else if (autoPercent <= 15) {
+                    autoDirection = 1;
+                }
+
+                updateSlider(autoPercent);
+                autoAnimationId = requestAnimationFrame(animate);
+            };
+
+            autoAnimationId = requestAnimationFrame(animate);
+        };
+
+        const pauseAutoAnimation = () => {
+            isPaused = true;
+            if (autoAnimationId) {
+                cancelAnimationFrame(autoAnimationId);
+                autoAnimationId = null;
+            }
+
+            // Clear any existing resume timeout
+            if (pauseTimeout) {
+                clearTimeout(pauseTimeout);
+            }
+
+            // Resume after 3 seconds of inactivity
+            pauseTimeout = setTimeout(() => {
+                startAutoAnimation();
+            }, 3000);
+        };
+
+        // Pause animation on user interaction
+        slider.addEventListener('mousedown', pauseAutoAnimation);
+        slider.addEventListener('touchstart', pauseAutoAnimation, { passive: true });
+        slider.addEventListener('mouseenter', pauseAutoAnimation);
+
+        // Start auto-animation
+        startAutoAnimation();
     });
 
     // Chat Widget Toggle Logic

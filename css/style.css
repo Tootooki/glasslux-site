@@ -118,6 +118,16 @@ img {
     text-shadow: 0 0 15px rgba(57, 255, 20, 0.4);
 }
 
+/* Logo Button Text Colors */
+.logo-btn .logo-text {
+    color: #fff;
+}
+
+.logo-btn .logo-text .highlight {
+    color: #39FF14;
+    text-shadow: none;
+}
+
 .btn-outline {
     background-color: transparent;
     border: 2px solid var(--primary-green);
@@ -162,10 +172,27 @@ img {
     letter-spacing: 1px;
 }
 
+/* Logo as Button - Mobile Header */
+.logo-btn {
+    background: #000;
+    padding: 10px 20px;
+    border-radius: 50px;
+    border: none;
+    transition: all 0.3s ease;
+    min-width: 120px;
+    justify-content: center;
+}
+
+.logo-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(57, 255, 20, 0.6);
+}
+
 .logo-img {
     height: 40px;
     width: auto;
 }
+
 
 .nav-links {
     display: flex;
@@ -228,6 +255,20 @@ img {
     margin-top: -80px;
     /* Counteract navbar height to be full screen */
     padding-top: 80px;
+    position: relative;
+}
+
+/* Hero fade to white at bottom */
+.hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 200px;
+    background: linear-gradient(to bottom, transparent 0%, rgba(255, 255, 255, 0.3) 40%, rgba(255, 255, 255, 0.7) 70%, #FFFFFF 100%);
+    pointer-events: none;
+    z-index: 1;
 }
 
 .hero-content {
@@ -626,8 +667,15 @@ img {
 }
 
 .slider-wrapper h3 {
-    margin-bottom: 10px;
-    color: var(--primary-green);
+    margin-bottom: 15px;
+    color: #39FF14;
+    text-shadow: 0 0 10px rgba(57, 255, 20, 0.8), 0 0 20px rgba(57, 255, 20, 0.5), 0 0 30px rgba(57, 255, 20, 0.3);
+    background: linear-gradient(135deg, rgba(20, 20, 20, 0.95) 0%, rgba(30, 30, 30, 0.9) 100%);
+    padding: 12px 25px;
+    border-radius: 12px;
+    display: inline-block;
+    border: 1px solid rgba(57, 255, 20, 0.3);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.05);
 }
 
 .slider-wrapper p {
@@ -2237,35 +2285,37 @@ img {
     }
 }
 
-/* MOBILE PILL BUTTONS */
+/* MOBILE PILL BUTTONS - UNIFORM SIZE */
 .mobile-pill-btn {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 8px;
-    padding: 10px 16px;
+    padding: 10px 20px;
     border-radius: 50px;
     font-size: 0.85rem;
     font-weight: 700;
     text-decoration: none;
     white-space: nowrap;
     transition: all 0.3s ease;
+    min-width: 120px;
+    border: 2px solid transparent;
 }
 
 .phone-pill {
-    background: var(--primary-green);
+    background: #39FF14;
     color: #000;
 }
 
 .whatsapp-pill {
-    background: var(--primary-green);
+    background: #39FF14;
     color: #000;
 }
 
 .phone-pill:hover,
 .whatsapp-pill:hover {
     transform: scale(1.05);
-    box-shadow: 0 0 15px rgba(57, 255, 20, 0.5);
+    box-shadow: 0 0 20px rgba(57, 255, 20, 0.6);
 }
 
 @media (max-width: 768px) {
@@ -2309,12 +2359,11 @@ img {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        gap: 8px;
+        padding: 0 15px;
     }
 
     .logo {
         order: 2;
-        flex: 0 0 auto;
     }
 
     .phone-pill.mobile-only {
@@ -2325,25 +2374,56 @@ img {
         order: 3;
     }
 
+    /* All header buttons - UNIFORM STYLE */
     .mobile-pill-btn {
+        height: 42px;
+        padding: 0 18px;
         font-size: 0.7rem;
-        padding: 8px 10px;
-        gap: 5px;
+        font-weight: 700;
+        border-radius: 25px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
     }
 
-    .logo-text {
-        font-size: 1.1rem;
-    }
-}
-
-@media (max-width: 400px) {
-    .mobile-pill-btn {
-        font-size: 0.6rem;
-        padding: 6px 8px;
+    .logo-btn {
+        height: 42px;
+        padding: 0 20px;
+        border-radius: 25px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #000;
+        border: none;
     }
 
     .logo-text {
         font-size: 0.9rem;
+        letter-spacing: 1px;
+        white-space: nowrap;
+    }
+}
+
+@media (max-width: 400px) {
+    .navbar-container {
+        padding: 0 10px;
+    }
+
+    .mobile-pill-btn {
+        height: 36px;
+        padding: 0 12px;
+        font-size: 0.6rem;
+    }
+
+    .logo-btn {
+        height: 36px;
+        padding: 0 14px;
+    }
+
+    .logo-text {
+        font-size: 0.75rem;
+        letter-spacing: 0.5px;
     }
 }
 
@@ -4974,6 +5054,7 @@ body {
         /* Horizontal alignment */
     }
 }
+
 /* =============================================
    LIGHT MODE OVERRIDES
    ============================================= */
@@ -5028,7 +5109,17 @@ body {
     color: #1A1A1A !important;
 }
 
-.service-card h3,
+.service-card h3 {
+    color: #39FF14 !important;
+    text-shadow: 0 0 10px rgba(57, 255, 20, 0.8), 0 0 20px rgba(57, 255, 20, 0.5), 0 0 30px rgba(57, 255, 20, 0.3);
+    background: linear-gradient(135deg, rgba(20, 20, 20, 0.95) 0%, rgba(30, 30, 30, 0.9) 100%);
+    padding: 12px 20px;
+    border-radius: 10px;
+    display: inline-block;
+    border: 1px solid rgba(57, 255, 20, 0.3);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
 .damage-card h4,
 .product-card h3,
 .review-card h4,
@@ -5200,7 +5291,8 @@ body {
 
 /* 2. Make Colors POP - More Vibrant Accent */
 :root {
-    --primary-accent: #0077FF !important; /* Brighter blue */
+    --primary-accent: #0077FF !important;
+    /* Brighter blue */
     --primary-green: #0077FF !important;
 }
 
@@ -5325,7 +5417,8 @@ section:not(.footer) {
 }
 
 .hero-section::before {
-    display: none !important; /* Remove white overlay */
+    display: none !important;
+    /* Remove white overlay */
 }
 
 .hero-section h1,
@@ -5468,7 +5561,8 @@ section:not(.footer) {
 .callback-card p,
 .slider-desc,
 .science-text p {
-    color: #555555 !important; /* Darker gray for readability */
+    color: #555555 !important;
+    /* Darker gray for readability */
 }
 
 /* 3. Future Tech / Science Section descriptions */
@@ -5526,7 +5620,8 @@ section:not(.footer) {
 /* Any italicized descriptions */
 .slider-card p em,
 .slider-card p i,
-em, i {
+em,
+i {
     color: #555555 !important;
 }
 
@@ -5558,27 +5653,32 @@ section p,
     letter-spacing: 2px !important;
 }
 
-/* GLASS part - Dark */
+/* GLASS part - Dark (for non-navbar areas) */
 .logo-text {
     color: #1A1A1A !important;
 }
 
-/* LUX part - Vibrant Green with pop */
+/* Navbar Logo Button - GLASS white */
+.navbar .logo-btn .logo-text {
+    color: #fff !important;
+}
+
+/* LUX part - Match Button Green */
 .logo-text .highlight {
-    color: #00CC66 !important; /* Slightly deeper green for white bg */
-    text-shadow: 0 0 10px rgba(0, 204, 102, 0.3) !important;
+    color: #39FF14 !important;
+    text-shadow: none !important;
     font-weight: 900 !important;
 }
 
 /* Navbar specific */
 .navbar .logo-text .highlight {
-    color: #00CC66 !important;
+    color: #39FF14 !important;
 }
 
 /* Footer logo - Green on dark */
 .footer .logo-text .highlight {
     color: #39FF14 !important;
-    text-shadow: 0 0 15px rgba(57, 255, 20, 0.5) !important;
+    text-shadow: none !important;
 }
 
 /* Footer GLASS text - White */
@@ -5600,7 +5700,8 @@ h3.highlight,
 h4.highlight,
 .slider-title,
 .comparison-title {
-    color: #00994D !important; /* Darker green for white bg */
+    color: #00994D !important;
+    /* Darker green for white bg */
 }
 
 /* Green section subtitles */
@@ -5656,4 +5757,173 @@ section h4 {
 /* Status badges */
 .status-badge.success {
     background: #00994D !important;
+}
+
+/* =============================================
+   MOBILE HEADER - FINAL UNIFIED STYLES
+   This section overrides all previous header rules
+   ============================================= */
+
+@media (max-width: 768px) {
+
+    /* Hide desktop navigation */
+    .navbar .desktop-nav {
+        display: none !important;
+    }
+
+    /* Show mobile buttons */
+    .navbar .mobile-only {
+        display: flex !important;
+    }
+
+    /* Hide logo image on mobile */
+    .navbar .logo-img {
+        display: none !important;
+    }
+
+    /* Navbar Container - equal spacing */
+    .navbar .navbar-container {
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        padding: 0 15px !important;
+        gap: 0 !important;
+    }
+
+    /* === ALL 3 HEADER BUTTONS - UNIFORM SIZE === */
+    .navbar .mobile-pill-btn,
+    .navbar .logo.logo-btn {
+        /* IDENTICAL dimensions */
+        width: 30% !important;
+        max-width: 110px !important;
+        height: 40px !important;
+        padding: 0 12px !important;
+
+        /* IDENTICAL shape */
+        border-radius: 20px !important;
+
+        /* IDENTICAL typography */
+        font-size: 0.7rem !important;
+        font-weight: 700 !important;
+
+        /* IDENTICAL layout */
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 5px !important;
+
+        /* Reset any other styles */
+        white-space: nowrap !important;
+        text-decoration: none !important;
+        border: none !important;
+    }
+
+    /* Green buttons (Phone & WhatsApp) */
+    .navbar .mobile-pill-btn.phone-pill,
+    .navbar .mobile-pill-btn.whatsapp-pill {
+        background: #39FF14 !important;
+        color: #000 !important;
+    }
+
+    /* Logo button (Black) */
+    .navbar .logo.logo-btn {
+        background: #000 !important;
+        min-width: 100px !important;
+    }
+
+    /* Logo text styling */
+    .navbar .logo.logo-btn .logo-text {
+        color: #fff !important;
+        font-size: 0.8rem !important;
+        font-weight: 800 !important;
+        letter-spacing: 1px !important;
+        white-space: nowrap !important;
+    }
+
+    /* LUX text - same green as buttons */
+    .navbar .logo.logo-btn .logo-text .highlight {
+        color: #39FF14 !important;
+        text-shadow: none !important;
+    }
+
+    /* Button ordering */
+    .navbar .phone-pill.mobile-only {
+        order: 1 !important;
+    }
+
+    .navbar .logo.logo-btn {
+        order: 2 !important;
+    }
+
+    .navbar .whatsapp-pill.mobile-only {
+        order: 3 !important;
+    }
+
+    /* Hover effects */
+    .navbar .mobile-pill-btn:hover,
+    .navbar .logo.logo-btn:hover {
+        transform: scale(1.03) !important;
+    }
+}
+
+/* Extra small screens (400px and below) */
+@media (max-width: 400px) {
+
+    .navbar .mobile-pill-btn,
+    .navbar .logo.logo-btn {
+        width: 31% !important;
+        max-width: 95px !important;
+        height: 36px !important;
+        padding: 0 8px !important;
+        font-size: 0.6rem !important;
+        border-radius: 18px !important;
+    }
+
+    .navbar .logo.logo-btn .logo-text {
+        font-size: 0.7rem !important;
+        letter-spacing: 0.5px !important;
+    }
+}
+
+/* Very small screens (340px and below) */
+@media (max-width: 340px) {
+    .navbar .mobile-pill-btn span {
+        display: none !important;
+    }
+
+    .navbar .mobile-pill-btn {
+        width: 40px !important;
+        min-width: 40px !important;
+        padding: 0 !important;
+        border-radius: 50% !important;
+    }
+
+    .navbar .mobile-pill-btn i {
+        margin: 0 !important;
+        font-size: 1rem !important;
+    }
+
+    .navbar .logo.logo-btn {
+        width: auto !important;
+        max-width: none !important;
+        padding: 0 12px !important;
+    }
+}
+
+/* =============================================
+   CRACK CLOSE-UP SLIDER - SQUARE ASPECT RATIO
+   ============================================= */
+
+/* Make slider 4 (Crack Close-up) square on mobile */
+@media (max-width: 768px) {
+    #comparisonSlider4 {
+        aspect-ratio: 1 / 1 !important;
+        /* Square */
+        max-height: 400px !important;
+    }
+
+    #comparisonSlider4 .slider-image img {
+        object-fit: cover !important;
+        object-position: center !important;
+    }
 }
