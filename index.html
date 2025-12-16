@@ -63,7 +63,6 @@
     <header id="home" class="hero">
         <div class="container hero-content">
             <h1 class="hero-title">
-                <span class="title-line">PREMIUM</span>
                 <span class="title-line">AUTO GLASS</span>
                 <span class="title-line highlight">DONE RIGHT.</span>
             </h1>
@@ -82,8 +81,11 @@
     </header>
 
     <!-- Inline Live Chat Section (Crisp Powered) -->
-    <section class="embedded-chat-section" style="padding: 50px 0; background: #FFFFFF;">
+    <section class="embedded-chat-section">
         <div class="container">
+
+            <!-- Big Stylish Header -->
+            <h2 class="chat-hero-title">CHAT WITH US NOW!</h2>
 
             <!-- 3-Column Chat Layout -->
             <div class="chat-layout-grid">
@@ -199,45 +201,25 @@
                     class="fa-solid fa-lock" style="color: var(--primary-green);"></i> Secure Chat • We reply fast!</p>
         </div>
     </section>
-    <!-- Services Section -->
-    <section id="services" class="services">
-        <div class="container">
-            <h2 class="section-title">Our Premium Services</h2>
-            <div class="services-grid">
-                <!-- Service 1 -->
-                <div class="service-card">
-                    <div class="icon-box"><i class="fa-solid fa-car-burst"></i></div>
-                    <h3>Windshield Replacement</h3>
-                    <p>OEM quality glass replacement for all vehicle makes and models. Safety calibration included.</p>
-                </div>
-                <!-- Service 2 -->
-                <div class="service-card">
-                    <div class="icon-box"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
-                    <h3>Chip Repair</h3>
-                    <p>Save your windshield with our advanced resin injection technology. Fast and invisible.</p>
-                </div>
-                <!-- Service 3 -->
-                <div class="service-card">
-                    <div class="icon-box"><i class="fa-solid fa-truck-fast"></i></div>
-                    <h3>Mobile Service</h3>
-                    <p>We come to your home or office. Convenience without compromise.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+
 
     <!-- Callback Request Section -->
     <section class="callback-section">
         <div class="container">
-            <div class="callback-card">
-                <div class="callback-icon">
-                    <i class="fa-solid fa-comments"></i>
-                </div>
-                <h3>Message Us</h3>
-                <p>Leave your phone number and we'll call you back within minutes!</p>
-                <form class="callback-form">
-                    <input type="tel" placeholder="Your phone number" aria-label="Phone number">
-                    <button type="submit">
+            <div class="callback-card callback-card-minimal">
+                <form class="callback-form callback-form-sexy">
+                    <!-- Ultra Premium Input Field -->
+                    <div class="sexy-input-wrapper">
+
+                        <div class="input-inner-container">
+                            <i class="fa-solid fa-phone input-icon-left"></i>
+                            <input type="tel" placeholder="Your phone number" aria-label="Phone number"
+                                class="sexy-phone-input">
+
+                        </div>
+
+                    </div>
+                    <button type="submit" class="btn btn-primary callback-btn">
                         <i class="fa-solid fa-phone"></i> REQUEST CALLBACK
                     </button>
                 </form>
@@ -250,79 +232,12 @@
         <div class="container">
             <h2 class="section-title">How It Works</h2>
 
-            <!-- All 3 Sliders in One Row -->
+            <!-- Slider -->
             <div class="sliders-row">
 
-                <!-- Before / After Slider 1 -->
+                <!-- Before / After Slider - Crack Close-up (SQUARE) -->
                 <div class="slider-wrapper">
-                    <h3>City Driving</h3>
-                    <p>Drag the slider to see the repair results.</p>
-                    <div class="slider-container" id="comparisonSlider1">
-                        <div class="slider-image after">
-                            <img src="slider_after.png" alt="After Repair" draggable="false" onmousedown="return false">
-                            <span class="slider-label">AFTER</span>
-                        </div>
-                        <div class="slider-image before">
-                            <img src="slider_before.png" alt="Before Repair" draggable="false"
-                                onmousedown="return false">
-                            <span class="slider-label">BEFORE</span>
-                        </div>
-                        <div class="slider-handle">
-                            <div class="handle-line"></div>
-                            <div class="handle-circle"><i class="fa-solid fa-arrows-left-right"></i></div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Before / After Slider 2 -->
-                <div class="slider-wrapper" style="margin-top: 40px;">
-                    <h3>Highway Visibility</h3>
-                    <p>Clear vision at high speeds is critical.</p>
-                    <div class="slider-container" id="comparisonSlider2">
-                        <div class="slider-image after">
-                            <img src="slider2_after.png" alt="After Repair" draggable="false"
-                                onmousedown="return false">
-                            <span class="slider-label">AFTER</span>
-                        </div>
-                        <div class="slider-image before">
-                            <img src="slider2_before.png" alt="Before Repair" draggable="false"
-                                onmousedown="return false">
-                            <span class="slider-label">BEFORE</span>
-                        </div>
-                        <div class="slider-handle">
-                            <div class="handle-line"></div>
-                            <div class="handle-circle"><i class="fa-solid fa-arrows-left-right"></i></div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Before / After Slider 3 - Exterior -->
-                <div class="slider-wrapper">
-                    <h3>Exterior View</h3>
-                    <p>See the difference from outside.</p>
-                    <div class="slider-container" id="comparisonSlider3">
-                        <div class="slider-image after">
-                            <img src="slider3_after.png" alt="After Repair" draggable="false"
-                                onmousedown="return false">
-                            <span class="slider-label">AFTER</span>
-                        </div>
-                        <div class="slider-image before">
-                            <img src="slider3_before.png" alt="Before Repair" draggable="false"
-                                onmousedown="return false">
-                            <span class="slider-label">BEFORE</span>
-                        </div>
-                        <div class="slider-handle">
-                            <div class="handle-line"></div>
-                            <div class="handle-circle"><i class="fa-solid fa-arrows-left-right"></i></div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Before / After Slider 4 - Crack Close-up -->
-                <div class="slider-wrapper" style="margin-top: 40px;">
-                    <h3>Crack Close-up</h3>
-                    <p>See the detailed repair up close.</p>
-                    <div class="slider-container" id="comparisonSlider4">
+                    <div class="slider-container slider-square" id="comparisonSlider4">
                         <div class="slider-image after">
                             <img src="slider4_after.png" alt="After Repair" draggable="false"
                                 onmousedown="return false">
@@ -343,14 +258,11 @@
             </div>
             <!-- End Sliders Row -->
 
-            <div class="process-content" style="margin-top: 60px;">
+            <div class="process-content">
                 <div class="process-text">
-                    <h3>The Science of Auto Glass Repair</h3>
-                    <p>Our advanced repair process restores the structural integrity of your windshield while
-                        dramatically improving visual clarity. We don't just "fill" the crack; we engineer a bond
-                        stronger than the original glass.</p>
+
                     <!-- Designed Single-Line Points -->
-                    <div class="tech-points-container" style="margin-top: 25px;">
+                    <div class="tech-points-container">
                         <div class="tech-point-row">
                             <span class="tech-point-icon"><i class="fa-solid fa-wind"></i></span>
                             <span class="tech-point-label">VACUUM PURGE:</span>
@@ -372,142 +284,20 @@
                     <!-- Desktop: Original Single Image -->
                     <img src="repair_process.png" alt="Windshield Repair Process Steps" class="desktop-process-img"
                         style="border-radius: 15px; border: 1px solid var(--glass-border);">
-
-                    <!-- Mobile: 3 Split Images with Text Headers -->
-                    <div class="mobile-process-split">
-
-                        <!-- Step 1: Vacuum Purge -->
-                        <div class="process-step-wrapper">
-                            <div class="tech-point-row mobile-header">
-                                <span class="tech-point-icon"><i class="fa-solid fa-wind"></i></span>
-                                <div class="mobile-text-stack">
-                                    <span class="tech-point-label">VACUUM PURGE:</span>
-                                    <span class="tech-point-desc">Total Air Removal</span>
-                                </div>
-                            </div>
-                            <div class="split-step">
-                                <img src="repair_step_1_drill.png" alt="Drilling">
-                            </div>
-                        </div>
-
-                        <!-- Step 2: Pressure Injection -->
-                        <div class="process-step-wrapper">
-                            <div class="tech-point-row mobile-header">
-                                <span class="tech-point-icon"><i class="fa-solid fa-syringe"></i></span>
-                                <div class="mobile-text-stack">
-                                    <span class="tech-point-label">PRESSURE INJECTION:</span>
-                                    <span class="tech-point-desc">Deep Resin Penetration</span>
-                                </div>
-                            </div>
-                            <div class="split-step">
-                                <img src="repair_step_2_inject.png" alt="Injection">
-                            </div>
-                        </div>
-
-                        <!-- Step 3: UV Curing -->
-                        <div class="process-step-wrapper">
-                            <div class="tech-point-row mobile-header">
-                                <span class="tech-point-icon"><i class="fa-solid fa-sun"></i></span>
-                                <div class="mobile-text-stack">
-                                    <span class="tech-point-label">UV CURING:</span>
-                                    <span class="tech-point-desc">Instant Rock-Hard Bond</span>
-                                </div>
-                            </div>
-                            <div class="split-step">
-                                <img src="repair_step_3_uv.png" alt="UV Curing">
-                            </div>
-                        </div>
-
-                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Qualification Guide Section -->
-    <!-- The Future of Auto Glass Section -->
-    <section class="future-tech-section"
-        style="background-color: #000; padding: 100px 0; overflow: hidden; position: relative;">
-        <!-- Animated Background Elements -->
-        <div class="tech-orb orb-1"></div>
-        <div class="tech-orb orb-2"></div>
 
-        <div class="container" style="position: relative; z-index: 2;">
-            <h2 class="section-title">The Future of Auto Glass</h2>
-            <p style="text-align: center; color: #ccc; max-width: 700px; margin: 0 auto 60px;">
-                We don't just fix cracks; we prepare your vehicle for the future.
-            </p>
-
-            <div class="future-grid">
-                <!-- Card 1: Nano Resin -->
-                <div class="future-card">
-                    <div class="future-img-wrapper">
-                        <img src="nano_resin_tech.png" alt="Nano Resin Technology">
-                        <div class="future-overlay"></div>
-                    </div>
-                    <div class="future-content">
-                        <h3>Nano-Resin Tech</h3>
-                        <p>Molecular bonding stronger than the original glass structure.</p>
-                    </div>
-                </div>
-
-                <!-- Card 2: AI Calibration -->
-                <div class="future-card">
-                    <div class="future-img-wrapper">
-                        <img src="ai_calibration_scan.png" alt="AI Calibration">
-                        <div class="future-overlay"></div>
-                    </div>
-                    <div class="future-content">
-                        <h3>AI Calibration</h3>
-                        <p>Laser-precise ADAS alignment for your safety systems.</p>
-                    </div>
-                </div>
-
-                <!-- Card 3: Smart Glass -->
-                <div class="future-card">
-                    <div class="future-img-wrapper">
-                        <img src="smart_glass_hud.png" alt="Smart Glass HUD">
-                        <div class="future-overlay"></div>
-                    </div>
-                    <div class="future-content">
-                        <h3>Smart Clarity</h3>
-                        <p>Optimized for HUDs and rain sensors with zero distortion.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- Why Us Section -->
     <section id="why-us" class="why-us">
         <div class="container">
-            <h2 class="section-title">Why Choose Glass Lux?</h2>
-
-            <!-- Before / After Slider 3 (Full Width) -->
-            <div class="slider-wrapper"
-                style="margin-bottom: 60px; max-width: 700px; margin-left: auto; margin-right: auto;">
-                <h3>Side Profile Perfection</h3>
-                <p>Invisible repairs from every angle.</p>
-                <div class="slider-container" id="comparisonSlider3">
-                    <div class="slider-image after">
-                        <img src="slider2_after.png" alt="After Repair" draggable="false" onmousedown="return false">
-                        <span class="slider-label">AFTER</span>
-                    </div>
-                    <div class="slider-image before">
-                        <img src="slider2_before.png" alt="Before Repair" draggable="false" onmousedown="return false">
-                        <span class="slider-label">BEFORE</span>
-                    </div>
-                    <div class="slider-handle">
-                        <div class="handle-line"></div>
-                        <div class="handle-circle"><i class="fa-solid fa-arrows-left-right"></i></div>
-                    </div>
-                </div>
-            </div>
-
             <div class="features-grid">
-                <div class="science-section" style="margin-top: 60px; text-align: center;">
-                    <div class="science-header" style="margin-bottom: 40px;">
-                        <h3 class="section-title" style="margin-bottom: 20px;">The Science of Auto Glass Repair</h3>
+                <div class="science-section">
+                    <div class="science-header">
+                        <h3 class="section-title">The Science of Auto Glass Repair</h3>
                         <p style="max-width: 700px; margin: 0 auto; color: #ccc;">Our advanced repair process restores
                             the structural integrity of your windshield while dramatically improving visual clarity. We
                             don't just "fill" the crack; we engineer a bond stronger than the original glass.</p>
@@ -549,14 +339,11 @@
                         </div>
                     </div>
 
-                    <!-- New Process Image (Mobile) -->
-                    <div class="science-collage-container">
-                        <img src="science_collage.png" alt="Repair Process" draggable="false">
-                    </div>
+
                 </div>
 
                 <!-- WhatsApp Chat Block -->
-                <div class="whatsapp-chat-section" style="margin: 60px 0;">
+                <div class="whatsapp-chat-section">
                     <div class="whatsapp-card">
                         <div class="whatsapp-icon-large">
                             <i class="fa-brands fa-whatsapp"></i>
@@ -572,7 +359,7 @@
                     </div>
                 </div>
 
-                <div class="guide-section text-center" style="margin-top: 60px;">
+                <div class="guide-section text-center">
                     <h3 class="section-title">Is Your Crack Repairable?</h3>
                     <div class="damage-grid">
                         <div class="damage-card">
@@ -611,71 +398,18 @@
 
     <!-- Service Checkout Section -->
     <section id="book-service" class="shop">
-        <div class="container">
-            <h2 class="section-title">Book A Repair</h2>
-
-            <div class="booking-layout-grid">
-                <!-- Left: Trust & Warranty -->
-                <div class="booking-side-block left">
-                    <div class="trust-item">
-                        <i class="fa-solid fa-shield-halved"></i>
-                        <h4>Lifetime Warranty</h4>
-                        <p>We stand behind our work forever.</p>
-                    </div>
-                    <div class="trust-item">
-                        <i class="fa-solid fa-star"></i>
-                        <h4>Top Rated</h4>
-                        <p>5-Star service across all platforms.</p>
-                    </div>
-                    <div class="trust-item">
-                        <i class="fa-solid fa-lock"></i>
-                        <h4>Secure Payment</h4>
-                        <p>100% secure checkout via Stripe.</p>
-                    </div>
-                </div>
-
-                <!-- Center: Product Card -->
-                <div class="product-card main-booking-card">
-                    <div class="product-image">
-                        <img src="promo_glass.png" alt="Windshield Repair">
-                        <div class="promo-badge">25% OFF</div>
-                    </div>
-                    <h3>Windshield Repair</h3>
-                    <p>Complete repair + mobile service.</p>
-                    <div class="price-wrapper">
-                        <span class="old-price">$200</span>
-                        <span class="price">$150</span>
-                    </div>
-                    <a href="https://buy.stripe.com/7sY14p1NSaQofZ31In3AY00" class="btn btn-primary buy-btn">Pay & Book
-                        Now</a>
-                </div>
-
-                <!-- Right: Service Features -->
-                <div class="booking-side-block right">
-                    <div class="trust-item">
-                        <i class="fa-solid fa-truck-fast"></i>
-                        <h4>We Come To You</h4>
-                        <p>Mobile service to your home or work.</p>
-                    </div>
-                    <div class="trust-item">
-                        <i class="fa-regular fa-calendar-check"></i>
-                        <h4>Fast Scheduling</h4>
-                        <p>Same-day or next-day appointments.</p>
-                    </div>
-                    <div class="trust-item">
-                        <i class="fa-solid fa-certificate"></i>
-                        <h4>Certified Techs</h4>
-                        <p>Expertly trained & insurance approved.</p>
-                    </div>
-                </div>
+        <div class="container" style="display: flex; justify-content: center;">
+            <div style="width: 100%; max-width: 500px;">
+                <a href="https://buy.stripe.com/7sY14p1NSaQofZ31In3AY00" class="btn-book-now">
+                    <span class="btn-text">BOOK NOW</span>
+                    <span class="btn-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+                </a>
             </div>
-
-            <p class="shop-note">*Secure checkout via Stripe. We will contact you to schedule after payment.</p>
         </div>
     </section>
 
     <!-- Reviews Section -->
-    <section class="reviews-section" style="padding: 80px 0; background: #1a1a1a;">
+    <section class="reviews-section" style="background: #1a1a1a;">
         <div class="container">
             <h2 class="section-title">What Our Customers Say</h2>
 
@@ -756,8 +490,7 @@
                 </a>
 
                 <!-- Payment Methods -->
-                <div class="payment-methods"
-                    style="margin-top: 20px; font-size: 1.8rem; color: #fff; display: flex; gap: 15px;">
+                <div class="payment-methods">
                     <i class="fa-brands fa-cc-visa"></i>
                     <i class="fa-brands fa-cc-mastercard"></i>
                     <i class="fa-brands fa-cc-amex"></i>
