@@ -15,7 +15,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="css/style.css?v=20241216-v7">
+    <link rel="stylesheet" href="css/style.css?v=20241216-v16">
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -105,17 +105,23 @@
                 <!-- CENTER: Chat Box -->
                 <div class="live-chat-box"
                     style="background: linear-gradient(180deg, #1e1e1e, #252525); border-radius: 20px; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.6); border: 1px solid rgba(168, 254, 40, 0.3);">
-                    <!-- Header -->
-                    <div
-                        style="background: linear-gradient(135deg, #a8fe28, #a8fe28); padding: 18px 20px; display: flex; align-items: center; gap: 14px;">
-                        <div style="position: relative;">
-                            <img src="support_avatar.png" alt="Support"
-                                style="width: 50px; height: 50px; border-radius: 50%; border: 2px solid #000; object-fit: cover;">
+                    <!-- Header - Enhanced Sofia Block with CTA -->
+                    <div class="chat-header-enhanced">
+                        <div class="chat-header-left">
+                            <div class="chat-header-avatar-wrapper">
+                                <img src="support_avatar.png" alt="Support" class="chat-header-avatar">
+                                <span class="online-indicator"></span>
+                            </div>
+                            <div class="chat-header-info">
+                                <h4 class="chat-header-name">Sofia - GlassLux</h4>
+                                <span class="chat-header-status">
+                                    <i class="fa-solid fa-circle online-dot"></i> Online • Replies instantly
+                                </span>
+                            </div>
                         </div>
-                        <div style="color: #000; flex: 1;">
-                            <h4 style="margin: 0; font-size: 1.15rem; font-weight: 700; color: #000 !important;">Sofia -
-                                GlassLux</h4>
-                            <span style="font-size: 0.85rem; opacity: 0.8;">Online • Replies instantly</span>
+                        <div class="chat-header-cta">
+                            <span class="cta-chat">CHAT</span>
+                            <span class="cta-with-us">WITH US NOW!</span>
                         </div>
                     </div>
                     <!-- Messages Area -->
@@ -196,26 +202,36 @@
     </section>
 
 
-    <!-- Callback Request Section -->
+    <!-- Callback Request Section - Chat Style -->
     <section class="callback-section">
         <div class="container">
-            <div class="callback-card callback-card-minimal">
-                <form class="callback-form callback-form-sexy">
-                    <!-- Ultra Premium Input Field -->
-                    <div class="sexy-input-wrapper">
-
-                        <div class="input-inner-container">
-                            <i class="fa-solid fa-phone input-icon-left"></i>
-                            <input type="tel" placeholder="Your phone number" aria-label="Phone number"
-                                class="sexy-phone-input">
-
-                        </div>
-
+            <div class="callback-card-chat-style">
+                <!-- Header Bar (matching chat) -->
+                <div class="callback-header">
+                    <div class="callback-header-icon">
+                        <i class="fa-solid fa-phone-volume"></i>
                     </div>
-                    <button type="submit" class="btn btn-primary callback-btn">
-                        <i class="fa-solid fa-phone"></i> REQUEST CALLBACK
-                    </button>
-                </form>
+                    <div class="callback-header-text">
+                        <h4 class="callback-big-title">WE WILL CALL YOU!</h4>
+                    </div>
+                </div>
+                <!-- Form Area -->
+                <div class="callback-form-area">
+                    <form class="callback-form callback-form-sexy">
+                        <!-- Input Field -->
+                        <div class="callback-input-row">
+                            <i class="fa-solid fa-phone"></i>
+                            <input type="tel" placeholder="Your phone number" aria-label="Phone number"
+                                class="callback-phone-input">
+                        </div>
+                        <!-- Submit Button -->
+                        <button type="submit" class="callback-submit-btn">
+                            <i class="fa-solid fa-phone"></i> REQUEST CALLBACK
+                        </button>
+                    </form>
+                </div>
+                <!-- Footer -->
+                <p class="callback-footer"><i class="fa-solid fa-bolt"></i> Fast Response Guaranteed</p>
             </div>
         </div>
     </section>
@@ -290,54 +306,92 @@
             <div class="features-grid">
 
 
-                <!-- WhatsApp Chat Block -->
+                <!-- WhatsApp Chat Block - ENHANCED 2025 -->
                 <div class="whatsapp-chat-section">
-                    <div class="whatsapp-card">
-                        <div class="whatsapp-icon-large">
-                            <i class="fa-brands fa-whatsapp"></i>
+                    <div class="whatsapp-card-enhanced">
+                        <!-- Creative Header -->
+                        <div class="whatsapp-header-enhanced">
+                            <div class="whatsapp-header-icon">
+                                <i class="fa-brands fa-whatsapp"></i>
+                            </div>
+                            <div class="whatsapp-header-text">
+                                <h4>Chat on WhatsApp</h4>
+                                <span><i class="fa-solid fa-bolt"></i> Instant Reply</span>
+                            </div>
                         </div>
-                        <h3>Chat on WhatsApp</h3>
-                        <p>Prefer WhatsApp? Start a conversation instantly!</p>
-                        <a href="https://wa.me/13859885129" class="btn btn-whatsapp-large" target="_blank">
-                            <i class="fa-brands fa-whatsapp"></i> OPEN WHATSAPP
-                        </a>
-                        <div class="whatsapp-fallback">
-                            <i class="fa-solid fa-phone"></i> Or call: <a href="tel:+13859885129">(385) 988-5129</a>
+                        <!-- Content -->
+                        <div class="whatsapp-content-enhanced">
+                            <i class="fa-brands fa-whatsapp bg-icon"></i>
+                            <p class="whatsapp-promo-text">Start a conversation instantly! We are online and ready to
+                                help.</p>
+                            <a href="https://wa.me/13859885129?text=Hi!%20I%20need%20a%20quote%20for%20my%20windshield"
+                                class="btn btn-whatsapp-neon" target="_blank">
+                                <i class="fa-brands fa-whatsapp"></i> OPEN WHATSAPP
+                            </a>
+                            <div class="whatsapp-fallback-enhanced">
+                                <span>Or call us directly:</span>
+                                <a href="tel:+13859885129" class="fallback-number">385 988 5129</a>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="guide-section text-center">
-                    <h3 class="section-title">Is Your Crack Repairable?</h3>
-                    <div class="damage-grid">
-                        <div class="damage-card">
-                            <img src="crack_bullseye.png" alt="Bullseye Crack">
-                            <h4>Bullseye</h4>
-                            <div class="status-badge success">Repairable</div>
-                            <p style="color: #999; margin-top: 10px; font-size: 0.9rem;">Clean circular break, up to 1
-                                inch.</p>
+                <!-- Unified Damage Guide Block - Chat Style -->
+                <div class="damage-guide-block">
+                    <!-- Header Bar (matching chat style) -->
+                    <div class="damage-guide-header">
+                        <div class="damage-guide-header-icon">
+                            <i class="fa-solid fa-circle-question"></i>
                         </div>
-                        <div class="damage-card">
-                            <img src="crack_star.png" alt="Star Break">
-                            <h4>Star Break</h4>
-                            <div class="status-badge success">Repairable</div>
-                            <p style="color: #999; margin-top: 10px; font-size: 0.9rem;">Multiple legs spreading from
-                                impact.</p>
+                        <div class="damage-guide-header-text">
+                            <h4>Is Your Crack Repairable?</h4>
+                            <span>All these damage types can be fixed!</span>
                         </div>
-                        <div class="damage-card">
-                            <img src="crack_combo.png" alt="Combo Crack">
-                            <h4>Combination</h4>
-                            <div class="status-badge success">Repairable</div>
-                            <p style="color: #999; margin-top: 10px; font-size: 0.9rem;">Mix of star and bullseye
-                                features.</p>
+                    </div>
+                    <!-- Content Area -->
+                    <div class="damage-guide-content">
+                        <div class="damage-items-grid">
+                            <!-- Bullseye -->
+                            <div class="damage-item">
+                                <img src="crack_bullseye.png" alt="Bullseye Crack">
+                                <div class="damage-item-info">
+                                    <h5>Bullseye</h5>
+                                    <span class="damage-badge">REPAIRABLE</span>
+                                    <p>Clean circular break, up to 1 inch.</p>
+                                </div>
+                            </div>
+                            <!-- Star Break -->
+                            <div class="damage-item">
+                                <img src="crack_star.png" alt="Star Break">
+                                <div class="damage-item-info">
+                                    <h5>Star Break</h5>
+                                    <span class="damage-badge">REPAIRABLE</span>
+                                    <p>Multiple legs spreading from impact.</p>
+                                </div>
+                            </div>
+                            <!-- Combination -->
+                            <div class="damage-item">
+                                <img src="crack_combo.png" alt="Combo Crack">
+                                <div class="damage-item-info">
+                                    <h5>Combination</h5>
+                                    <span class="damage-badge">REPAIRABLE</span>
+                                    <p>Mix of star and bullseye features.</p>
+                                </div>
+                            </div>
+                            <!-- Stone Chip -->
+                            <div class="damage-item">
+                                <img src="crack_chip.png" alt="Stone Chip">
+                                <div class="damage-item-info">
+                                    <h5>Stone Chip</h5>
+                                    <span class="damage-badge">REPAIRABLE</span>
+                                    <p>Small impact mark, easiest to fix.</p>
+                                </div>
+                            </div>
                         </div>
-                        <div class="damage-card">
-                            <img src="crack_chip.png" alt="Stone Chip">
-                            <h4>Stone Chip</h4>
-                            <div class="status-badge success">Repairable</div>
-                            <p style="color: #999; margin-top: 10px; font-size: 0.9rem;">Small impact mark, easiest to
-                                fix.</p>
-                        </div>
+                    </div>
+                    <!-- Footer -->
+                    <div class="damage-guide-footer">
+                        <i class="fa-solid fa-check-circle"></i> All repairs backed by lifetime warranty
                     </div>
                 </div>
             </div>
