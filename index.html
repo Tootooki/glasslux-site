@@ -230,14 +230,18 @@
         }
 
         .text-lime {
-            /* NEON GLASS GRADIENT TEXT */
-            background: #a8fe28;
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            /* NEON GREEN WITH BLACK STROKE */
+            color: #a8fe28;
+            -webkit-text-stroke: 0.5px black;
 
-            /* Neon outer glow */
-            filter: drop-shadow(0 0 15px rgba(168, 254, 40, 0.5));
+            /* Reset old clip styles */
+            background: none;
+            -webkit-text-fill-color: #a8fe28;
+            background-clip: border-box;
+            -webkit-background-clip: border-box;
+
+            /* Remove glow */
+            filter: none;
 
             font-weight: 900;
             /* Extra pop */
@@ -1362,11 +1366,14 @@
         }
 
         .product-title .text-lime {
-            background: #a8fe28;
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            filter: drop-shadow(0 0 15px rgba(168, 254, 40, 0.5));
+            color: #a8fe28;
+            -webkit-text-stroke: 0.8px black;
+            /* Slightly thicker for bold title */
+            background: none;
+            -webkit-text-fill-color: #a8fe28;
+            background-clip: border-box;
+            -webkit-background-clip: border-box;
+            filter: none;
             font-weight: 900;
         }
 
@@ -1539,12 +1546,14 @@
         }
 
         .product-price-range .price-high {
-            background: #a8fe28;
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: #a8fe28;
+            -webkit-text-stroke: 0.8px black;
+            background: none;
+            -webkit-text-fill-color: #a8fe28;
+            background-clip: border-box;
+            -webkit-background-clip: border-box;
             font-weight: 900;
-            filter: drop-shadow(0 0 10px rgba(168, 254, 40, 0.4));
+            filter: none;
         }
 
         .product-savings {
