@@ -875,8 +875,10 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 8px;
-            padding: 12px;
+            gap: 6px;
+            /* Reduced gap */
+            padding: 10px;
+            /* Reduced padding */
             background: rgba(0, 0, 0, 0.05);
             border-radius: 12px;
         }
@@ -887,9 +889,12 @@
         }
 
         .damage-guide-footer span {
-            font-size: 13px;
+            font-size: 11px;
+            /* Smaller for mobile fit */
             font-weight: 600;
             color: #333333;
+            white-space: nowrap;
+            /* Force one line */
         }
 
         /* ========== MOBILE HEADER STYLES ========== */
