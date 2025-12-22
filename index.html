@@ -1539,12 +1539,16 @@
         }
 
         .product-price-range .price-high {
-            background: #a8fe28;
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: #000000;
+            -webkit-text-fill-color: #000000;
             font-weight: 900;
-            filter: drop-shadow(0 0 10px rgba(168, 254, 40, 0.4));
+            text-shadow:
+                0 0 20px rgba(168, 254, 40, 0.8),
+                0 0 10px rgba(168, 254, 40, 0.8);
+            background: none;
+            -webkit-background-clip: border-box;
+            background-clip: border-box;
+            filter: none;
         }
 
         .product-savings {
@@ -2318,8 +2322,7 @@
                 <div class="reviews-block">
                     <div class="reviews-header">
                         <div class="reviews-title">
-                            <span class="text-dark">What Our </span><span class="text-lime-gradient">Customers
-                                Say</span>
+                            <span class="text-dark">WHAT OUR CUSTOMERS SAY</span>
                         </div>
                     </div>
 
