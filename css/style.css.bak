@@ -8089,16 +8089,14 @@ section h4 {
     }
 
     .hero-phone-cta {
-        width: 97vw !important;
-        max-width: 97vw !important;
-        margin-left: calc(50% - 48.5vw) !important;
-        margin-right: calc(50% - 48.5vw) !important;
+        width: calc(100vw - 24px) !important;
+        max-width: none !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
         padding: 20px 15px !important;
+        margin: 0 !important;
         box-sizing: border-box !important;
         border-radius: 16px !important;
-        left: auto !important;
-        transform: none !important;
-        position: relative !important;
     }
 
     .hero-phone-cta .phone-label {
@@ -8215,21 +8213,20 @@ section h4 {
         padding-right: 0 !important;
     }
 
-    /* ALL CARDS & BLOCKS - 97vw width (1.5% padding on each side from screen) */
+    /* ALL CARDS & BLOCKS - FORCE FULL WIDTH */
     .live-chat-box,
-    .callback-card-chat-style,
+    .callback-card,
     .slider-container,
     .tech-points-container,
     .whatsapp-card,
-    .whatsapp-card-enhanced,
-    .damage-guide-block,
+    .damage-card,
     .btn-book-now,
     .review-card,
     .science-card {
-        width: 97vw !important;
-        max-width: 97vw !important;
-        margin-left: calc(50% - 48.5vw) !important;
-        margin-right: calc(50% - 48.5vw) !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
         box-sizing: border-box !important;
     }
 
@@ -8693,8 +8690,7 @@ section h4 {
         padding-right: 1.5% !important;
     }
 
-    .damage-guide-block,
-    .whatsapp-card-enhanced {
+    .damage-guide-block {
         margin-left: 0 !important;
         margin-right: 0 !important;
         width: 100% !important;
@@ -8956,211 +8952,5 @@ section h4 {
 
     .cta-with-us {
         font-size: 0.75rem;
-    }
-}
-
-/* =============================================
-   ENHANCED WHATSAPP BLOCK - 2025 PREMIUM DESIGN
-   ============================================= */
-
-/* Main Card Container */
-.whatsapp-card-enhanced {
-    background: linear-gradient(160deg, #151515, #1a1a1a, #0f0f0f);
-    border-radius: 24px;
-    overflow: hidden;
-    box-shadow:
-        0 25px 80px rgba(0, 0, 0, 0.8),
-        0 0 60px rgba(168, 254, 40, 0.15),
-        inset 0 1px 0 rgba(255, 255, 255, 0.05);
-    border: 2px solid rgba(168, 254, 40, 0.4);
-    margin: 0 auto;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    position: relative;
-    width: 100%;
-    /* Default width */
-}
-
-/* Shimmer Border-Glow Effect */
-.whatsapp-card-enhanced::before {
-    content: '';
-    position: absolute;
-    top: -2px;
-    left: -2px;
-    right: -2px;
-    bottom: -2px;
-    background: linear-gradient(45deg, #a8fe28, transparent, #a8fe28, transparent);
-    background-size: 400% 400%;
-    border-radius: 26px;
-    z-index: -1;
-    animation: border-glow 4s ease infinite;
-    opacity: 0.5;
-}
-
-.whatsapp-card-enhanced:hover {
-    border-color: rgba(168, 254, 40, 0.7);
-    box-shadow:
-        0 30px 100px rgba(0, 0, 0, 0.9),
-        0 0 80px rgba(168, 254, 40, 0.25);
-    transform: translateY(-3px);
-}
-
-/* Creative Header */
-.whatsapp-header-enhanced {
-    background: linear-gradient(135deg, #a8fe28 0%, #c4ff61 25%, #a8fe28 50%, #8ed922 75%, #a8fe28 100%);
-    background-size: 300% 300%;
-    animation: header-gradient-flow 6s ease infinite;
-    padding: 20px;
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    position: relative;
-    overflow: hidden;
-}
-
-/* Header Shine Effect */
-.whatsapp-header-enhanced::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 50%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
-    animation: header-shine 4s ease-in-out infinite;
-}
-
-/* Header Icon */
-.whatsapp-header-icon {
-    width: 55px;
-    height: 55px;
-    background: rgba(0, 0, 0, 0.2);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.8rem;
-    color: #fff;
-    box-shadow:
-        0 4px 15px rgba(0, 0, 0, 0.2),
-        inset 0 -2px 5px rgba(0, 0, 0, 0.1);
-    animation: icon-pulse 3s ease-in-out infinite;
-    position: relative;
-    z-index: 1;
-}
-
-/* Header Text */
-.whatsapp-header-text {
-    flex: 1;
-    position: relative;
-    z-index: 1;
-}
-
-.whatsapp-header-text h4 {
-    margin: 0;
-    font-size: 1.5rem;
-    font-weight: 900;
-    color: #000;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    text-shadow: none;
-}
-
-.whatsapp-header-text span {
-    font-size: 0.95rem;
-    font-weight: 700;
-    color: rgba(0, 0, 0, 0.7);
-    display: flex;
-    align-items: center;
-    gap: 6px;
-}
-
-/* Content Area */
-.whatsapp-content-enhanced {
-    padding: 30px 25px;
-    background: linear-gradient(180deg, #141414, #1a1a1a);
-    position: relative;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-/* Background Large Icon Faded */
-.bg-icon {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 10rem;
-    color: rgba(168, 254, 40, 0.03);
-    pointer-events: none;
-    z-index: 0;
-}
-
-.whatsapp-promo-text {
-    font-size: 1.1rem;
-    color: #fff;
-    margin-bottom: 25px;
-    position: relative;
-    z-index: 1;
-    max-width: 80%;
-}
-
-/* Neon Button */
-.btn-whatsapp-neon {
-    background: #a8fe28;
-    color: #000;
-    font-size: 1.1rem;
-    font-weight: 800;
-    padding: 16px 30px;
-    border-radius: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    box-shadow: 0 0 20px rgba(168, 254, 40, 0.4);
-    transition: all 0.3s ease;
-    width: 100%;
-    position: relative;
-    z-index: 1;
-}
-
-.btn-whatsapp-neon:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 40px rgba(168, 254, 40, 0.6);
-    background: #fff;
-    /* Hover to white for flash */
-}
-
-/* Fallback Number */
-.whatsapp-fallback-enhanced {
-    margin-top: 25px;
-    font-size: 0.95rem;
-    color: #fff;
-    position: relative;
-    z-index: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-}
-
-.fallback-number {
-    font-size: 1.4rem;
-    font-weight: 700;
-    color: #a8fe28;
-    text-shadow: 0 0 10px rgba(168, 254, 40, 0.3);
-}
-
-/* Mobile Specifics */
-@media (max-width: 768px) {
-    .whatsapp-card-enhanced {
-        width: 97vw !important;
-        max-width: 97vw !important;
-        /* Break out of container to be centered viewport width */
-        margin-left: calc(50% - 48.5vw) !important;
-        margin-right: calc(50% - 48.5vw) !important;
-        position: static !important;
-        /* Reset relative */
-        transform: none !important;
     }
 }
