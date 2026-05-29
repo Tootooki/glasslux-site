@@ -41,6 +41,7 @@
   <div class="fallback">
     <h1>GlassLux</h1>
     <p>Loading website...</p>
+    <p>Serving Palm Beach and Broward Counties</p>
     <a class="phone" href="tel:+15614517757">561-451-7757</a><br>
     <a class="email" href="mailto:GlassLuxllc@gmail.com">GlassLuxllc@gmail.com</a>
   </div>
@@ -52,6 +53,8 @@
       const whatsappNumber = '15614517757';
       const displayNumber = '561-451-7757';
       const emailAddress = 'GlassLuxllc@gmail.com';
+      const serviceAreaText = 'Serving Palm Beach and Broward Counties';
+      const serviceAreaMapEmbed = 'https://www.google.com/maps?q=Palm%20Beach%20County%20FL%20and%20Broward%20County%20FL&output=embed';
 
       function decodeBase64Utf8(base64) {
         const clean = base64.replace(/\s/g, '');
@@ -79,6 +82,13 @@
           .replace(/info@glasslux\.us/gi, emailAddress)
           .replace(/GlassLuxllc@gmail\.com/gi, emailAddress)
           .replace(/glassluxllc@gmail\.com/gi, emailAddress);
+      }
+
+      function replaceServiceAreaEverywhere(html) {
+        return html
+          .replace(/Serving\s+All\s+Florida/g, serviceAreaText)
+          .replace(/Serving\s+Florida/g, serviceAreaText)
+          .replace(/src="https:\/\/www\.google\.com\/maps\/embed\?pb=[^"]+"/g, 'src="' + serviceAreaMapEmbed + '"');
       }
 
       function addSuperGlassEverywhere(html) {
@@ -133,13 +143,14 @@
         const originalHtml = decodeBase64Utf8(blob.content);
         let updatedHtml = replacePhoneEverywhere(originalHtml);
         updatedHtml = replaceEmailEverywhere(updatedHtml);
+        updatedHtml = replaceServiceAreaEverywhere(updatedHtml);
         updatedHtml = addSuperGlassEverywhere(updatedHtml);
 
         document.open();
         document.write(updatedHtml);
         document.close();
       } catch (error) {
-        document.body.innerHTML = '<div class="fallback"><h1>GlassLux</h1><p>by SuperGlass</p><p>Please call, text, or email us:</p><a class="phone" href="tel:' + telNumber + '">' + displayNumber + '</a><br><a class="email" href="mailto:' + emailAddress + '">' + emailAddress + '</a></div>';
+        document.body.innerHTML = '<div class="fallback"><h1>GlassLux</h1><p>by SuperGlass</p><p>' + serviceAreaText + '</p><p>Please call, text, or email us:</p><a class="phone" href="tel:' + telNumber + '">' + displayNumber + '</a><br><a class="email" href="mailto:' + emailAddress + '">' + emailAddress + '</a></div>';
       }
     })();
   </script>
