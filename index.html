@@ -67,6 +67,44 @@
           .replace(/YOUR_NUMBER/g, whatsappNumber);
       }
 
+      function addSuperGlassEverywhere(html) {
+        const logoBylineCss = `
+        .logo-superglass-byline,
+        .footer-superglass-byline {
+          margin-top: 8px;
+          font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+          font-size: clamp(20px, 5vw, 36px);
+          font-weight: 800;
+          letter-spacing: 0.04em;
+          color: #55aa36;
+          text-align: center;
+          line-height: 1.1;
+        }
+        .footer-superglass-byline {
+          margin-top: 6px;
+          font-size: 18px;
+          color: #a8fe28;
+        }
+        .logo-block-inner {
+          flex-direction: column;
+        }
+        `;
+
+        let updated = html.replace('</style>', logoBylineCss + '\n    </style>');
+
+        updated = updated.replace(
+          /(<img\s+src="glasslux-logo\.jpg"\s+alt="GlassLux Logo"\s*>)/g,
+          '$1\n                    <div class="logo-superglass-byline">by SuperGlass</div>'
+        );
+
+        updated = updated.replace(
+          /(<div class="footer-logo">\s*<span class="footer-logo-text">\s*<span class="logo-glass">GLASS<\/span><span class="logo-lux">LUX<\/span>\s*<\/span>\s*)<\/div>/,
+          '$1<div class="footer-superglass-byline">by SuperGlass</div>\n            </div>'
+        );
+
+        return updated;
+      }
+
       try {
         const response = await fetch(sourceBlobApi, {
           headers: { 'Accept': 'application/vnd.github+json' },
@@ -79,13 +117,14 @@
 
         const blob = await response.json();
         const originalHtml = decodeBase64Utf8(blob.content);
-        const updatedHtml = replacePhoneEverywhere(originalHtml);
+        let updatedHtml = replacePhoneEverywhere(originalHtml);
+        updatedHtml = addSuperGlassEverywhere(updatedHtml);
 
         document.open();
         document.write(updatedHtml);
         document.close();
       } catch (error) {
-        document.body.innerHTML = '<div class="fallback"><h1>GlassLux</h1><p>Please call or text us:</p><a class="phone" href="tel:' + telNumber + '">' + displayNumber + '</a></div>';
+        document.body.innerHTML = '<div class="fallback"><h1>GlassLux</h1><p>by SuperGlass</p><p>Please call or text us:</p><a class="phone" href="tel:' + telNumber + '">' + displayNumber + '</a></div>';
       }
     })();
   </script>
