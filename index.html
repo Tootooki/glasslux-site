@@ -20,7 +20,7 @@
       padding: 32px;
       max-width: 520px;
     }
-    .phone {
+    .phone, .email {
       display: inline-block;
       margin-top: 16px;
       padding: 16px 24px;
@@ -28,8 +28,12 @@
       color: #000;
       border-radius: 999px;
       text-decoration: none;
-      font-size: 28px;
+      font-size: 24px;
       font-weight: 800;
+    }
+    .email {
+      background: #f5f5f5;
+      font-size: 20px;
     }
   </style>
 </head>
@@ -37,7 +41,8 @@
   <div class="fallback">
     <h1>GlassLux</h1>
     <p>Loading website...</p>
-    <a class="phone" href="tel:+15614517757">561-451-7757</a>
+    <a class="phone" href="tel:+15614517757">561-451-7757</a><br>
+    <a class="email" href="mailto:GlassLuxllc@gmail.com">GlassLuxllc@gmail.com</a>
   </div>
 
   <script>
@@ -46,6 +51,7 @@
       const telNumber = '+15614517757';
       const whatsappNumber = '15614517757';
       const displayNumber = '561-451-7757';
+      const emailAddress = 'GlassLuxllc@gmail.com';
 
       function decodeBase64Utf8(base64) {
         const clean = base64.replace(/\s/g, '');
@@ -65,6 +71,14 @@
           .replace(/\+13859885129/g, telNumber)
           .replace(/13859885129/g, whatsappNumber)
           .replace(/YOUR_NUMBER/g, whatsappNumber);
+      }
+
+      function replaceEmailEverywhere(html) {
+        return html
+          .replace(/mailto:info@glasslux\.us/gi, 'mailto:' + emailAddress)
+          .replace(/info@glasslux\.us/gi, emailAddress)
+          .replace(/GlassLuxllc@gmail\.com/gi, emailAddress)
+          .replace(/glassluxllc@gmail\.com/gi, emailAddress);
       }
 
       function addSuperGlassEverywhere(html) {
@@ -118,13 +132,14 @@
         const blob = await response.json();
         const originalHtml = decodeBase64Utf8(blob.content);
         let updatedHtml = replacePhoneEverywhere(originalHtml);
+        updatedHtml = replaceEmailEverywhere(updatedHtml);
         updatedHtml = addSuperGlassEverywhere(updatedHtml);
 
         document.open();
         document.write(updatedHtml);
         document.close();
       } catch (error) {
-        document.body.innerHTML = '<div class="fallback"><h1>GlassLux</h1><p>by SuperGlass</p><p>Please call or text us:</p><a class="phone" href="tel:' + telNumber + '">' + displayNumber + '</a></div>';
+        document.body.innerHTML = '<div class="fallback"><h1>GlassLux</h1><p>by SuperGlass</p><p>Please call, text, or email us:</p><a class="phone" href="tel:' + telNumber + '">' + displayNumber + '</a><br><a class="email" href="mailto:' + emailAddress + '">' + emailAddress + '</a></div>';
       }
     })();
   </script>
